@@ -1,0 +1,3199 @@
+[
+  {
+    "id": "alprazolam",
+    "generic_name": "alprazolam",
+    "brand_names": [
+      "Xanax",
+      "Xanax XR"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Benzodiazepine",
+    "mechanism_of_action": "Enhances GABA-A receptor activity by binding to the benzodiazepine site, increasing chloride ion conductance and producing CNS depression",
+    "indications": [
+      "Generalized anxiety disorder",
+      "Panic disorder"
+    ],
+    "dosage": {
+      "adult": "Anxiety: 0.25–0.5 mg three times daily. Panic: 0.5–1 mg three times daily",
+      "max_dose": "4 mg/day for anxiety, 10 mg/day for panic disorder",
+      "renal_adjustment": "No significant adjustment — hepatically metabolized"
+    },
+    "side_effects": [
+      "Sedation",
+      "Cognitive impairment",
+      "Ataxia",
+      "Dependence and withdrawal",
+      "Respiratory depression (with opioids)",
+      "Rebound anxiety"
+    ],
+    "warnings": [
+      "Black box warning: combined use with opioids — risk of profound sedation, respiratory depression, coma, death",
+      "Physical dependence with regular use — do not abruptly discontinue",
+      "On Beers Criteria — avoid in elderly"
+    ],
+    "contraindications": [
+      "Acute narrow-angle glaucoma",
+      "Concurrent itraconazole or ketoconazole (potent CYP3A4 inhibitors)",
+      "Severe respiratory insufficiency"
+    ],
+    "interactions": [
+      "Opioids — black box warning, respiratory depression",
+      "CYP3A4 inhibitors (azole antifungals, HIV protease inhibitors) — dramatically increase alprazolam levels",
+      "Alcohol — additive CNS depression",
+      "Other CNS depressants"
+    ],
+    "monitoring": [
+      "Signs of sedation and cognitive impairment",
+      "Dependence and withdrawal symptoms",
+      "Respiratory status if combined with opioids"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — taper slowly to avoid life-threatening withdrawal seizures",
+      "Avoid alcohol entirely",
+      "Do not drive or operate heavy machinery",
+      "Do not take with opioids unless directed by physician",
+      "Schedule IV — refills permitted up to 5 times within 6 months in NYS"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV",
+      "Highest potency and fastest onset of commonly prescribed benzodiazepines — highest abuse potential in the class",
+      "Abrupt discontinuation after chronic use can cause potentially fatal withdrawal seizures — must taper",
+      "In NYS, benzodiazepines require official NYS prescription form or EPCS — treated similarly to CII despite being CIV"
+    ]
+  },
+  {
+    "id": "amobarbital",
+    "generic_name": "amobarbital",
+    "brand_names": [
+      "Amytal"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Barbiturate — intermediate-acting CNS depressant",
+    "mechanism_of_action": "Enhances GABA-A receptor activity by prolonging chloride channel opening duration — unlike benzodiazepines which increase frequency. At high doses, directly activates GABA-A channels independent of GABA",
+    "indications": [
+      "Insomnia (short-term, rarely used today)",
+      "Preanesthetic sedation",
+      "Narcoanalysis (Amytal interview — forensic/psychiatric use)"
+    ],
+    "dosage": {
+      "adult": "Sedation: 65–200 mg at bedtime. Preanesthesia: 200 mg IM 1–2 hours before procedure",
+      "max_dose": "500 mg per dose",
+      "renal_adjustment": "Use with caution in renal impairment — reduce dose"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Sedation",
+      "Hangover effect",
+      "Ataxia",
+      "Dependence",
+      "Paradoxical excitement in elderly"
+    ],
+    "warnings": [
+      "High lethality in overdose — narrow therapeutic index compared to benzodiazepines",
+      "Physical dependence and severe withdrawal — can be fatal",
+      "Potent enzyme inducer — reduces levels of many medications"
+    ],
+    "contraindications": [
+      "Porphyria — absolute contraindication",
+      "Severe respiratory disease",
+      "History of barbiturate addiction"
+    ],
+    "interactions": [
+      "CNS depressants — additive, potentially fatal",
+      "CYP enzyme inducers — accelerates own metabolism and many other drugs",
+      "Warfarin — decreases anticoagulant effect via enzyme induction",
+      "Oral contraceptives — reduced efficacy"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Level of consciousness",
+      "Signs of dependence",
+      "Drug levels of co-administered medications"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — life-threatening withdrawal seizures",
+      "Avoid alcohol and all CNS depressants",
+      "Schedule II — no refills, largely replaced by safer agents",
+      "Extremely rarely used today — largely replaced by benzodiazepines and Z-drugs"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Barbiturates largely replaced by benzodiazepines due to narrower therapeutic index and higher overdose lethality",
+      "Absolute contraindication in porphyria — barbiturates induce ALA synthase precipitating acute porphyric crisis",
+      "Still used for Amytal interview (sodium amobarbital IV) in psychiatry/forensics to facilitate recall"
+    ]
+  },
+  {
+    "id": "amphetamine_mixed",
+    "generic_name": "amphetamine, mixed salts",
+    "brand_names": [
+      "Adderall",
+      "Adderall XR"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — amphetamine",
+    "mechanism_of_action": "Releases catecholamines (dopamine, norepinephrine) from presynaptic terminals and inhibits their reuptake, increasing synaptic concentrations in prefrontal cortex and striatum",
+    "indications": [
+      "ADHD in children and adults",
+      "Narcolepsy"
+    ],
+    "dosage": {
+      "adult": "IR: 5–30 mg daily in divided doses. XR: 5–30 mg once daily in the morning",
+      "max_dose": "40 mg/day for ADHD",
+      "renal_adjustment": "No specific adjustment — use caution in severe renal impairment"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Tachycardia",
+      "Hypertension",
+      "Dry mouth",
+      "Anxiety",
+      "Growth suppression in children"
+    ],
+    "warnings": [
+      "Black box warning: high abuse and dependence potential",
+      "Cardiovascular events — avoid in patients with structural heart disease",
+      "May worsen psychiatric symptoms — use caution in patients with history of psychosis"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Advanced arteriosclerosis",
+      "Symptomatic cardiovascular disease",
+      "Moderate to severe hypertension",
+      "Hyperthyroidism",
+      "Glaucoma"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Acidifying agents (vitamin C, ammonium chloride) — decrease amphetamine levels",
+      "Alkalinizing agents (sodium bicarbonate) — increase amphetamine levels and toxicity"
+    ],
+    "monitoring": [
+      "Blood pressure and heart rate",
+      "Growth in pediatric patients",
+      "Signs of misuse",
+      "Psychiatric symptoms"
+    ],
+    "counseling_points": [
+      "Take in the morning — taking late in the day causes insomnia",
+      "Do not take with vitamin C or acidic juices — reduces effectiveness",
+      "Schedule II — no refills, new Rx required monthly",
+      "Do not share — serious legal consequences",
+      "Report chest pain or palpitations immediately"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "No refills permitted on Schedule II prescriptions — patient must present a new Rx each month",
+      "In NYS, Schedule II prescriptions must be written on official NYS serialized prescription forms or via electronic prescribing (EPCS)"
+    ]
+  },
+  {
+    "id": "atenolol",
+    "generic_name": "atenolol",
+    "brand_names": [
+      "Tenormin"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "betaBlockers",
+    "drug_class": "Cardioselective beta-1 blocker",
+    "mechanism_of_action": "Selectively blocks cardiac beta-1 receptors, reducing heart rate and blood pressure without significant beta-2 effects at therapeutic doses",
+    "indications": [
+      "Hypertension",
+      "Angina",
+      "Post-MI"
+    ],
+    "dosage": {
+      "adult": "25–100 mg once daily",
+      "max_dose": "100 mg/day",
+      "renal_adjustment": "CrCl 15–35: max 50 mg/day. CrCl <15: max 25 mg/day"
+    },
+    "side_effects": [
+      "Fatigue",
+      "Bradycardia",
+      "Cold extremities",
+      "Dizziness",
+      "Depression"
+    ],
+    "warnings": [
+      "Do not abruptly discontinue",
+      "Caution in reactive airway disease",
+      "Masks hypoglycemia symptoms"
+    ],
+    "contraindications": [
+      "Severe bradycardia",
+      "Heart block",
+      "Cardiogenic shock"
+    ],
+    "interactions": [
+      "Calcium channel blockers — additive bradycardia",
+      "Clonidine — rebound hypertension risk",
+      "Antidiabetics — masked hypoglycemia"
+    ],
+    "monitoring": [
+      "Heart rate",
+      "Blood pressure",
+      "Renal function — renally cleared"
+    ],
+    "counseling_points": [
+      "Take at the same time each day",
+      "Do not stop without physician guidance",
+      "Monitor pulse daily",
+      "Avoid alcohol",
+      "Avoid excessive caffeine which can counteract effect"
+    ],
+    "pearls": [
+      "Hydrophilic — less CNS penetration means fewer CNS side effects like depression and nightmares compared to propranolol",
+      "Renally excreted — requires dose adjustment in renal impairment unlike metoprolol"
+    ]
+  },
+  {
+    "id": "belladonna_opium",
+    "generic_name": "belladonna alkaloids with opium",
+    "brand_names": [
+      "B&O Suppositories"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid / anticholinergic combination",
+    "mechanism_of_action": "Combination of opium (morphine, codeine, other alkaloids) providing opioid analgesia plus belladonna alkaloids (atropine, scopolamine) providing anticholinergic antispasmodic effects — used for urinary tract spasm and pain",
+    "indications": [
+      "Moderate to severe pain associated with ureteral spasm",
+      "Relief of vesical spasm (bladder spasm)",
+      "Preoperative and postoperative pain with spasm"
+    ],
+    "dosage": {
+      "adult": "1 suppository rectally every 4–6 hours as needed",
+      "max_dose": "4 suppositories per day",
+      "renal_adjustment": "Use with caution in renal impairment — reduce frequency"
+    },
+    "side_effects": [
+      "Anticholinergic effects — dry mouth, urinary retention, constipation, blurred vision, tachycardia",
+      "Opioid effects — sedation, respiratory depression",
+      "Heat intolerance from decreased sweating"
+    ],
+    "warnings": [
+      "Schedule II due to opium content",
+      "Anticholinergic burden — avoid in elderly (Beers Criteria)",
+      "Respiratory depression from opioid component"
+    ],
+    "contraindications": [
+      "Glaucoma",
+      "Severe prostatic hypertrophy",
+      "Myasthenia gravis",
+      "Ulcerative colitis",
+      "Respiratory depression"
+    ],
+    "interactions": [
+      "Other anticholinergics — additive effects",
+      "CNS depressants — additive sedation",
+      "MAOIs — hypertensive crisis"
+    ],
+    "monitoring": [
+      "Urinary retention",
+      "Intraocular pressure",
+      "Respiratory status",
+      "Anticholinergic side effects"
+    ],
+    "counseling_points": [
+      "Rectal suppository — proper insertion technique important",
+      "Schedule II — no refills",
+      "Avoid in hot weather — reduced ability to sweat causes heat stroke risk",
+      "Report difficulty urinating or eye pain immediately"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS due to opium content",
+      "One of the few remaining combination opioid/anticholinergic products still marketed",
+      "Largely replaced by more modern analgesics and antispasmodics but still occasionally used for ureteral colic",
+      "Belladonna literally means 'beautiful woman' in Italian — historically used to dilate pupils for cosmetic effect"
+    ]
+  },
+  {
+    "id": "buprenorphine",
+    "generic_name": "buprenorphine",
+    "brand_names": [
+      "Subutex (mono)",
+      "Suboxone (with naloxone)",
+      "Bunavail",
+      "Zubsolv",
+      "Butrans patch",
+      "Buprenex"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIII",
+    "drug_class": "Partial opioid agonist / opioid use disorder treatment",
+    "mechanism_of_action": "Partial mu-opioid agonist and kappa antagonist with very high receptor affinity — ceiling effect on respiratory depression makes it safer than full agonists. Naloxone added to Suboxone to deter injection abuse",
+    "indications": [
+      "Opioid use disorder (OUD) — maintenance and detoxification",
+      "Moderate to severe chronic pain (patch, buccal film)",
+      "Preoperative analgesia"
+    ],
+    "dosage": {
+      "adult": "OUD: 8–24 mg sublingual daily after induction. Patch: 5–20 mcg/hr weekly",
+      "max_dose": "32 mg/day sublingual for OUD",
+      "renal_adjustment": "No dose adjustment needed for mild-moderate renal impairment"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea",
+      "Headache",
+      "Sweating",
+      "Insomnia",
+      "Precipitated withdrawal if given to opioid-dependent patient too soon"
+    ],
+    "warnings": [
+      "Precipitated withdrawal — must wait for patient to be in moderate withdrawal (COWS score ≥8–12) before first dose",
+      "Respiratory depression with CNS depressants",
+      "Hepatotoxicity — monitor LFTs"
+    ],
+    "contraindications": [
+      "Hypersensitivity to buprenorphine or naloxone",
+      "Significant respiratory depression (relative)"
+    ],
+    "interactions": [
+      "Benzodiazepines — respiratory depression risk, though lower than full agonists",
+      "CYP3A4 inhibitors — increase buprenorphine levels",
+      "MAOIs — avoid"
+    ],
+    "monitoring": [
+      "Urine drug screens",
+      "LFTs at baseline and periodically",
+      "COWS score before induction",
+      "Adherence and diversion"
+    ],
+    "counseling_points": [
+      "Place tablet or film under the tongue — do not swallow",
+      "Do not use other opioids while on buprenorphine — won't get high and may precipitate withdrawal",
+      "Take as prescribed — diversion is a federal crime",
+      "Avoid benzodiazepines and alcohol",
+      "Federal CIII — can be prescribed in office-based settings unlike methadone"
+    ],
+    "pearls": [
+      "Federal Schedule III, NYS Schedule III — less restrictive than CII, allows refills and can be called in",
+      "Suboxone (buprenorphine/naloxone) is preferred over Subutex (mono) to deter injection abuse — naloxone precipitates withdrawal if injected",
+      "Following 2023 federal rule changes, ANY DEA-licensed prescriber can prescribe buprenorphine for OUD without special waiver — major policy change"
+    ]
+  },
+  {
+    "id": "captopril",
+    "generic_name": "captopril",
+    "brand_names": [
+      "Capoten"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "aceInhibitors",
+    "drug_class": "ACE inhibitor",
+    "mechanism_of_action": "Directly inhibits ACE by binding to its active site via a sulfhydryl group, reducing angiotensin II production and promoting vasodilation — the first ACE inhibitor developed",
+    "indications": [
+      "Hypertension",
+      "Heart failure",
+      "Post-MI left ventricular dysfunction",
+      "Diabetic nephropathy"
+    ],
+    "dosage": {
+      "adult": "25–150 mg per day in 2–3 divided doses",
+      "max_dose": "150 mg/day",
+      "renal_adjustment": "Reduce dose and frequency in renal impairment — CrCl <50 requires dose reduction"
+    },
+    "side_effects": [
+      "Dry cough",
+      "Rash",
+      "Dysgeusia (taste disturbance)",
+      "Hypotension",
+      "Hyperkalemia",
+      "Proteinuria at high doses"
+    ],
+    "warnings": [
+      "Angioedema",
+      "Pregnancy category D",
+      "Neutropenia risk in patients with renal impairment or collagen vascular disease"
+    ],
+    "contraindications": [
+      "Pregnancy",
+      "History of ACE inhibitor-induced angioedema"
+    ],
+    "interactions": [
+      "Potassium-sparing diuretics — hyperkalemia",
+      "NSAIDs — decreased efficacy",
+      "Probenecid — increases captopril levels",
+      "Antacids — reduce absorption"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Renal function",
+      "Potassium",
+      "CBC in high-risk patients",
+      "Urinary protein"
+    ],
+    "counseling_points": [
+      "Take on an empty stomach — food reduces absorption by up to 40%",
+      "Multiple daily doses required unlike newer ACE inhibitors",
+      "Avoid potassium supplements",
+      "Report any unusual infections or sore throat — neutropenia risk",
+      "Do not take during pregnancy"
+    ],
+    "pearls": [
+      "The first ACE inhibitor approved — landmark drug in cardiovascular pharmacology",
+      "Short half-life means multiple daily doses needed, making adherence harder than once-daily agents",
+      "Unique sulfhydryl group causes rash and taste disturbance not seen with other ACE inhibitors"
+    ]
+  },
+  {
+    "id": "carfentanil",
+    "generic_name": "carfentanil",
+    "brand_names": [
+      "Wildnil"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Ultra-potent synthetic opioid — large animal veterinary use only",
+    "mechanism_of_action": "Extremely potent mu-opioid receptor agonist — approximately 10,000 times more potent than morphine and 100 times more potent than fentanyl by weight",
+    "indications": [
+      "Sedation and immobilization of large animals (elephants, rhinoceroses) — veterinary use only",
+      "No approved human medical use"
+    ],
+    "dosage": {
+      "adult": "Veterinary: 1–3 mcg/kg for large animals. Human therapeutic use: NONE",
+      "max_dose": "N/A — no human dosing",
+      "renal_adjustment": "N/A — no human dosing"
+    },
+    "side_effects": [
+      "Immediate fatal respiratory depression in humans at microgram quantities",
+      "CNS depression",
+      "Cardiovascular collapse"
+    ],
+    "warnings": [
+      "EXTREME HAZARD — microgram skin contact can be fatal to humans",
+      "No human medical use — any human exposure is accidental or illicit",
+      "Increasingly found in illicit drug supply — major contributor to overdose deaths",
+      "Standard naloxone doses may be insufficient — multiple doses required"
+    ],
+    "contraindications": [
+      "Human use — absolutely contraindicated"
+    ],
+    "interactions": [
+      "Any CNS depressant — fatal additive effects at any dose in humans"
+    ],
+    "monitoring": [
+      "N/A for medical use — emergency: monitor for opioid toxicity if accidental exposure"
+    ],
+    "counseling_points": [
+      "No legitimate human use — awareness only for pharmacy students",
+      "Found in illicit fentanyl supply — contributes to mass casualty overdose events",
+      "Multiple doses of naloxone required for reversal due to extreme receptor affinity",
+      "Schedule II despite no human use — controlled due to extreme abuse and harm potential"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS — despite no human medical use",
+      "10,000x more potent than morphine — a few micrograms is lethal to humans",
+      "Used as chemical weapon agent — 2002 Moscow theater hostage crisis involved carfentanil aerosol, killing ~130 hostages",
+      "Classic exam distinction: carfentanil is CII (has veterinary approval) vs heroin which is CI (no accepted medical use anywhere in US)"
+    ]
+  },
+  {
+    "id": "carvedilol",
+    "generic_name": "carvedilol",
+    "brand_names": [
+      "Coreg",
+      "Coreg CR"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "betaBlockers",
+    "drug_class": "Nonselective beta blocker with alpha-1 blocking activity",
+    "mechanism_of_action": "Blocks beta-1, beta-2, and alpha-1 adrenergic receptors, producing vasodilation in addition to cardiac rate and contractility reduction — reducing both preload and afterload",
+    "indications": [
+      "Heart failure with reduced EF",
+      "Hypertension",
+      "Post-MI left ventricular dysfunction"
+    ],
+    "dosage": {
+      "adult": "3.125–25 mg twice daily, titrated slowly",
+      "max_dose": "50 mg/day in heart failure",
+      "renal_adjustment": "No renal adjustment required — hepatically metabolized"
+    },
+    "side_effects": [
+      "Dizziness",
+      "Hypotension",
+      "Fatigue",
+      "Bradycardia",
+      "Weight gain",
+      "Hyperglycemia"
+    ],
+    "warnings": [
+      "Significant first-dose hypotension — always take with food",
+      "Do not abruptly discontinue",
+      "Use caution in reactive airway disease",
+      "May mask hypoglycemia"
+    ],
+    "contraindications": [
+      "Severe bradycardia",
+      "Decompensated heart failure requiring IV inotropes",
+      "Severe hepatic impairment",
+      "Cardiogenic shock"
+    ],
+    "interactions": [
+      "Antihypertensives — additive hypotension",
+      "Insulin and oral hypoglycemics — masked hypoglycemia",
+      "CYP2D6 inhibitors (fluoxetine, paroxetine) — increased carvedilol levels",
+      "Digoxin — additive bradycardia"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Heart rate",
+      "Signs of HF exacerbation",
+      "Blood glucose in diabetics",
+      "Liver function"
+    ],
+    "counseling_points": [
+      "Always take with food to reduce hypotension risk",
+      "Rise slowly from sitting or lying",
+      "Never stop abruptly",
+      "Weigh yourself daily — report gain of more than 2 lbs in a day or 5 lbs in a week",
+      "Avoid alcohol"
+    ],
+    "pearls": [
+      "One of three beta blockers with proven mortality benefit in heart failure — along with metoprolol succinate and bisoprolol",
+      "Alpha-1 blockade provides additional vasodilation not seen with cardioselective agents",
+      "COPERNICUS trial demonstrated survival benefit in severe heart failure"
+    ]
+  },
+  {
+    "id": "citalopram",
+    "generic_name": "citalopram",
+    "brand_names": [
+      "Celexa"
+    ],
+    "collection": "neuroPsych",
+    "sub_collection": "ssris",
+    "drug_class": "Selective serotonin reuptake inhibitor (SSRI)",
+    "mechanism_of_action": "Inhibits SERT with high selectivity for serotonin reuptake, producing minimal effects on norepinephrine or dopamine transporters",
+    "indications": [
+      "Major depressive disorder"
+    ],
+    "dosage": {
+      "adult": "20–40 mg once daily",
+      "max_dose": "40 mg/day — FDA-limited due to QT prolongation risk",
+      "renal_adjustment": "No renal adjustment required. Use with caution in hepatic impairment — max 20 mg/day"
+    },
+    "side_effects": [
+      "Nausea",
+      "Dry mouth",
+      "Sweating",
+      "QT prolongation",
+      "Somnolence",
+      "Sexual dysfunction"
+    ],
+    "warnings": [
+      "FDA dose cap at 40 mg due to dose-dependent QT prolongation — max 20 mg/day in elderly, hepatic impairment, or CYP2C19 poor metabolizers",
+      "Serotonin syndrome risk",
+      "Suicidal ideation black box warning"
+    ],
+    "contraindications": [
+      "Concurrent MAOI use",
+      "Congenital long QT syndrome",
+      "Concurrent use of other QT-prolonging drugs at high risk"
+    ],
+    "interactions": [
+      "QT-prolonging drugs — additive QT risk (antipsychotics, antibiotics, antiarrhythmics)",
+      "CYP2C19 inhibitors (omeprazole, fluconazole) — increased citalopram levels",
+      "MAOIs — serotonin syndrome",
+      "Warfarin — bleeding risk"
+    ],
+    "monitoring": [
+      "EKG at baseline and after dose changes in high-risk patients",
+      "Electrolytes — hypokalemia worsens QT risk",
+      "Mood and suicidality"
+    ],
+    "counseling_points": [
+      "Do not exceed prescribed dose — higher doses increase heart risk",
+      "Report palpitations or irregular heartbeat",
+      "Avoid alcohol",
+      "Do not stop abruptly",
+      "Takes several weeks for full antidepressant effect",
+      "Avoid other medications that affect heart rhythm without physician approval"
+    ],
+    "pearls": [
+      "FDA issued a dose cap in 2012 after data showed dose-dependent QT prolongation — unique among SSRIs",
+      "Despite QT concern, remains widely used due to favorable tolerability and low drug interaction profile",
+      "Escitalopram is the active S-enantiomer of citalopram — often preferred for its cleaner profile"
+    ]
+  },
+  {
+    "id": "clonazepam",
+    "generic_name": "clonazepam",
+    "brand_names": [
+      "Klonopin"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Benzodiazepine / anticonvulsant",
+    "mechanism_of_action": "Long-acting benzodiazepine GABA-A modulator with high potency — particularly effective for seizure disorders due to sustained activity",
+    "indications": [
+      "Panic disorder",
+      "Seizure disorders — absence, myoclonic, Lennox-Gastaut",
+      "Akathisia (off-label)",
+      "Restless legs syndrome (off-label)"
+    ],
+    "dosage": {
+      "adult": "Panic: 0.25–1 mg twice daily. Seizures: 0.5–20 mg daily in divided doses",
+      "max_dose": "20 mg/day for seizures",
+      "renal_adjustment": "No significant adjustment"
+    },
+    "side_effects": [
+      "Sedation",
+      "Ataxia",
+      "Cognitive impairment",
+      "Dependence",
+      "Depression",
+      "Hypersalivation in some patients"
+    ],
+    "warnings": [
+      "Black box warning: opioid combination",
+      "Tolerance develops to anticonvulsant effect — may require dose increases",
+      "Do not abruptly discontinue — seizure risk"
+    ],
+    "contraindications": [
+      "Acute narrow-angle glaucoma",
+      "Severe liver disease"
+    ],
+    "interactions": [
+      "CNS depressants — additive sedation",
+      "Opioids — respiratory depression",
+      "Valproate — may cause absence status epilepticus with combined use"
+    ],
+    "monitoring": [
+      "Seizure frequency",
+      "Sedation and cognitive function",
+      "Signs of tolerance"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — risk of withdrawal seizures even if taking for anxiety",
+      "Avoid alcohol and CNS depressants",
+      "Schedule IV — refills permitted in NYS",
+      "Report worsening depression"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV",
+      "Highest potency benzodiazepine per milligram — 0.5 mg clonazepam approximates 10 mg diazepam",
+      "Unlike other benzodiazepines, has specific anticonvulsant properties making it useful for seizure disorders",
+      "Tolerance to anticonvulsant effect is a clinical challenge — may lose efficacy over months"
+    ]
+  },
+  {
+    "id": "cocaine_topical",
+    "generic_name": "cocaine",
+    "brand_names": [
+      "Cocaine HCl Topical Solution"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Local anesthetic / vasoconstrictor — topical only",
+    "mechanism_of_action": "Blocks voltage-gated sodium channels (local anesthetic effect) AND inhibits reuptake of norepinephrine, dopamine, and serotonin — the only local anesthetic with vasoconstrictive properties, making it useful in ENT procedures",
+    "indications": [
+      "Topical anesthesia for nasal and oropharyngeal mucosa during ENT surgical procedures only — not for injection or systemic use"
+    ],
+    "dosage": {
+      "adult": "Topical 4–10% solution: 1–3 mg/kg applied to mucosa. Maximum single dose typically 200 mg",
+      "max_dose": "200 mg topical per procedure",
+      "renal_adjustment": "No specific adjustment for topical use"
+    },
+    "side_effects": [
+      "Cardiovascular stimulation — tachycardia, hypertension",
+      "CNS stimulation — euphoria, anxiety",
+      "Systemic absorption can cause cardiac arrhythmias",
+      "Vasoconstriction at application site"
+    ],
+    "warnings": [
+      "Cardiovascular risk — avoid in patients with hypertension, coronary artery disease, or cardiac arrhythmias",
+      "Systemic absorption from mucosal surfaces is significant",
+      "High abuse potential — Schedule II despite medical use"
+    ],
+    "contraindications": [
+      "Hypersensitivity",
+      "Hypertension",
+      "Severe cardiovascular disease",
+      "MAOIs"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Sympathomimetics — additive cardiovascular effects",
+      "Epinephrine — avoid combination — severe hypertension and arrhythmias"
+    ],
+    "monitoring": [
+      "Blood pressure and heart rate during procedure",
+      "Cardiac monitoring in high-risk patients",
+      "Signs of systemic toxicity"
+    ],
+    "counseling_points": [
+      "Medical use only — topical ENT procedures",
+      "Schedule II — tightly controlled",
+      "Only local anesthetic that is also a vasoconstrictor — unique pharmacology",
+      "Not for injection under any circumstances"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS — only legal medical use is as topical ENT anesthetic",
+      "Unique among local anesthetics — only one with intrinsic vasoconstrictive properties due to catecholamine reuptake inhibition",
+      "First local anesthetic discovered — Koller demonstrated ophthalmic anesthesia with cocaine in 1884",
+      "Combination with epinephrine is CONTRAINDICATED unlike other local anesthetics"
+    ]
+  },
+  {
+    "id": "codeine_cii",
+    "generic_name": "codeine",
+    "brand_names": [
+      "Codeine Sulfate",
+      "Codeine Phosphate"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic / antitussive — prodrug",
+    "mechanism_of_action": "Prodrug converted to morphine (10%) and codeine-6-glucuronide via CYP2D6 and UGT2B7. Antitussive effects from direct opioid receptor activity. Analgesic effects primarily from morphine conversion",
+    "indications": [
+      "Mild to moderate pain (single-ingredient tablets — Schedule II)",
+      "Cough suppression — note: combination cough syrups with low codeine content are Schedule V"
+    ],
+    "dosage": {
+      "adult": "Pain: 15–60 mg every 4–6 hours. Antitussive: 10–20 mg every 4–6 hours",
+      "max_dose": "360 mg/day",
+      "renal_adjustment": "Reduce dose in renal impairment — morphine metabolite accumulates"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea",
+      "Sedation",
+      "Respiratory depression",
+      "Pruritus",
+      "Euphoria"
+    ],
+    "warnings": [
+      "FDA black box: contraindicated in children under 12 and post-tonsillectomy patients under 18",
+      "CYP2D6 ultra-metabolizers convert excessive codeine to morphine — fatal cases in children",
+      "Single-ingredient codeine = Schedule II. Combination cough syrups with codeine <200mg/100mL = Schedule V"
+    ],
+    "contraindications": [
+      "Children under 12",
+      "Post-tonsillectomy/adenoidectomy under 18",
+      "Respiratory depression",
+      "MAOIs within 14 days"
+    ],
+    "interactions": [
+      "CYP2D6 inhibitors — reduce morphine conversion, decrease analgesia",
+      "CYP2D6 inducers — increase morphine formation, increase toxicity",
+      "CNS depressants — additive respiratory depression",
+      "MAOIs — serotonin syndrome"
+    ],
+    "monitoring": [
+      "Respiratory rate",
+      "Pain control",
+      "Signs of excessive morphine conversion (extreme sedation, miosis)",
+      "CYP2D6 phenotype if available"
+    ],
+    "counseling_points": [
+      "Not for use in children under 12",
+      "Schedule II for single-ingredient tablets — no refills",
+      "CYP2D6 genetics affect how much morphine your body makes from codeine",
+      "Avoid alcohol and other CNS depressants",
+      "Report extreme drowsiness or slow breathing immediately"
+    ],
+    "pearls": [
+      "Single-ingredient codeine = Schedule II federally and in NYS. Codeine combination cough syrups (<200mg/100mL) = Schedule V — this scheduling distinction is high-yield",
+      "CYP2D6 ultra-metabolizers (prevalence: ~1–2% Caucasians, ~3% African Americans, ~29% Ethiopians) convert codeine to dangerous morphine levels — multiple pediatric fatalities led to FDA black box warning",
+      "Codeine is the most widely used opioid worldwide — paradoxically has significant pharmacogenomic variability making it unpredictable"
+    ]
+  },
+  {
+    "id": "codeine_cough",
+    "generic_name": "codeine (cough syrup formulations)",
+    "brand_names": [
+      "Robitussin AC",
+      "Guiatuss AC",
+      "Cheracol",
+      "Mytussin AC"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleV",
+    "drug_class": "Opioid antitussive",
+    "mechanism_of_action": "Prodrug converted to morphine via CYP2D6 — antitussive effects mediated by opioid receptors in cough center. Low-dose codeine in combination cough syrups classified Schedule V",
+    "indications": [
+      "Cough suppression when non-opioid antitussives have failed"
+    ],
+    "dosage": {
+      "adult": "10–20 mg every 4–6 hours as needed for cough",
+      "max_dose": "120 mg/day",
+      "renal_adjustment": "Reduce dose in renal impairment"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea",
+      "Sedation",
+      "Respiratory depression at high doses",
+      "Euphoria"
+    ],
+    "warnings": [
+      "FDA black box warning: avoid in children under 12 — risk of fatal respiratory depression especially in CYP2D6 ultra-metabolizers",
+      "CYP2D6 ultra-metabolizers convert excessive codeine to morphine — fatal cases reported in children post-tonsillectomy",
+      "Abuse potential — 'lean' (codeine syrup with soda) associated with significant substance use disorder"
+    ],
+    "contraindications": [
+      "Children under 12 years",
+      "Post-tonsillectomy/adenoidectomy pain in children under 18",
+      "CYP2D6 ultra-metabolizers (relative)"
+    ],
+    "interactions": [
+      "CYP2D6 inhibitors — reduce conversion to morphine, decrease efficacy",
+      "CYP2D6 inducers — increase morphine formation, increase toxicity",
+      "CNS depressants — additive"
+    ],
+    "monitoring": [
+      "Respiratory rate",
+      "CYP2D6 status if available",
+      "Signs of misuse"
+    ],
+    "counseling_points": [
+      "Not for use in children under 12",
+      "Schedule V — lowest restriction level but still controlled",
+      "Do not mix with alcohol",
+      "Sold behind the counter at pharmacy in some states"
+    ],
+    "pearls": [
+      "Federal Schedule V and NYS Schedule V when in combination cough syrup with less than 200 mg codeine per 100 mL",
+      "CYP2D6 genetics matter — ultra-metabolizers (higher in North African, Ethiopian, Saudi populations) at risk of morphine toxicity",
+      "FDA removed codeine from pediatric labeling due to multiple pediatric fatalities — now contraindicated under age 12"
+    ]
+  },
+  {
+    "id": "dexmethylphenidate",
+    "generic_name": "dexmethylphenidate",
+    "brand_names": [
+      "Focalin",
+      "Focalin XR"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — d-enantiomer of methylphenidate",
+    "mechanism_of_action": "Active d-enantiomer of racemic methylphenidate — blocks dopamine and norepinephrine transporters with greater potency than the l-enantiomer, approximately twice as potent as racemic methylphenidate per milligram",
+    "indications": [
+      "ADHD in children 6 and older and adults"
+    ],
+    "dosage": {
+      "adult": "IR: 2.5–10 mg twice daily. XR: 5–20 mg once daily in the morning",
+      "max_dose": "20 mg/day IR, 20 mg/day XR",
+      "renal_adjustment": "No specific adjustment required"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Headache",
+      "Abdominal pain",
+      "Tachycardia",
+      "Irritability"
+    ],
+    "warnings": [
+      "Black box warning: high abuse and dependence potential",
+      "Cardiovascular risk — obtain cardiac history",
+      "May worsen psychiatric symptoms or tics"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Marked anxiety or agitation",
+      "Glaucoma",
+      "Tourette syndrome or motor tics"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Antihypertensives — reduced efficacy",
+      "Anticoagulants — may increase effect"
+    ],
+    "monitoring": [
+      "Blood pressure and heart rate",
+      "Growth parameters in children",
+      "Psychiatric symptoms"
+    ],
+    "counseling_points": [
+      "Take in the morning only — causes insomnia if taken late",
+      "Schedule II — no refills, new Rx required monthly",
+      "Do not crush XR capsules — can sprinkle on applesauce only",
+      "Report chest pain, palpitations, or worsening anxiety"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "D-enantiomer of methylphenidate — approximately twice as potent per milligram, so doses are half those of Ritalin",
+      "Same mechanism as methylphenidate but cleaner pharmacologically — l-enantiomer contributes little therapeutic benefit but adds side effects in racemic mixture"
+    ]
+  },
+  {
+    "id": "dexmethylphenidate_serdex",
+    "generic_name": "dexmethylphenidate/serdexmethylphenidate",
+    "brand_names": [
+      "Azstarys"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — prodrug/active drug combination",
+    "mechanism_of_action": "Combination of serdexmethylphenidate (prodrug, 70%) and dexmethylphenidate (active, 30%). Serdexmethylphenidate is converted to dexmethylphenidate in the GI tract, providing extended coverage. The immediate-release component provides rapid onset",
+    "indications": [
+      "ADHD in patients 6 years and older"
+    ],
+    "dosage": {
+      "adult": "39.2 mg/7.8 mg (serdex/dex) once daily in the morning — may titrate to 52.3 mg/10.4 mg",
+      "max_dose": "52.3 mg/10.4 mg per day",
+      "renal_adjustment": "No specific adjustment"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Irritability",
+      "Affect lability",
+      "Tachycardia",
+      "Weight loss"
+    ],
+    "warnings": [
+      "Black box warning: abuse and dependence",
+      "Cardiovascular risk",
+      "Growth suppression in children with long-term use"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Glaucoma",
+      "Anxiety or agitation",
+      "Tourette syndrome"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Antihypertensives — reduced efficacy",
+      "Acidifying agents — reduce efficacy"
+    ],
+    "monitoring": [
+      "Blood pressure, heart rate",
+      "Height and weight in children",
+      "Psychiatric symptoms"
+    ],
+    "counseling_points": [
+      "Take in the morning",
+      "Capsule may be opened and contents mixed with applesauce",
+      "Schedule II — no refills",
+      "Newer formulation — FDA approved 2021"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "FDA approved 2021 — one of the newer ADHD formulations",
+      "Prodrug component (serdexmethylphenidate) provides gradual onset and extended duration while active component (dexmethylphenidate) provides rapid initial effect — dual-release design in one molecule pair"
+    ]
+  },
+  {
+    "id": "dextroamphetamine",
+    "generic_name": "dextroamphetamine",
+    "brand_names": [
+      "Dexedrine",
+      "Dexedrine Spansule",
+      "ProCentra"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — dextrorotatory amphetamine isomer",
+    "mechanism_of_action": "D-isomer of amphetamine — releases dopamine and norepinephrine from presynaptic terminals and inhibits their reuptake. More potent CNS stimulant than l-amphetamine due to higher CNS penetration",
+    "indications": [
+      "ADHD in children 3 years and older and adults",
+      "Narcolepsy"
+    ],
+    "dosage": {
+      "adult": "IR: 5–40 mg daily in divided doses. Spansule ER: 5–30 mg once or twice daily",
+      "max_dose": "40 mg/day",
+      "renal_adjustment": "No specific adjustment — use caution in severe renal impairment"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Tachycardia",
+      "Hypertension",
+      "Dry mouth",
+      "Weight loss",
+      "Irritability"
+    ],
+    "warnings": [
+      "Black box warning: abuse and dependence",
+      "Cardiovascular risk",
+      "May worsen psychiatric conditions",
+      "Growth suppression with long-term pediatric use"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Arteriosclerosis",
+      "Symptomatic cardiovascular disease",
+      "Hyperthyroidism",
+      "Glaucoma"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Acidifying agents — reduce absorption and increase excretion",
+      "Alkalinizing agents — increase effect and toxicity",
+      "TCAs — potentiated cardiovascular effects"
+    ],
+    "monitoring": [
+      "Blood pressure and heart rate",
+      "Height and weight in children",
+      "Signs of abuse",
+      "Psychiatric symptoms"
+    ],
+    "counseling_points": [
+      "Take in the morning to prevent insomnia",
+      "Avoid vitamin C and acidic foods around dosing time",
+      "Schedule II — no refills",
+      "Do not share — serious legal consequences",
+      "Report chest pain or irregular heartbeat"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "D-isomer of amphetamine — approximately 3–4x more potent as CNS stimulant than l-isomer due to preferential CNS penetration",
+      "Adderall contains both d and l-amphetamine salts (75% d-amphetamine, 25% l-amphetamine) while Dexedrine is pure d-amphetamine",
+      "One of the oldest approved ADHD medications — originally approved as appetite suppressant in 1937"
+    ]
+  },
+  {
+    "id": "diazepam",
+    "generic_name": "diazepam",
+    "brand_names": [
+      "Valium",
+      "Diastat"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Benzodiazepine",
+    "mechanism_of_action": "Positive allosteric modulator of GABA-A receptor — long-acting benzodiazepine with active metabolites extending duration of action",
+    "indications": [
+      "Anxiety disorders",
+      "Alcohol withdrawal — first-line due to long half-life",
+      "Muscle spasm",
+      "Status epilepticus (IV/rectal)",
+      "Seizure prophylaxis"
+    ],
+    "dosage": {
+      "adult": "Anxiety: 2–10 mg two to four times daily. Alcohol withdrawal: 10 mg every 6–8 hours tapering. Status epilepticus: 5–10 mg IV",
+      "max_dose": "40 mg/day",
+      "renal_adjustment": "No significant adjustment — hepatically metabolized"
+    },
+    "side_effects": [
+      "Sedation",
+      "Anterograde amnesia",
+      "Ataxia",
+      "Respiratory depression",
+      "Dependence",
+      "Paradoxical agitation in elderly"
+    ],
+    "warnings": [
+      "Black box warning: combined use with opioids",
+      "Long half-life (20–100 hours) plus active metabolites — accumulates in elderly",
+      "Beers Criteria — avoid in elderly"
+    ],
+    "contraindications": [
+      "Acute narrow-angle glaucoma",
+      "Severe respiratory insufficiency",
+      "Sleep apnea"
+    ],
+    "interactions": [
+      "Opioids — black box respiratory depression",
+      "Alcohol — additive CNS depression",
+      "CYP2C19 inhibitors — increase diazepam levels",
+      "Antiepileptics — complex interactions"
+    ],
+    "monitoring": [
+      "Sedation level",
+      "Respiratory status",
+      "Ataxia and fall risk in elderly",
+      "Withdrawal symptoms during taper"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — risk of withdrawal seizures",
+      "Avoid alcohol",
+      "Long half-life means effects last longer than you think",
+      "Schedule IV — refills permitted",
+      "Diastat rectal gel — for home rescue therapy of prolonged seizures only"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV",
+      "Drug of choice for alcohol withdrawal due to long half-life — self-tapering effect reduces breakthrough withdrawal",
+      "Active metabolites (desmethyldiazepam, oxazepam) extend duration — especially problematic in elderly and hepatic impairment",
+      "Diastat is the only FDA-approved home treatment for prolonged seizure clusters"
+    ]
+  },
+  {
+    "id": "dronabinol_oral",
+    "generic_name": "dronabinol oral solution",
+    "brand_names": [
+      "Syndros"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Cannabinoid — synthetic THC oral solution",
+    "mechanism_of_action": "Synthetic delta-9-tetrahydrocannabinol (THC) — agonist at CB1 and CB2 cannabinoid receptors. Antiemetic effects via CB1 receptors in vomiting centers; appetite stimulation via hypothalamic CB1 receptors",
+    "indications": [
+      "Anorexia associated with AIDS-related weight loss",
+      "Chemotherapy-induced nausea and vomiting (CINV) refractory to conventional antiemetics"
+    ],
+    "dosage": {
+      "adult": "Anorexia: 2.1 mg twice daily before lunch and dinner. CINV: 4.2 mg/m² 1–3 hours before chemotherapy",
+      "max_dose": "12.6 mg/day for anorexia",
+      "renal_adjustment": "No significant adjustment required"
+    },
+    "side_effects": [
+      "Euphoria or dysphoria",
+      "Dizziness",
+      "Paranoia",
+      "Somnolence",
+      "Tachycardia",
+      "Orthostatic hypotension",
+      "Cognitive impairment"
+    ],
+    "warnings": [
+      "Federal Schedule II — oral solution only. NOTE: Dronabinol capsules (Marinol) are Schedule III federally",
+      "NYS classifies as noncontrolled — important federal vs NYS distinction",
+      "CNS effects — impairs driving and mental functioning",
+      "Psychiatric effects in susceptible patients"
+    ],
+    "contraindications": [
+      "Hypersensitivity to cannabinoids or sesame oil (oral solution)",
+      "History of psychotic disorders (relative)"
+    ],
+    "interactions": [
+      "CNS depressants — additive sedation",
+      "Sympathomimetics — additive tachycardia",
+      "Anticholinergics — additive tachycardia"
+    ],
+    "monitoring": [
+      "Mood and psychiatric symptoms",
+      "Heart rate",
+      "Signs of cannabis hyperemesis with long-term use"
+    ],
+    "counseling_points": [
+      "Federal CII but NYS noncontrolled — important distinction for NYS pharmacists",
+      "Do not drive or operate machinery",
+      "Alcohol dramatically increases CNS effects",
+      "Shake well before use — oral solution requires calibrated oral syringe"
+    ],
+    "pearls": [
+      "FEDERAL CII only — NYS considers dronabinol oral solution (Syndros) noncontrolled",
+      "Key distinction: Dronabinol CAPSULES (Marinol) = Federal CIII. Dronabinol ORAL SOLUTION (Syndros) = Federal CII. Same drug, different schedule based on formulation",
+      "This federal vs NYS discrepancy is a classic NAPLEX/pharmacy law exam question — know it cold"
+    ]
+  },
+  {
+    "id": "enalapril",
+    "generic_name": "enalapril",
+    "brand_names": [
+      "Vasotec"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "aceInhibitors",
+    "drug_class": "ACE inhibitor",
+    "mechanism_of_action": "Prodrug converted to enalaprilat in the liver, which inhibits ACE and reduces angiotensin II and aldosterone, causing vasodilation and decreased blood pressure",
+    "indications": [
+      "Hypertension",
+      "Heart failure",
+      "Asymptomatic left ventricular dysfunction"
+    ],
+    "dosage": {
+      "adult": "5–40 mg daily in one or two divided doses",
+      "max_dose": "40 mg/day",
+      "renal_adjustment": "CrCl 30–80: start 5 mg daily. CrCl <30: start 2.5 mg daily"
+    },
+    "side_effects": [
+      "Dry cough",
+      "Hypotension",
+      "Hyperkalemia",
+      "Dizziness",
+      "Renal impairment"
+    ],
+    "warnings": [
+      "Angioedema risk",
+      "Pregnancy category D",
+      "First-dose hypotension especially in volume-depleted patients"
+    ],
+    "contraindications": [
+      "Pregnancy",
+      "History of ACE inhibitor-induced angioedema"
+    ],
+    "interactions": [
+      "Potassium-sparing diuretics — hyperkalemia",
+      "Diuretics — additive hypotension",
+      "NSAIDs — reduced efficacy and renal risk",
+      "Lithium — toxicity risk"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Renal function",
+      "Serum potassium",
+      "Signs of angioedema"
+    ],
+    "counseling_points": [
+      "Stand up slowly to avoid dizziness especially when starting",
+      "Take consistently with or without food",
+      "Avoid potassium supplements unless directed",
+      "Do not use if pregnant",
+      "Report facial or throat swelling immediately"
+    ],
+    "pearls": [
+      "Unlike lisinopril, enalapril is a prodrug requiring hepatic activation — onset is slightly slower",
+      "Available in IV form as enalaprilat for hypertensive urgency"
+    ]
+  },
+  {
+    "id": "escitalopram",
+    "generic_name": "escitalopram",
+    "brand_names": [
+      "Lexapro"
+    ],
+    "collection": "neuroPsych",
+    "sub_collection": "ssris",
+    "drug_class": "Selective serotonin reuptake inhibitor (SSRI)",
+    "mechanism_of_action": "S-enantiomer of citalopram — selectively inhibits SERT with greater potency and selectivity than racemic citalopram, producing antidepressant and anxiolytic effects",
+    "indications": [
+      "Major depressive disorder",
+      "Generalized anxiety disorder"
+    ],
+    "dosage": {
+      "adult": "10–20 mg once daily",
+      "max_dose": "20 mg/day",
+      "renal_adjustment": "No renal adjustment required. Hepatic impairment: max 10 mg/day"
+    },
+    "side_effects": [
+      "Nausea",
+      "Insomnia",
+      "Fatigue",
+      "Sweating",
+      "Sexual dysfunction",
+      "Dry mouth"
+    ],
+    "warnings": [
+      "Suicidal ideation black box warning in patients under 25",
+      "Serotonin syndrome risk",
+      "Discontinuation syndrome if stopped abruptly",
+      "QT prolongation — less than citalopram but monitor in high-risk patients"
+    ],
+    "contraindications": [
+      "Concurrent MAOI use — 14-day washout required",
+      "Concurrent use with pimozide"
+    ],
+    "interactions": [
+      "MAOIs — serotonin syndrome",
+      "Cimetidine — increases escitalopram levels",
+      "QT-prolonging drugs — additive risk",
+      "Warfarin — increased bleeding risk",
+      "Serotonergic drugs — serotonin syndrome"
+    ],
+    "monitoring": [
+      "Mood and suicidality",
+      "Signs of serotonin syndrome",
+      "EKG in high-risk patients"
+    ],
+    "counseling_points": [
+      "Take once daily with or without food",
+      "Full antidepressant effect takes 4–6 weeks",
+      "Do not stop abruptly — taper slowly",
+      "Avoid alcohol",
+      "Avoid St. John's Wort",
+      "Report worsening mood or unusual changes in behavior"
+    ],
+    "pearls": [
+      "Among the best-tolerated SSRIs with minimal drug interactions — preferred in elderly patients and those on complex regimens",
+      "Active enantiomer of citalopram — allows lower effective dose with similar efficacy",
+      "Weak CYP inhibitor unlike fluoxetine and paroxetine — much lower interaction potential"
+    ]
+  },
+  {
+    "id": "fentanyl",
+    "generic_name": "fentanyl",
+    "brand_names": [
+      "Duragesic",
+      "Actiq",
+      "Fentora",
+      "Subsys",
+      "Sublimaze"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Synthetic opioid analgesic",
+    "mechanism_of_action": "Highly potent synthetic mu-opioid agonist — approximately 100 times more potent than morphine by weight, with rapid CNS penetration due to high lipophilicity",
+    "indications": [
+      "Severe chronic pain in opioid-tolerant patients (transdermal patch)",
+      "Breakthrough cancer pain (buccal/sublingual formulations)",
+      "Anesthesia induction and maintenance (IV)"
+    ],
+    "dosage": {
+      "adult": "Transdermal patch: 12–25 mcg/hr every 72 hours. IV: 25–50 mcg titrated. Buccal: 100 mcg (opioid-tolerant only)",
+      "max_dose": "Individualized — only for opioid-tolerant patients",
+      "renal_adjustment": "Preferred over morphine in renal failure — no active renally-cleared metabolites"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Sedation",
+      "Constipation",
+      "Nausea",
+      "Diaphoresis",
+      "Application site reactions (patch)"
+    ],
+    "warnings": [
+      "Black box warning: for opioid-tolerant patients ONLY — not for opioid-naive patients",
+      "Black box warning: transdermal patch releases heat — fever or heating pads increase absorption fatally",
+      "Illicitly manufactured fentanyl (IMF) is the leading cause of overdose deaths in the US"
+    ],
+    "contraindications": [
+      "Opioid-naive patients for transdermal and buccal formulations",
+      "Respiratory depression",
+      "Acute asthma"
+    ],
+    "interactions": [
+      "CYP3A4 inhibitors — significantly increase fentanyl levels",
+      "Benzodiazepines — fatal respiratory depression risk",
+      "MAOIs — avoid"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Patch placement and skin integrity",
+      "Temperature — fever increases patch absorption",
+      "Signs of overdose"
+    ],
+    "counseling_points": [
+      "Never apply heat to patch — heating pad, fever, hot tub can cause fatal overdose",
+      "Rotate patch sites — apply to clean dry intact skin",
+      "Dispose of used patches by folding sticky sides together and flushing",
+      "Keep out of reach of children — accidental exposure is fatal",
+      "Do not switch formulations without physician guidance"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "100x more potent than morphine — dosing errors are fatal",
+      "Only indicated for opioid-tolerant patients defined as taking at least 60 mg oral morphine daily for one week or equivalent"
+    ]
+  },
+  {
+    "id": "fluoxetine",
+    "generic_name": "fluoxetine",
+    "brand_names": [
+      "Prozac",
+      "Sarafem"
+    ],
+    "collection": "neuroPsych",
+    "sub_collection": "ssris",
+    "drug_class": "Selective serotonin reuptake inhibitor (SSRI)",
+    "mechanism_of_action": "Inhibits the serotonin transporter (SERT), blocking reuptake of serotonin into the presynaptic neuron and increasing serotonergic neurotransmission",
+    "indications": [
+      "Major depressive disorder",
+      "OCD",
+      "Bulimia nervosa",
+      "Panic disorder",
+      "Bipolar depression (with olanzapine)"
+    ],
+    "dosage": {
+      "adult": "20–80 mg once daily, typically in the morning",
+      "max_dose": "80 mg/day",
+      "renal_adjustment": "No renal adjustment required"
+    },
+    "side_effects": [
+      "Insomnia",
+      "Nausea",
+      "Anxiety or agitation",
+      "Sexual dysfunction",
+      "Weight loss initially",
+      "Headache"
+    ],
+    "warnings": [
+      "Black box warning: suicidal ideation in patients under 25",
+      "Serotonin syndrome risk",
+      "Discontinuation syndrome less common due to long half-life"
+    ],
+    "contraindications": [
+      "Concurrent MAOI use — 5-week washout required after stopping fluoxetine before starting MAOI",
+      "Pimozide — QT prolongation",
+      "Thioridazine"
+    ],
+    "interactions": [
+      "MAOIs — serotonin syndrome",
+      "CYP2D6 substrates — fluoxetine is a potent CYP2D6 inhibitor, raising levels of codeine, TCAs, antipsychotics",
+      "CYP2C19 substrates",
+      "Warfarin — increased bleeding",
+      "Tamoxifen — reduced efficacy via CYP2D6 inhibition"
+    ],
+    "monitoring": [
+      "Mood and suicidality",
+      "Weight",
+      "Signs of serotonin syndrome",
+      "Drug interactions via CYP2D6"
+    ],
+    "counseling_points": [
+      "Take in the morning to reduce insomnia",
+      "Allow 4–6 weeks for full effect",
+      "Do not stop without physician guidance",
+      "Avoid alcohol",
+      "Avoid St. John's Wort",
+      "Report worsening mood or suicidal thoughts immediately"
+    ],
+    "pearls": [
+      "Longest half-life of all SSRIs (1–4 days, active metabolite norfluoxetine up to 2 weeks) — least likely to cause discontinuation syndrome",
+      "Potent CYP2D6 inhibitor — significant drug interaction potential",
+      "The 5-week washout before starting an MAOI is unique to fluoxetine due to long half-life"
+    ]
+  },
+  {
+    "id": "hydrocodone",
+    "generic_name": "hydrocodone",
+    "brand_names": [
+      "Zohydro ER",
+      "Hysingla ER",
+      "Vicodin (with APAP)",
+      "Norco (with APAP)",
+      "Lortab (with APAP)"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Semisynthetic opioid that binds mu-opioid receptors — partially converted to hydromorphone (active metabolite) via CYP2D6",
+    "indications": [
+      "Moderate to severe pain",
+      "Chronic pain in opioid-tolerant patients (ER formulations only)"
+    ],
+    "dosage": {
+      "adult": "IR combination products: 5–10 mg every 4–6 hours. ER: 20–120 mg every 24 hours",
+      "max_dose": "Combination products: limited by APAP content — max 4g APAP/day",
+      "renal_adjustment": "Reduce dose in renal impairment"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea",
+      "Sedation",
+      "Respiratory depression",
+      "Dizziness",
+      "Euphoria"
+    ],
+    "warnings": [
+      "Black box warning: addiction, abuse, misuse",
+      "Black box warning: respiratory depression",
+      "Combination products carry acetaminophen hepatotoxicity risk",
+      "Reclassified from CIII to CII in 2014 — stricter prescribing rules now apply"
+    ],
+    "contraindications": [
+      "Significant respiratory depression",
+      "MAOIs within 14 days",
+      "Acute asthma"
+    ],
+    "interactions": [
+      "CYP3A4 inhibitors — increase hydrocodone levels",
+      "CYP2D6 inhibitors — reduce conversion to active metabolite",
+      "Benzodiazepines — black box combined risk"
+    ],
+    "monitoring": [
+      "Pain control",
+      "Respiratory status",
+      "Liver function if using combination products long-term",
+      "APAP daily intake"
+    ],
+    "counseling_points": [
+      "Do not exceed APAP limit from all sources — check all medications for acetaminophen",
+      "Avoid alcohol — increases APAP hepatotoxicity and CNS depression",
+      "Schedule II — no refills, new prescription required each time",
+      "Store securely"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS — reclassified from CIII in 2014, one of the most prescribed opioids before reclassification",
+      "Combination products are still Schedule II — prescriber must write new Rx each month, no refills permitted",
+      "CYP2D6 poor metabolizers get less analgesia — CYP2D6 ultra-metabolizers get more"
+    ]
+  },
+  {
+    "id": "hydromorphone",
+    "generic_name": "hydromorphone",
+    "brand_names": [
+      "Dilaudid",
+      "Exalgo"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Semisynthetic hydrogenated ketone of morphine — potent mu-opioid agonist, approximately 5–7 times more potent than morphine",
+    "indications": [
+      "Moderate to severe pain requiring opioid therapy",
+      "Cancer pain"
+    ],
+    "dosage": {
+      "adult": "IR oral: 2–4 mg every 4–6 hours. IV: 0.2–1 mg every 2–3 hours. ER: 8–64 mg once daily",
+      "max_dose": "Individualized",
+      "renal_adjustment": "Reduce dose significantly — accumulation in renal failure"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Sedation",
+      "Constipation",
+      "Nausea",
+      "Pruritus"
+    ],
+    "warnings": [
+      "Black box warning: respiratory depression",
+      "ER tablets for opioid-tolerant patients ONLY",
+      "High potency — dosing errors cause death"
+    ],
+    "contraindications": [
+      "Opioid-naive patients for ER formulation",
+      "Significant respiratory depression",
+      "MAOIs"
+    ],
+    "interactions": [
+      "CNS depressants — additive depression",
+      "Benzodiazepines — black box warning",
+      "MAOIs — severe reactions"
+    ],
+    "monitoring": [
+      "Respiratory rate",
+      "Sedation",
+      "Pain control",
+      "Bowel function"
+    ],
+    "counseling_points": [
+      "Do not crush or chew ER tablets",
+      "Avoid alcohol",
+      "Keep naloxone on hand",
+      "Report any breathing difficulty immediately",
+      "Schedule II — new prescription required each time"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "5–7x more potent than morphine — 1.5 mg hydromorphone IV approximates 10 mg morphine IV",
+      "Preferred over morphine in some patients due to less histamine release and fewer active metabolites"
+    ]
+  },
+  {
+    "id": "ketamine",
+    "generic_name": "ketamine",
+    "brand_names": [
+      "Ketalar",
+      "Spravato (esketamine nasal — CIII)"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIII",
+    "drug_class": "Dissociative anesthetic / NMDA receptor antagonist",
+    "mechanism_of_action": "Non-competitive NMDA glutamate receptor antagonist — produces dissociative anesthesia, analgesia, and amnesia. Rapid antidepressant effects via downstream AMPA receptor activation and BDNF release",
+    "indications": [
+      "Anesthesia induction and maintenance",
+      "Procedural sedation",
+      "Treatment-resistant depression (esketamine/Spravato)",
+      "Acute pain management",
+      "Status epilepticus (off-label)"
+    ],
+    "dosage": {
+      "adult": "Anesthesia: 1–4.5 mg/kg IV. Procedural: 1–2 mg/kg IV. Spravato: 56–84 mg intranasally twice weekly",
+      "max_dose": "Individualized based on indication",
+      "renal_adjustment": "No significant adjustment required"
+    },
+    "side_effects": [
+      "Emergence reactions — vivid dreams, hallucinations, delirium on awakening",
+      "Tachycardia and hypertension",
+      "Increased secretions",
+      "Nausea",
+      "Dissociation"
+    ],
+    "warnings": [
+      "Emergence reactions — benzodiazepine premedication reduces incidence",
+      "Spravato: REMS program required — patient must be monitored for 2 hours after each dose",
+      "Abuse potential — used recreationally as 'Special K'"
+    ],
+    "contraindications": [
+      "Conditions where increased blood pressure is hazardous (uncontrolled hypertension, aortic dissection)",
+      "History of psychosis (relative)"
+    ],
+    "interactions": [
+      "CNS depressants — additive sedation",
+      "Theophylline — lowers seizure threshold",
+      "Thyroid hormones — exaggerated pressor response"
+    ],
+    "monitoring": [
+      "Blood pressure and heart rate",
+      "Respiratory status",
+      "Level of consciousness",
+      "Emergence reactions"
+    ],
+    "counseling_points": [
+      "Spravato must be administered in a certified healthcare setting — cannot take home",
+      "Do not drive the day of Spravato administration",
+      "Report any unusual thoughts, hallucinations, or suicidal thoughts",
+      "Schedule III — refills permitted"
+    ],
+    "pearls": [
+      "Federal Schedule III and NYS Schedule III",
+      "Esketamine (Spravato) is the S-enantiomer — FDA approved for treatment-resistant depression and MDD with acute suicidal ideation — only intranasal antidepressant",
+      "Unique among anesthetics — maintains airway reflexes and respiratory drive at subanesthetic doses",
+      "Bronchodilator — useful in asthmatic patients requiring procedural sedation"
+    ]
+  },
+  {
+    "id": "lisdexamfetamine",
+    "generic_name": "lisdexamfetamine",
+    "brand_names": [
+      "Vyvanse"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — prodrug amphetamine",
+    "mechanism_of_action": "Prodrug converted to active d-amphetamine by red blood cell hydrolysis — designed to reduce abuse potential by requiring enzymatic conversion, though still CII",
+    "indications": [
+      "ADHD in adults and children 6 and older",
+      "Moderate to severe binge eating disorder (BED)"
+    ],
+    "dosage": {
+      "adult": "30–70 mg once daily in the morning",
+      "max_dose": "70 mg/day",
+      "renal_adjustment": "Max 50 mg/day if GFR 15–30. Max 30 mg/day if GFR <15"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Dry mouth",
+      "Increased heart rate",
+      "Anxiety",
+      "Weight loss"
+    ],
+    "warnings": [
+      "Black box warning: abuse and dependence potential",
+      "Cardiovascular risk",
+      "Psychiatric adverse events"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Cardiovascular disease",
+      "Hypertension",
+      "Hyperthyroidism"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Acidifying agents — reduce efficacy",
+      "Alkalinizing agents — increase toxicity"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Heart rate",
+      "Weight",
+      "Psychiatric symptoms"
+    ],
+    "counseling_points": [
+      "Take in the morning only — long duration causes insomnia if taken late",
+      "Capsule can be opened and dissolved in water — do not take partial doses",
+      "Schedule II — no refills",
+      "Only FDA-approved stimulant for binge eating disorder"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "First FDA-approved medication for binge eating disorder among stimulants",
+      "Prodrug design was intended to reduce IV abuse potential — crushing/snorting produces slower onset than amphetamine salts"
+    ]
+  },
+  {
+    "id": "lisinopril",
+    "generic_name": "lisinopril",
+    "brand_names": [
+      "Zestril",
+      "Prinivil"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "aceInhibitors",
+    "drug_class": "ACE inhibitor",
+    "mechanism_of_action": "Inhibits angiotensin-converting enzyme (ACE), preventing conversion of angiotensin I to angiotensin II, resulting in vasodilation and reduced aldosterone secretion",
+    "indications": [
+      "Hypertension",
+      "Heart failure",
+      "Post-MI left ventricular dysfunction",
+      "Diabetic nephropathy"
+    ],
+    "dosage": {
+      "adult": "10–40 mg once daily",
+      "max_dose": "40 mg/day",
+      "renal_adjustment": "CrCl 10–30: start at 5 mg daily. CrCl <10: not recommended"
+    },
+    "side_effects": [
+      "Dry cough",
+      "Hyperkalemia",
+      "Dizziness",
+      "Hypotension",
+      "Elevated creatinine"
+    ],
+    "warnings": [
+      "Angioedema — discontinue immediately if suspected",
+      "Pregnancy category D — contraindicated",
+      "Can worsen renal function in bilateral renal artery stenosis"
+    ],
+    "contraindications": [
+      "Pregnancy",
+      "History of ACE inhibitor-induced angioedema",
+      "Concurrent use with aliskiren in diabetes"
+    ],
+    "interactions": [
+      "Potassium-sparing diuretics — hyperkalemia risk",
+      "NSAIDs — reduced antihypertensive effect and renal impairment",
+      "Lithium — increased lithium levels",
+      "Aliskiren — contraindicated in diabetes"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Serum potassium",
+      "Serum creatinine and BUN",
+      "Signs of angioedema"
+    ],
+    "counseling_points": [
+      "Take at the same time each day",
+      "Rise slowly from sitting or lying to avoid dizziness",
+      "Avoid potassium supplements and salt substitutes containing potassium",
+      "Do not use NSAIDs regularly without physician approval",
+      "Report any swelling of face, lips, or throat immediately",
+      "Do not take if pregnant or planning pregnancy"
+    ],
+    "pearls": [
+      "First-line agent for hypertension in patients with diabetes or CKD due to nephroprotective effects",
+      "The dry cough is a class effect from bradykinin accumulation — switch to an ARB if intolerable"
+    ]
+  },
+  {
+    "id": "lorazepam",
+    "generic_name": "lorazepam",
+    "brand_names": [
+      "Ativan"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Benzodiazepine",
+    "mechanism_of_action": "GABA-A positive allosteric modulator — intermediate-acting benzodiazepine with NO active metabolites, making it preferred in hepatic impairment and elderly",
+    "indications": [
+      "Anxiety",
+      "Status epilepticus (IV — first-line)",
+      "Procedural sedation",
+      "Alcohol withdrawal (preferred in liver disease)",
+      "Acute agitation"
+    ],
+    "dosage": {
+      "adult": "Anxiety: 0.5–2 mg two to three times daily. Status epilepticus: 0.1 mg/kg IV (max 4 mg/dose)",
+      "max_dose": "10 mg/day",
+      "renal_adjustment": "No significant adjustment"
+    },
+    "side_effects": [
+      "Sedation",
+      "Amnesia",
+      "Respiratory depression",
+      "Dependence",
+      "Ataxia"
+    ],
+    "warnings": [
+      "Black box warning: combined use with opioids",
+      "IV formulation contains propylene glycol — toxicity with high doses or prolonged infusion",
+      "Physical dependence — do not abruptly discontinue"
+    ],
+    "contraindications": [
+      "Acute narrow-angle glaucoma",
+      "Severe respiratory insufficiency"
+    ],
+    "interactions": [
+      "Opioids — respiratory depression",
+      "Alcohol — additive CNS depression",
+      "Probenecid — prolongs lorazepam effect",
+      "Valproate — increases lorazepam levels"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Sedation level",
+      "Propylene glycol levels with IV infusion >3 days",
+      "Withdrawal symptoms"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — taper to prevent withdrawal seizures",
+      "Avoid alcohol",
+      "Can cause significant amnesia — do not make important decisions while taking",
+      "Schedule IV — refills permitted in NYS"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV",
+      "No active metabolites — preferred benzodiazepine in elderly (with caution), liver disease, and ICU settings",
+      "Drug of choice for status epilepticus IV along with diazepam IV — faster brain penetration than diazepam despite similar potency",
+      "LOT — Lorazepam, Oxazepam, Temazepam — the three benzodiazepines safe in liver disease due to glucuronidation only"
+    ]
+  },
+  {
+    "id": "meperidine",
+    "generic_name": "meperidine",
+    "brand_names": [
+      "Demerol"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Synthetic phenylpiperidine opioid — mu-opioid agonist with additional anticholinergic properties. Metabolized to normeperidine, a toxic CNS excitatory metabolite",
+    "indications": [
+      "Moderate to severe acute pain (short-term only)",
+      "Shivering post-anesthesia or amphotericin B"
+    ],
+    "dosage": {
+      "adult": "50–150 mg every 3–4 hours IM/SC. Oral form rarely used due to poor bioavailability",
+      "max_dose": "600 mg/24 hours — limit to 48–72 hours maximum",
+      "renal_adjustment": "AVOID in renal impairment — normeperidine accumulates causing seizures"
+    },
+    "side_effects": [
+      "Normeperidine accumulation — seizures, tremors, myoclonus",
+      "Respiratory depression",
+      "Nausea",
+      "Tachycardia (anticholinergic effect)",
+      "Dry mouth"
+    ],
+    "warnings": [
+      "Normeperidine is a CNS excitatory toxic metabolite — accumulates in renal failure, elderly, and with repeated dosing causing SEIZURES",
+      "Avoid in patients on MAOIs — severe serotonin syndrome",
+      "Avoid in elderly patients — Beers Criteria"
+    ],
+    "contraindications": [
+      "MAOIs or within 14 days — potentially fatal interaction",
+      "Renal impairment",
+      "Elderly patients (relative)"
+    ],
+    "interactions": [
+      "MAOIs — severe serotonin syndrome and hyperpyrexia — CONTRAINDICATED",
+      "SSRIs — serotonin syndrome risk",
+      "Phenytoin — reduces meperidine levels but increases normeperidine"
+    ],
+    "monitoring": [
+      "Signs of normeperidine toxicity (tremors, myoclonus, agitation, seizures)",
+      "Renal function",
+      "Duration of use"
+    ],
+    "counseling_points": [
+      "Only for short-term use — do not use beyond 48–72 hours",
+      "Report any muscle twitching or tremors immediately",
+      "Avoid if you take MAOIs — life-threatening interaction",
+      "Schedule II — no refills"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Largely fallen out of favor due to normeperidine toxicity — most hospitals restrict its use",
+      "MAOI interaction is uniquely dangerous and can be fatal — unlike other opioids, produces serotonin syndrome not just respiratory depression",
+      "On Beers Criteria — avoid in elderly"
+    ]
+  },
+  {
+    "id": "methadone",
+    "generic_name": "methadone",
+    "brand_names": [
+      "Dolophine",
+      "Methadose"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Synthetic opioid / NMDA receptor antagonist",
+    "mechanism_of_action": "Long-acting mu-opioid agonist with additional NMDA receptor antagonism — unique among opioids. Used for both pain management and opioid use disorder treatment",
+    "indications": [
+      "Opioid use disorder (OUD) — maintenance treatment",
+      "Severe chronic pain",
+      "Opioid detoxification"
+    ],
+    "dosage": {
+      "adult": "OUD: 20–30 mg initial, titrated to 60–120 mg daily. Pain: 2.5–10 mg every 8–12 hours",
+      "max_dose": "OUD: individualized. Pain: extreme caution above 40 mg/day due to QT risk",
+      "renal_adjustment": "Use with caution — monitor for accumulation"
+    },
+    "side_effects": [
+      "QT prolongation — dose-dependent",
+      "Respiratory depression",
+      "Constipation",
+      "Sedation",
+      "Diaphoresis",
+      "Peripheral edema"
+    ],
+    "warnings": [
+      "Black box warning: QT prolongation and risk of fatal arrhythmia — get baseline EKG",
+      "Black box warning: respiratory depression — especially during initiation and dose increases",
+      "Long and unpredictable half-life (24–36 hours) — accumulation risk"
+    ],
+    "contraindications": [
+      "Congenital long QT syndrome",
+      "Concurrent QT-prolonging drugs (caution)",
+      "MAOIs"
+    ],
+    "interactions": [
+      "QT-prolonging drugs — additive risk",
+      "CYP3A4 and CYP2D6 inhibitors — increase methadone levels",
+      "Rifampin — dramatically reduces methadone levels, precipitates withdrawal"
+    ],
+    "monitoring": [
+      "EKG at baseline, 30 days, then annually",
+      "QTc interval",
+      "Respiratory status",
+      "Signs of accumulation"
+    ],
+    "counseling_points": [
+      "Take exactly as prescribed — do not adjust dose",
+      "Avoid all other CNS depressants including alcohol and benzodiazepines",
+      "Methadone for OUD can only be dispensed from certified opioid treatment programs (OTPs)",
+      "Report palpitations or fainting immediately",
+      "Long half-life means overdose symptoms may be delayed"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "For OUD treatment, can only be dispensed from DEA-certified opioid treatment programs — not standard pharmacies",
+      "Unpredictable half-life (8–59 hours) makes it dangerous to initiate — requires careful dose titration by experienced prescribers",
+      "QT prolongation risk requires baseline and follow-up EKGs"
+    ]
+  },
+  {
+    "id": "methamphetamine",
+    "generic_name": "methamphetamine",
+    "brand_names": [
+      "Desoxyn"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — amphetamine derivative",
+    "mechanism_of_action": "Releases massive amounts of dopamine, norepinephrine, and serotonin from presynaptic terminals — more potent and longer-acting than amphetamine. Greater CNS penetration and longer duration of action than amphetamine",
+    "indications": [
+      "ADHD (rarely used due to abuse potential)",
+      "Short-term adjunct in obesity treatment (rarely used)"
+    ],
+    "dosage": {
+      "adult": "ADHD: 5 mg once or twice daily, may increase to 20–25 mg/day. Obesity: 5 mg 30 minutes before each meal",
+      "max_dose": "25 mg/day for ADHD",
+      "renal_adjustment": "No specific adjustment"
+    },
+    "side_effects": [
+      "Severe cardiovascular stimulation",
+      "Insomnia",
+      "Extreme appetite suppression",
+      "Psychosis",
+      "Hyperthermia",
+      "Severe addiction potential"
+    ],
+    "warnings": [
+      "Black box warning: extreme abuse and dependence potential — highest among legally marketed stimulants",
+      "Cardiovascular risk",
+      "Psychosis — even at therapeutic doses",
+      "Rarely prescribed due to availability of safer alternatives"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Cardiovascular disease",
+      "Hyperthyroidism",
+      "Glaucoma",
+      "History of drug abuse"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Insulin — altered glucose metabolism",
+      "Antihypertensives — reduced efficacy"
+    ],
+    "monitoring": [
+      "Cardiovascular status",
+      "Psychiatric symptoms",
+      "Growth in children",
+      "Signs of misuse"
+    ],
+    "counseling_points": [
+      "Essentially never prescribed in modern practice — Desoxyn exists but is virtually never written",
+      "Schedule II — no refills",
+      "Report any psychotic symptoms immediately",
+      "Severe abuse potential — most addictive of legal stimulants"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Desoxyn (pharmaceutical methamphetamine) is technically FDA-approved for ADHD and obesity but virtually never prescribed — only exists as a legal entity",
+      "D-methamphetamine is 2–3x more potent than d-amphetamine as CNS stimulant due to greater CNS penetration and longer half-life",
+      "Classic exam question: methamphetamine IS Schedule II (not Schedule I) because Desoxyn is FDA-approved, even though illicit meth is the prototypical Schedule II abuse drug"
+    ]
+  },
+  {
+    "id": "methylphenidate",
+    "generic_name": "methylphenidate",
+    "brand_names": [
+      "Ritalin",
+      "Concerta",
+      "Metadate CD",
+      "Daytrana Patch",
+      "Quillivant XR"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "CNS stimulant — piperidine derivative",
+    "mechanism_of_action": "Blocks reuptake of dopamine and norepinephrine transporters — mechanism distinct from amphetamines (reuptake inhibition rather than release)",
+    "indications": [
+      "ADHD in children 6 and older and adults",
+      "Narcolepsy"
+    ],
+    "dosage": {
+      "adult": "IR: 5–20 mg two to three times daily. ER (Concerta): 18–72 mg once daily",
+      "max_dose": "60 mg/day (IR), 72 mg/day (Concerta)",
+      "renal_adjustment": "No specific adjustment required"
+    },
+    "side_effects": [
+      "Decreased appetite",
+      "Insomnia",
+      "Headache",
+      "Abdominal pain",
+      "Tachycardia",
+      "Irritability"
+    ],
+    "warnings": [
+      "Black box warning: abuse and dependence potential",
+      "Cardiovascular risk — obtain cardiac history before prescribing",
+      "May unmask Tourette syndrome"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days",
+      "Marked anxiety or agitation",
+      "Glaucoma",
+      "Motor tics or Tourette syndrome"
+    ],
+    "interactions": [
+      "MAOIs — hypertensive crisis",
+      "Antihypertensives — may decrease effectiveness",
+      "Anticoagulants — may increase anticoagulant effect"
+    ],
+    "monitoring": [
+      "Heart rate and blood pressure",
+      "Height and weight in children",
+      "Psychiatric symptoms",
+      "Sleep patterns"
+    ],
+    "counseling_points": [
+      "Take IR formulation 30–45 minutes before meals",
+      "Avoid taking in the afternoon — causes insomnia",
+      "Do not crush Concerta tablets — osmotic delivery system",
+      "Schedule II — new prescription required each month",
+      "Daytrana patch: apply to hip 2 hours before effect needed, remove after 9 hours"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Mechanism differs from amphetamines — blocks reuptake without causing release, considered lower abuse potential but still CII",
+      "Concerta uses an OROS osmotic pump — tablet shell appears intact in stool, this is normal and expected"
+    ]
+  },
+  {
+    "id": "metoprolol",
+    "generic_name": "metoprolol",
+    "brand_names": [
+      "Lopressor",
+      "Toprol XL"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "betaBlockers",
+    "drug_class": "Cardioselective beta-1 blocker",
+    "mechanism_of_action": "Selectively blocks beta-1 adrenergic receptors in the heart, reducing heart rate, contractility, and cardiac output, resulting in decreased blood pressure and myocardial oxygen demand",
+    "indications": [
+      "Hypertension",
+      "Angina",
+      "Heart failure (reduced EF)",
+      "Post-MI",
+      "Atrial fibrillation rate control"
+    ],
+    "dosage": {
+      "adult": "25–200 mg once daily (XL) or 50–100 mg twice daily (tartrate)",
+      "max_dose": "200 mg/day",
+      "renal_adjustment": "No major renal adjustment required"
+    },
+    "side_effects": [
+      "Bradycardia",
+      "Fatigue",
+      "Cold extremities",
+      "Dizziness",
+      "Depression",
+      "Erectile dysfunction"
+    ],
+    "warnings": [
+      "Do not abruptly discontinue — risk of rebound hypertension and angina",
+      "Use with caution in reactive airway disease",
+      "May mask hypoglycemia symptoms in diabetics"
+    ],
+    "contraindications": [
+      "Severe bradycardia",
+      "Second or third degree heart block without pacemaker",
+      "Decompensated heart failure",
+      "Cardiogenic shock"
+    ],
+    "interactions": [
+      "Verapamil and diltiazem — additive bradycardia and heart block",
+      "Clonidine — rebound hypertension if both stopped simultaneously",
+      "Insulin and oral hypoglycemics — masked hypoglycemia symptoms"
+    ],
+    "monitoring": [
+      "Heart rate",
+      "Blood pressure",
+      "Signs of heart failure exacerbation",
+      "Blood glucose in diabetics"
+    ],
+    "counseling_points": [
+      "Never stop abruptly — taper over 1–2 weeks",
+      "Take with food to reduce GI upset",
+      "Avoid alcohol",
+      "Monitor pulse daily — hold and call provider if below 60 bpm",
+      "May cause fatigue especially when starting — usually improves"
+    ],
+    "pearls": [
+      "Cardioselective at low doses but selectivity is lost at higher doses",
+      "Toprol XL (succinate) is preferred over Lopressor (tartrate) for heart failure — once daily improves adherence",
+      "MERIT-HF trial showed survival benefit in heart failure with reduced EF"
+    ]
+  },
+  {
+    "id": "morphine",
+    "generic_name": "morphine",
+    "brand_names": [
+      "MS Contin",
+      "MSIR",
+      "Roxanol",
+      "Duramorph",
+      "Kadian",
+      "Avinza"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Prototype opioid agonist — binds mu, kappa, and delta opioid receptors, producing analgesia, euphoria, and respiratory depression via CNS and peripheral mechanisms",
+    "indications": [
+      "Severe acute pain",
+      "Chronic cancer pain",
+      "Acute pulmonary edema",
+      "Dyspnea in palliative care"
+    ],
+    "dosage": {
+      "adult": "IR: 10–30 mg every 4 hours. IV: 2–4 mg every 4 hours. ER: 15–30 mg every 8–12 hours",
+      "max_dose": "Individualized — no ceiling dose in cancer pain",
+      "renal_adjustment": "Reduce dose significantly — active metabolite morphine-6-glucuronide accumulates in renal failure"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Constipation",
+      "Nausea",
+      "Sedation",
+      "Hypotension",
+      "Pruritus"
+    ],
+    "warnings": [
+      "Black box warning: respiratory depression — highest risk at initiation and dose escalation",
+      "Black box warning: addiction and abuse potential",
+      "Histamine release — can cause flushing, urticaria, hypotension"
+    ],
+    "contraindications": [
+      "Respiratory depression",
+      "Acute asthma attack",
+      "MAOIs within 14 days",
+      "Head injury with increased ICP (use caution)"
+    ],
+    "interactions": [
+      "Benzodiazepines — black box combined sedative risk",
+      "CNS depressants — additive effects",
+      "MAOIs — severe hypotension or hypertension"
+    ],
+    "monitoring": [
+      "Respiratory rate and depth",
+      "Pain scores",
+      "Sedation scale",
+      "Signs of opioid-induced constipation"
+    ],
+    "counseling_points": [
+      "Do not crush or chew ER formulations",
+      "Avoid alcohol entirely",
+      "Keep naloxone accessible",
+      "Report difficulty breathing immediately",
+      "Do not share medication — Schedule II controlled substance"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Gold standard opioid for pain equivalency — all other opioids are converted to oral morphine equivalents (MME) for comparison",
+      "Renal failure patients should use with extreme caution due to active metabolite accumulation"
+    ]
+  },
+  {
+    "id": "morphine_naltrexone",
+    "generic_name": "morphine sulfate with naltrexone",
+    "brand_names": [
+      "Embeda"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic with abuse-deterrent formulation",
+    "mechanism_of_action": "Extended-release morphine surrounding a sequestered naltrexone core — if capsule is intact, naltrexone is not absorbed. If crushed or chewed to abuse, naltrexone is released and precipitates opioid withdrawal, deterring misuse",
+    "indications": [
+      "Moderate to severe chronic pain requiring around-the-clock opioid therapy in opioid-tolerant patients"
+    ],
+    "dosage": {
+      "adult": "20 mg/0.8 mg to 100 mg/4 mg every 24 hours — individualized",
+      "max_dose": "Individualized based on tolerance",
+      "renal_adjustment": "Reduce dose in renal impairment — morphine metabolites accumulate"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea",
+      "Somnolence",
+      "Respiratory depression",
+      "Headache",
+      "Precipitated withdrawal if tampered with"
+    ],
+    "warnings": [
+      "Black box warning: abuse and respiratory depression",
+      "Do not crush, chew, or dissolve — releases naltrexone causing precipitated withdrawal",
+      "For opioid-tolerant patients only"
+    ],
+    "contraindications": [
+      "Opioid-naive patients",
+      "Respiratory depression",
+      "MAOIs within 14 days",
+      "Paralytic ileus"
+    ],
+    "interactions": [
+      "CNS depressants — additive respiratory depression",
+      "Benzodiazepines — black box combined risk",
+      "MAOIs — serotonin syndrome and opioid toxicity"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Pain control",
+      "Signs of tampered use — precipitated withdrawal signals misuse attempt"
+    ],
+    "counseling_points": [
+      "Swallow capsules whole — never crush, chew, or dissolve",
+      "Capsule contents may be sprinkled on applesauce ONLY — do not chew the pellets",
+      "Schedule II — no refills",
+      "The inner naltrexone core is there to deter abuse — if you feel withdrawal symptoms, call your doctor immediately"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Abuse-deterrent formulation — naltrexone sequestered in core only releases if product integrity is compromised",
+      "Classic exam pearl: Embeda is the only opioid formulation where crushing triggers opioid withdrawal rather than enhanced effect",
+      "If patient accidentally chews a capsule, naltrexone is released causing acute precipitated withdrawal — distinct from usual opioid toxicity concern"
+    ]
+  },
+  {
+    "id": "olicerdine",
+    "generic_name": "olicerdine",
+    "brand_names": [
+      "Olinvyk"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Biased mu-opioid receptor agonist — IV analgesic",
+    "mechanism_of_action": "G-protein biased mu-opioid agonist — preferentially activates G-protein signaling over beta-arrestin-2 pathway, theoretically producing analgesia with reduced respiratory depression and constipation compared to traditional opioids",
+    "indications": [
+      "Moderate to severe acute pain in adults in a hospital setting — IV only"
+    ],
+    "dosage": {
+      "adult": "Loading dose 1.5 mg IV, then 0.1–0.35 mg/hr infusion or patient-controlled analgesia",
+      "max_dose": "Individualized per clinical response",
+      "renal_adjustment": "Use with caution — no formal dosing recommendations"
+    },
+    "side_effects": [
+      "Nausea",
+      "Vomiting",
+      "Dizziness",
+      "Hypotension",
+      "Respiratory depression",
+      "Headache"
+    ],
+    "warnings": [
+      "FEDERAL CII ONLY — NYS noncontrolled",
+      "Hospital use only — not for outpatient use",
+      "Respiratory depression risk",
+      "Black box warning: abuse and dependence potential"
+    ],
+    "contraindications": [
+      "Significant respiratory depression",
+      "MAOIs within 14 days",
+      "Hypersensitivity"
+    ],
+    "interactions": [
+      "CNS depressants — additive",
+      "Benzodiazepines — enhanced respiratory depression",
+      "MAOIs — avoid"
+    ],
+    "monitoring": [
+      "Respiratory rate and oxygen saturation",
+      "Blood pressure",
+      "Pain scores",
+      "Sedation level"
+    ],
+    "counseling_points": [
+      "Hospital administration only — IV use",
+      "Federal CII only — NYS does not schedule this drug",
+      "Report any difficulty breathing immediately",
+      "Newer agent — limited post-marketing data available"
+    ],
+    "pearls": [
+      "FEDERAL CII ONLY — NYS noncontrolled — high-yield law exam distinction",
+      "First biased opioid agonist FDA approved (2020) — designed to separate analgesia from adverse effects",
+      "Clinical trials showed less respiratory depression than morphine at equianalgesic doses but FDA still required black box warning",
+      "G-protein biased agonism is an active area of opioid research aiming to develop safer opioids"
+    ]
+  },
+  {
+    "id": "oxycodone",
+    "generic_name": "oxycodone",
+    "brand_names": [
+      "OxyContin",
+      "Roxicodone",
+      "Xtampza ER",
+      "Percocet (with APAP)",
+      "Percodan (with ASA)"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Binds mu-opioid receptors in the CNS, reducing perception of pain and emotional response to pain via inhibition of ascending pain pathways",
+    "indications": [
+      "Moderate to severe pain",
+      "Chronic pain requiring around-the-clock opioid therapy (ER formulation)"
+    ],
+    "dosage": {
+      "adult": "Immediate release: 5–15 mg every 4–6 hours. Extended release: 10 mg every 12 hours (opioid-naive)",
+      "max_dose": "Individualized based on tolerance and clinical response",
+      "renal_adjustment": "Use with caution — reduce dose in renal impairment, accumulation risk"
+    },
+    "side_effects": [
+      "Constipation",
+      "Nausea and vomiting",
+      "Sedation",
+      "Respiratory depression",
+      "Pruritus",
+      "Euphoria"
+    ],
+    "warnings": [
+      "Black box warning: serious, life-threatening respiratory depression",
+      "Black box warning: addiction, abuse, and misuse potential",
+      "Black box warning: neonatal opioid withdrawal syndrome",
+      "Do not crush, chew, or dissolve ER tablets — risk of fatal overdose"
+    ],
+    "contraindications": [
+      "Significant respiratory depression",
+      "Acute or severe bronchial asthma",
+      "Known or suspected paralytic ileus",
+      "Concurrent MAOIs or within 14 days"
+    ],
+    "interactions": [
+      "CNS depressants — additive respiratory depression",
+      "Benzodiazepines — black box warning for combined use, risk of death",
+      "MAOIs — serotonin syndrome and opioid toxicity",
+      "CYP3A4 inhibitors — increased oxycodone levels"
+    ],
+    "monitoring": [
+      "Respiratory rate",
+      "Sedation level",
+      "Signs of misuse or diversion",
+      "Bowel function"
+    ],
+    "counseling_points": [
+      "Take exactly as prescribed — do not increase dose without physician guidance",
+      "Do not drink alcohol — life-threatening interaction",
+      "Do not drive or operate machinery",
+      "Store securely away from others — high abuse potential",
+      "Dispose of unused medication properly via take-back programs",
+      "Naloxone should be available in the household"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS — highest restriction among legally prescribed opioids",
+      "ER formulations are NOT interchangeable with IR formulations",
+      "Combination products with APAP (Percocet) carry acetaminophen toxicity risk at high doses"
+    ]
+  },
+  {
+    "id": "oxymorphone",
+    "generic_name": "oxymorphone",
+    "brand_names": [
+      "Opana",
+      "Opana ER",
+      "Numorphan"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic",
+    "mechanism_of_action": "Semisynthetic mu-opioid agonist — approximately 3x more potent than morphine",
+    "indications": [
+      "Moderate to severe pain",
+      "Preoperative sedation"
+    ],
+    "dosage": {
+      "adult": "IR: 5–20 mg every 4–6 hours. ER: 5–40 mg every 12 hours",
+      "max_dose": "Individualized",
+      "renal_adjustment": "Reduce dose in moderate to severe renal impairment"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Constipation",
+      "Nausea",
+      "Sedation",
+      "Dizziness"
+    ],
+    "warnings": [
+      "Black box warning: respiratory depression and addiction",
+      "ER formulation reformulated after high-profile IV abuse — FDA recommended withdrawal of original ER formulation in 2017"
+    ],
+    "contraindications": [
+      "Respiratory depression",
+      "Paralytic ileus",
+      "MAOIs"
+    ],
+    "interactions": [
+      "CNS depressants — additive",
+      "Anticholinergics — urinary retention and constipation",
+      "MAOIs"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Pain control",
+      "Signs of abuse"
+    ],
+    "counseling_points": [
+      "Take on empty stomach — food significantly increases absorption",
+      "Do not drink alcohol",
+      "Schedule II — no refills",
+      "Store securely"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Opana ER was voluntarily withdrawn from the US market in 2017 at FDA request due to abuse via injection — the reformulated crush-resistant tablet was being dissolved and injected causing HIV and hepatitis C outbreaks"
+    ]
+  },
+  {
+    "id": "pentobarbital",
+    "generic_name": "pentobarbital",
+    "brand_names": [
+      "Nembutal"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Short-acting barbiturate — CNS depressant",
+    "mechanism_of_action": "Short-acting barbiturate — enhances and mimics GABA at GABA-A receptors, prolonging chloride channel opening. At high doses directly activates chloride channels independent of GABA, producing general anesthesia",
+    "indications": [
+      "Procedural sedation",
+      "Refractory status epilepticus (IV)",
+      "Increased intracranial pressure management",
+      "Veterinary euthanasia — primary use today"
+    ],
+    "dosage": {
+      "adult": "Sedation: 100 mg IM or 100–200 mg IV titrated. Status epilepticus: 5–15 mg/kg IV loading dose",
+      "max_dose": "500 mg per dose for sedation",
+      "renal_adjustment": "Reduce dose in renal impairment"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Hypotension",
+      "Laryngospasm",
+      "Paradoxical excitement",
+      "Dependence",
+      "Hypothermia"
+    ],
+    "warnings": [
+      "Extreme lethality in overdose — used in capital punishment and physician-assisted death in some states",
+      "Physical dependence with regular use",
+      "Potent CYP enzyme inducer"
+    ],
+    "contraindications": [
+      "Porphyria — absolute contraindication",
+      "Severe respiratory disease",
+      "Liver disease"
+    ],
+    "interactions": [
+      "CNS depressants — additive, potentially fatal",
+      "Warfarin — enzyme induction reduces anticoagulant effect",
+      "Oral contraceptives — reduced efficacy",
+      "Phenytoin — complex bidirectional interaction"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Blood pressure",
+      "EEG for burst suppression in status epilepticus",
+      "Drug levels"
+    ],
+    "counseling_points": [
+      "Primarily hospital/institutional use",
+      "Schedule II — tightly controlled",
+      "Do not stop abruptly — severe withdrawal",
+      "Rarely used as outpatient medication today"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Used in capital punishment lethal injection protocols and veterinary euthanasia (Nembutal)",
+      "For status epilepticus refractory to other agents — produces burst-suppression pattern on EEG",
+      "Absolute contraindication in porphyria — same as all barbiturates, induces ALA synthase precipitating crisis"
+    ]
+  },
+  {
+    "id": "pregabalin",
+    "generic_name": "pregabalin",
+    "brand_names": [
+      "Lyrica",
+      "Lyrica CR"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleV",
+    "drug_class": "Alpha-2-delta calcium channel ligand / anticonvulsant",
+    "mechanism_of_action": "Binds to alpha-2-delta subunit of voltage-gated calcium channels in CNS, reducing calcium influx and decreasing release of excitatory neurotransmitters (glutamate, norepinephrine, substance P)",
+    "indications": [
+      "Neuropathic pain associated with diabetic peripheral neuropathy",
+      "Postherpetic neuralgia",
+      "Fibromyalgia",
+      "Partial onset seizures (adjunct)",
+      "Generalized anxiety disorder (Europe only)"
+    ],
+    "dosage": {
+      "adult": "Neuropathic pain: 50–100 mg three times daily. Fibromyalgia: 75–225 mg twice daily",
+      "max_dose": "600 mg/day",
+      "renal_adjustment": "Significant renal dose adjustment required — renally eliminated unchanged. CrCl 30–60: reduce by 50%. CrCl 15–30: reduce by 75%"
+    },
+    "side_effects": [
+      "Dizziness",
+      "Somnolence",
+      "Weight gain",
+      "Peripheral edema",
+      "Blurred vision",
+      "Euphoria at high doses"
+    ],
+    "warnings": [
+      "Euphoria and abuse potential — scheduled CV due to reports of misuse",
+      "Respiratory depression with CNS depressants",
+      "Angioedema — discontinue immediately",
+      "Suicidal ideation — class warning for anticonvulsants"
+    ],
+    "contraindications": [
+      "Hypersensitivity to pregabalin"
+    ],
+    "interactions": [
+      "CNS depressants — additive sedation and respiratory depression",
+      "Opioids — additive CNS depression",
+      "Thiazolidinediones — additive weight gain and edema",
+      "ACE inhibitors — increased angioedema risk"
+    ],
+    "monitoring": [
+      "Renal function — dose adjustment critical",
+      "Weight and edema",
+      "Signs of abuse or misuse",
+      "Suicidal ideation"
+    ],
+    "counseling_points": [
+      "Do not stop abruptly — taper to avoid withdrawal symptoms",
+      "Avoid alcohol and CNS depressants",
+      "May cause significant weight gain — monitor diet",
+      "Report any swelling of face or throat immediately",
+      "Schedule V — refills permitted in NYS"
+    ],
+    "pearls": [
+      "Federal Schedule V and NYS Schedule V — scheduled in 2005 due to euphoriant effects and abuse reports",
+      "Structurally related to gabapentin but more potent and with linear pharmacokinetics — more predictable absorption",
+      "Renally eliminated unchanged — dose adjustments are substantial in CKD",
+      "Unlike gabapentin, pregabalin has FDA approval for fibromyalgia and postherpetic neuralgia as primary indications"
+    ]
+  },
+  {
+    "id": "propranolol",
+    "generic_name": "propranolol",
+    "brand_names": [
+      "Inderal",
+      "Inderal LA"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "betaBlockers",
+    "drug_class": "Nonselective beta blocker",
+    "mechanism_of_action": "Blocks both beta-1 (cardiac) and beta-2 (pulmonary, vascular, uterine) adrenergic receptors, reducing heart rate, contractility, and renin release",
+    "indications": [
+      "Hypertension",
+      "Angina",
+      "Essential tremor",
+      "Performance anxiety",
+      "Migraine prophylaxis",
+      "Thyrotoxicosis (adjunct)",
+      "Portal hypertension"
+    ],
+    "dosage": {
+      "adult": "40–160 mg per day in divided doses (IR) or once daily (LA)",
+      "max_dose": "320 mg/day",
+      "renal_adjustment": "No renal adjustment required — hepatically metabolized"
+    },
+    "side_effects": [
+      "Fatigue",
+      "Bradycardia",
+      "Bronchospasm",
+      "Cold extremities",
+      "Nightmares",
+      "Depression",
+      "Erectile dysfunction"
+    ],
+    "warnings": [
+      "Contraindicated in asthma and COPD due to beta-2 blockade causing bronchospasm",
+      "Do not abruptly discontinue",
+      "Masks all signs of hypoglycemia except sweating"
+    ],
+    "contraindications": [
+      "Asthma",
+      "COPD",
+      "Severe bradycardia",
+      "Heart block",
+      "Cardiogenic shock"
+    ],
+    "interactions": [
+      "Other beta blockers — additive bradycardia",
+      "Verapamil and diltiazem — severe bradycardia risk",
+      "Antidiabetics — masked hypoglycemia",
+      "Epinephrine — paradoxical hypertension"
+    ],
+    "monitoring": [
+      "Heart rate",
+      "Blood pressure",
+      "Respiratory status in at-risk patients",
+      "Blood glucose in diabetics"
+    ],
+    "counseling_points": [
+      "Never stop abruptly — taper slowly",
+      "Avoid in asthma or breathing problems",
+      "Take with food — improves bioavailability",
+      "Avoid alcohol",
+      "May cause vivid dreams or depression — report to provider"
+    ],
+    "pearls": [
+      "Only beta blocker approved for performance anxiety and essential tremor",
+      "Lipophilic — crosses blood-brain barrier, explaining CNS side effects like depression and nightmares",
+      "Used acutely in thyroid storm to control sympathetic symptoms"
+    ]
+  },
+  {
+    "id": "ramipril",
+    "generic_name": "ramipril",
+    "brand_names": [
+      "Altace"
+    ],
+    "collection": "cardiology",
+    "sub_collection": "aceInhibitors",
+    "drug_class": "ACE inhibitor",
+    "mechanism_of_action": "Prodrug hydrolyzed to ramiprilat, which inhibits ACE and reduces angiotensin II formation, leading to vasodilation, reduced aldosterone, and decreased preload and afterload",
+    "indications": [
+      "Hypertension",
+      "Heart failure post-MI",
+      "Cardiovascular risk reduction in high-risk patients",
+      "Diabetic nephropathy"
+    ],
+    "dosage": {
+      "adult": "2.5–10 mg once daily",
+      "max_dose": "10 mg/day",
+      "renal_adjustment": "CrCl <40: start at 1.25 mg daily, titrate cautiously"
+    },
+    "side_effects": [
+      "Dry cough",
+      "Dizziness",
+      "Hypotension",
+      "Hyperkalemia",
+      "Angioedema"
+    ],
+    "warnings": [
+      "Angioedema — higher incidence in Black patients",
+      "Pregnancy category D",
+      "Bilateral renal artery stenosis — avoid"
+    ],
+    "contraindications": [
+      "Pregnancy",
+      "History of ACE inhibitor-induced angioedema"
+    ],
+    "interactions": [
+      "NSAIDs — blunt antihypertensive effect",
+      "Potassium supplements — hyperkalemia",
+      "Diuretics — hypotension",
+      "Lithium — elevated levels"
+    ],
+    "monitoring": [
+      "Blood pressure",
+      "Serum potassium",
+      "Renal function at baseline and after initiation"
+    ],
+    "counseling_points": [
+      "Take once daily with or without food",
+      "Capsule may be opened and sprinkled on food for patients with swallowing difficulty",
+      "Avoid NSAIDs and potassium supplements",
+      "Do not take during pregnancy",
+      "Report swelling of face or throat immediately"
+    ],
+    "pearls": [
+      "HOPE trial demonstrated ramipril reduces MI, stroke, and cardiovascular death in high-risk patients even without hypertension",
+      "Considered one of the most cardioprotective ACE inhibitors based on trial data"
+    ]
+  },
+  {
+    "id": "remifentanil",
+    "generic_name": "remifentanil",
+    "brand_names": [
+      "Ultiva"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Ultra-short-acting synthetic opioid — anesthetic adjunct",
+    "mechanism_of_action": "Highly selective mu-opioid agonist with unique ester linkage — metabolized by nonspecific blood and tissue esterases, producing extremely short and predictable duration of action independent of hepatic or renal function",
+    "indications": [
+      "Analgesia during induction and maintenance of general anesthesia",
+      "Analgesia in mechanically ventilated ICU patients (short-term)"
+    ],
+    "dosage": {
+      "adult": "Anesthesia: 0.5–1 mcg/kg IV bolus, then 0.05–2 mcg/kg/min infusion. ICU: 0.1–0.15 mcg/kg/min",
+      "max_dose": "2 mcg/kg/min infusion",
+      "renal_adjustment": "No dose adjustment needed — ester hydrolysis independent of renal function"
+    },
+    "side_effects": [
+      "Respiratory depression — rapid onset",
+      "Muscle rigidity at high doses",
+      "Bradycardia",
+      "Hypotension",
+      "Nausea",
+      "Opioid-induced hyperalgesia with prolonged use"
+    ],
+    "warnings": [
+      "Must have resuscitative equipment available — rapid respiratory depression",
+      "Opioid-induced hyperalgesia with prolonged infusion — paradoxical increased pain sensitivity",
+      "Not for intrathecal or epidural use — contains glycine"
+    ],
+    "contraindications": [
+      "Intrathecal or epidural administration (contains glycine)",
+      "Unsupported spontaneous ventilation for prolonged periods"
+    ],
+    "interactions": [
+      "CNS depressants — additive",
+      "Propofol, thiopental — synergistic anesthetic effect",
+      "Benzodiazepines — enhanced sedation and respiratory depression"
+    ],
+    "monitoring": [
+      "Continuous respiratory monitoring mandatory",
+      "Blood pressure and heart rate",
+      "Pain scores after discontinuation — rapid offset means pain returns quickly"
+    ],
+    "counseling_points": [
+      "Hospital/OR use only — never outpatient",
+      "Schedule II — tightly controlled",
+      "Duration of action 3–5 minutes — pain management plan must be in place before discontinuing",
+      "Tolerance develops rapidly — not for long-term use"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Unique pharmacokinetics — ester hydrolysis by blood esterases gives context-sensitive half-life of 3–5 minutes regardless of infusion duration",
+      "Does NOT contain a preservative and CANNOT be used epidurally or intrathecally due to glycine excipient causing spinal toxicity",
+      "Opioid-induced hyperalgesia (OIH) is a known complication of prolonged remifentanil infusion — patients may have increased pain sensitivity after stopping"
+    ]
+  },
+  {
+    "id": "secobarbital",
+    "generic_name": "secobarbital",
+    "brand_names": [
+      "Seconal"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Short-acting barbiturate — CNS depressant",
+    "mechanism_of_action": "Short-acting barbiturate that enhances GABA-A receptor activity — faster onset and shorter duration than phenobarbital but similar mechanism. Historically used for insomnia and procedural sedation",
+    "indications": [
+      "Short-term insomnia treatment (largely obsolete)",
+      "Preoperative sedation",
+      "Medical aid in dying (physician-assisted death) in authorized states"
+    ],
+    "dosage": {
+      "adult": "Insomnia: 100 mg at bedtime. Preoperative: 200–300 mg 1–2 hours before procedure",
+      "max_dose": "300 mg per dose",
+      "renal_adjustment": "Reduce dose in renal impairment"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Hangover sedation",
+      "Dependence",
+      "Paradoxical excitement in elderly",
+      "Hypotension"
+    ],
+    "warnings": [
+      "High lethality in overdose — narrow therapeutic index",
+      "Severe withdrawal — potentially fatal",
+      "Potent CYP inducer"
+    ],
+    "contraindications": [
+      "Porphyria",
+      "Severe respiratory disease",
+      "History of barbiturate addiction"
+    ],
+    "interactions": [
+      "CNS depressants — additive respiratory depression",
+      "Warfarin — enzyme induction",
+      "Oral contraceptives — reduced efficacy"
+    ],
+    "monitoring": [
+      "Respiratory status",
+      "Signs of dependence",
+      "Withdrawal monitoring during taper"
+    ],
+    "counseling_points": [
+      "Rarely used today — replaced by safer agents",
+      "Schedule II — no refills",
+      "Do not stop abruptly — life-threatening withdrawal",
+      "Avoid all alcohol and CNS depressants"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Primarily known today as the drug used in physician-assisted death (Death with Dignity) protocols in states like Oregon and California — prescribed for self-administration",
+      "Largely replaced by benzodiazepines for insomnia and sedation due to narrower therapeutic index and higher overdose lethality",
+      "Absolute contraindication in porphyria — class effect of all barbiturates"
+    ]
+  },
+  {
+    "id": "sertraline",
+    "generic_name": "sertraline",
+    "brand_names": [
+      "Zoloft"
+    ],
+    "collection": "neuroPsych",
+    "sub_collection": "ssris",
+    "drug_class": "Selective serotonin reuptake inhibitor (SSRI)",
+    "mechanism_of_action": "Selectively inhibits the presynaptic serotonin transporter (SERT), increasing synaptic serotonin concentration — antidepressant effects typically require 2–4 weeks of consistent use",
+    "indications": [
+      "Major depressive disorder",
+      "Panic disorder",
+      "PTSD",
+      "OCD",
+      "Social anxiety disorder",
+      "Premenstrual dysphoric disorder"
+    ],
+    "dosage": {
+      "adult": "50–200 mg once daily",
+      "max_dose": "200 mg/day",
+      "renal_adjustment": "No renal adjustment required"
+    },
+    "side_effects": [
+      "Nausea",
+      "Diarrhea",
+      "Insomnia",
+      "Sexual dysfunction",
+      "Headache",
+      "Increased sweating"
+    ],
+    "warnings": [
+      "Black box warning: increased suicidal ideation in children, adolescents, and young adults under 25",
+      "Serotonin syndrome risk especially with other serotonergic agents",
+      "Discontinuation syndrome if stopped abruptly"
+    ],
+    "contraindications": [
+      "Concurrent MAOI use — 14-day washout required",
+      "Concurrent use of pimozide",
+      "Concurrent use of linezolid or IV methylene blue"
+    ],
+    "interactions": [
+      "MAOIs — serotonin syndrome, potentially fatal",
+      "Triptans — serotonin syndrome risk",
+      "Warfarin — increased bleeding risk",
+      "NSAIDs — GI bleeding risk",
+      "Other serotonergic drugs"
+    ],
+    "monitoring": [
+      "Mood and suicidality especially in first weeks",
+      "Signs of serotonin syndrome",
+      "Weight"
+    ],
+    "counseling_points": [
+      "Takes 2–4 weeks for full antidepressant effect — do not stop early",
+      "Take at the same time each day, with or without food",
+      "Do not stop abruptly — taper to avoid discontinuation syndrome",
+      "Avoid alcohol",
+      "Avoid St. John's Wort",
+      "Report worsening depression or suicidal thoughts immediately"
+    ],
+    "pearls": [
+      "Most prescribed antidepressant in the US — considered first-line for most anxiety and depressive disorders",
+      "Broad FDA-approved indication set makes it versatile across psychiatric conditions",
+      "Taper over weeks when discontinuing to avoid discontinuation syndrome — dizziness, flu-like symptoms, electric shock sensations"
+    ]
+  },
+  {
+    "id": "sufentanil",
+    "generic_name": "sufentanil",
+    "brand_names": [
+      "Sufenta",
+      "Dsuvia"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Ultra-potent synthetic opioid — anesthetic adjunct / sublingual tablet",
+    "mechanism_of_action": "Highly selective mu-opioid receptor agonist — approximately 5–10 times more potent than fentanyl and 500–1000 times more potent than morphine. High lipophilicity allows rapid CNS penetration",
+    "indications": [
+      "Anesthesia induction and maintenance (IV — Sufenta)",
+      "Moderate to severe acute pain in medically supervised settings (sublingual tablet — Dsuvia)",
+      "Epidural analgesia in obstetrics"
+    ],
+    "dosage": {
+      "adult": "IV anesthesia: 0.5–30 mcg/kg depending on procedure. Dsuvia sublingual: 30 mcg per dose, max 12 doses/24 hours",
+      "max_dose": "30 mcg/kg IV for cardiac anesthesia. 360 mcg/day sublingual",
+      "renal_adjustment": "Use with caution — reduce dose in renal impairment"
+    },
+    "side_effects": [
+      "Respiratory depression",
+      "Bradycardia",
+      "Hypotension",
+      "Muscle rigidity",
+      "Nausea",
+      "Sedation"
+    ],
+    "warnings": [
+      "Extreme potency — dosing errors fatal",
+      "Dsuvia REMS program — only dispensed in certified medically supervised settings",
+      "Not for outpatient use — hospital/surgical center only"
+    ],
+    "contraindications": [
+      "Opioid-naive patients for high doses",
+      "Respiratory depression",
+      "MAOIs within 14 days"
+    ],
+    "interactions": [
+      "CNS depressants — additive respiratory depression",
+      "CYP3A4 inhibitors — increase sufentanil levels",
+      "MAOIs — avoid"
+    ],
+    "monitoring": [
+      "Continuous respiratory monitoring",
+      "Blood pressure and heart rate",
+      "Oxygen saturation"
+    ],
+    "counseling_points": [
+      "Hospital and supervised medical setting use only",
+      "Dsuvia cannot be dispensed to outpatients",
+      "Schedule II — tightly controlled",
+      "500–1000x more potent than morphine — extreme care required"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "5–10x more potent than fentanyl — most potent opioid approved for human use in the US",
+      "Dsuvia (sublingual tablet) approved 2018 — designed for battlefield and emergency settings where IV access unavailable, highly controversial due to abuse concerns",
+      "Epidural sufentanil is standard of care in obstetric analgesia — used in combination with bupivacaine for labor epidurals"
+    ]
+  },
+  {
+    "id": "tapentadol",
+    "generic_name": "tapentadol",
+    "brand_names": [
+      "Nucynta",
+      "Nucynta ER"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Opioid analgesic with norepinephrine reuptake inhibition (MOR-NRI)",
+    "mechanism_of_action": "Dual mechanism — mu-opioid receptor agonist AND norepinephrine reuptake inhibitor. Norepinephrine component activates descending pain inhibitory pathways. Allows lower opioid doses for equivalent analgesia with potentially fewer opioid side effects",
+    "indications": [
+      "Moderate to severe acute pain (IR)",
+      "Severe chronic pain including diabetic peripheral neuropathy (ER)"
+    ],
+    "dosage": {
+      "adult": "IR: 50–100 mg every 4–6 hours. ER: 50–250 mg twice daily",
+      "max_dose": "600 mg/day IR, 500 mg/day ER",
+      "renal_adjustment": "Avoid in severe renal impairment (CrCl <30)"
+    },
+    "side_effects": [
+      "Nausea",
+      "Dizziness",
+      "Constipation",
+      "Somnolence",
+      "Headache",
+      "Serotonin syndrome risk from NRI component"
+    ],
+    "warnings": [
+      "Black box warning: addiction, abuse, misuse",
+      "Black box warning: respiratory depression",
+      "Serotonin syndrome risk — NRI component interacts with serotonergic drugs",
+      "MAOIs — absolutely contraindicated"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days — serotonin syndrome risk from NRI component",
+      "Significant respiratory depression",
+      "Severe renal or hepatic impairment",
+      "Paralytic ileus"
+    ],
+    "interactions": [
+      "MAOIs — severe serotonin syndrome",
+      "SSRIs/SNRIs — serotonin syndrome risk",
+      "CNS depressants — additive",
+      "Benzodiazepines — black box combined risk"
+    ],
+    "monitoring": [
+      "Pain control",
+      "Respiratory status",
+      "Signs of serotonin syndrome",
+      "Renal function"
+    ],
+    "counseling_points": [
+      "Do not take with MAOIs or most antidepressants without physician approval",
+      "Schedule II — no refills",
+      "ER tablets — swallow whole, do not crush",
+      "Report muscle twitching, agitation, or rapid heart rate — serotonin syndrome signs"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS",
+      "Only Schedule II with dual MOR-NRI mechanism — FDA-approved for diabetic peripheral neuropathy pain, unlike most opioids",
+      "Norepinephrine reuptake inhibition gives it advantages for neuropathic pain similar to SNRIs but with opioid component",
+      "MAOI interaction is uniquely dangerous due to NRI component — causes serotonin syndrome not just respiratory depression, similar to tramadol but more potent"
+    ]
+  },
+  {
+    "id": "thiafentanil",
+    "generic_name": "thiafentanil",
+    "brand_names": [
+      "Thianil"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleII",
+    "drug_class": "Ultra-potent synthetic opioid — large animal veterinary use only",
+    "mechanism_of_action": "Potent mu-opioid receptor agonist structurally related to fentanyl — used exclusively for immobilization of large animals such as elk, deer, and bison. Approximately 6000 times more potent than morphine",
+    "indications": [
+      "Immobilization and sedation of free-ranging cervids (deer, elk, moose) — veterinary use only",
+      "No approved human medical use"
+    ],
+    "dosage": {
+      "adult": "Veterinary: species and weight dependent. Human use: NONE",
+      "max_dose": "N/A — no human dosing",
+      "renal_adjustment": "N/A — no human dosing"
+    },
+    "side_effects": [
+      "Immediate fatal respiratory depression in humans at microgram quantities",
+      "CNS and cardiovascular depression"
+    ],
+    "warnings": [
+      "EXTREME HAZARD — microgram quantities lethal to humans",
+      "No human medical indication",
+      "Accidental exposure requires immediate naloxone administration — multiple doses"
+    ],
+    "contraindications": [
+      "Human use — absolutely contraindicated"
+    ],
+    "interactions": [
+      "Any CNS depressant — additive and likely fatal"
+    ],
+    "monitoring": [
+      "N/A — emergency monitoring for accidental exposure"
+    ],
+    "counseling_points": [
+      "No legitimate human use — pharmacy awareness only",
+      "Veterinary controlled substance — extreme care in handling",
+      "Multiple doses of naloxone required for reversal",
+      "Schedule II despite no human use"
+    ],
+    "pearls": [
+      "Schedule II federally and in NYS — despite no human medical use, scheduled due to extreme harm potential",
+      "Approximately 6000x more potent than morphine — similar to carfentanil in danger profile",
+      "Used for wildlife management — enables safe immobilization of cervids for tagging, relocation, health assessment",
+      "Exam pearl: both carfentanil and thiafentanil are Schedule II veterinary-only opioids with no human medical use — contrast with heroin (Schedule I, no accepted medical use anywhere in US)"
+    ]
+  },
+  {
+    "id": "tramadol",
+    "generic_name": "tramadol",
+    "brand_names": [
+      "Ultram",
+      "ConZip",
+      "Ultracet (with APAP)"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Opioid agonist / SNRI — atypical analgesic",
+    "mechanism_of_action": "Weak mu-opioid agonist AND inhibits serotonin and norepinephrine reuptake — dual mechanism makes it atypical. Active metabolite O-desmethyltramadol (M1) has higher opioid affinity via CYP2D6",
+    "indications": [
+      "Moderate to moderately severe pain"
+    ],
+    "dosage": {
+      "adult": "IR: 50–100 mg every 4–6 hours. ER: 100–300 mg once daily",
+      "max_dose": "400 mg/day IR, 300 mg/day ER",
+      "renal_adjustment": "CrCl <30: max 200 mg/day IR. Avoid ER in renal impairment"
+    },
+    "side_effects": [
+      "Nausea",
+      "Constipation",
+      "Dizziness",
+      "Headache",
+      "Seizures at high doses",
+      "Serotonin syndrome"
+    ],
+    "warnings": [
+      "Seizure risk — lowers seizure threshold especially at high doses or with serotonergic drugs",
+      "Serotonin syndrome risk — dual serotonergic mechanism",
+      "CYP2D6 ultra-metabolizers convert more to M1 — increased opioid toxicity risk"
+    ],
+    "contraindications": [
+      "MAOIs within 14 days — serotonin syndrome",
+      "Seizure disorders (relative)",
+      "Severe renal or hepatic impairment"
+    ],
+    "interactions": [
+      "MAOIs — severe serotonin syndrome",
+      "SSRIs/SNRIs — serotonin syndrome and seizure risk",
+      "CYP2D6 inhibitors — reduce M1 formation, decrease analgesia",
+      "Carbamazepine — induces tramadol metabolism, reduces efficacy and seizure threshold"
+    ],
+    "monitoring": [
+      "Pain control",
+      "Signs of serotonin syndrome",
+      "Seizure history",
+      "Renal function"
+    ],
+    "counseling_points": [
+      "Do not take with MAOIs or most antidepressants without physician approval — seizure and serotonin syndrome risk",
+      "Schedule IV — refills permitted",
+      "Still an opioid despite being CIV — report any euphoria or urge to take more than prescribed",
+      "Avoid alcohol"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV — scheduled in 2014",
+      "Often mistakenly thought to be non-addictive — has both opioid and serotonergic dependence potential",
+      "CYP2D6 pharmacogenomics matters clinically — poor metabolizers get less analgesia, ultra-metabolizers at higher toxicity risk",
+      "Unique serotonergic component means MAOI interaction causes serotonin syndrome not just opioid toxicity"
+    ]
+  },
+  {
+    "id": "zolpidem",
+    "generic_name": "zolpidem",
+    "brand_names": [
+      "Ambien",
+      "Ambien CR",
+      "Intermezzo",
+      "Edluar"
+    ],
+    "collection": "controlledSubstances",
+    "sub_collection": "scheduleIV",
+    "drug_class": "Non-benzodiazepine GABA-A modulator (Z-drug)",
+    "mechanism_of_action": "Binds selectively to GABA-A receptor subunits (alpha-1) — produces sedation with less anxiolytic, muscle relaxant, and anticonvulsant effect than benzodiazepines",
+    "indications": [
+      "Short-term treatment of insomnia — difficulty with sleep onset and maintenance"
+    ],
+    "dosage": {
+      "adult": "IR: 5 mg (women) or 5–10 mg (men) immediately before bed. CR: 6.25–12.5 mg",
+      "max_dose": "10 mg/day IR, 12.5 mg/day CR",
+      "renal_adjustment": "No significant adjustment"
+    },
+    "side_effects": [
+      "Next-morning sedation — especially CR formulation",
+      "Somnambulism (sleepwalking)",
+      "Complex sleep behaviors — sleep-driving, sleep-eating",
+      "Amnesia",
+      "Hallucinations"
+    ],
+    "warnings": [
+      "FDA black box warning (2019): complex sleep behaviors including sleep-driving have resulted in deaths — contraindicate in patients who have experienced this",
+      "Lower dose recommended for women — slower clearance",
+      "Rebound insomnia on discontinuation"
+    ],
+    "contraindications": [
+      "History of complex sleep behaviors with zolpidem or other sedatives"
+    ],
+    "interactions": [
+      "CNS depressants — additive sedation",
+      "CYP3A4 inhibitors — increase zolpidem levels",
+      "Alcohol — dramatically increases complex sleep behavior risk"
+    ],
+    "monitoring": [
+      "Next-morning alertness",
+      "Complex sleep behaviors",
+      "Signs of dependence"
+    ],
+    "counseling_points": [
+      "Take immediately before bed — only when you have 7–8 hours available",
+      "Women should take lower dose — 5 mg",
+      "Do not take with alcohol — can cause sleep-driving or other dangerous behaviors",
+      "Short-term use only — no more than 4 weeks",
+      "Schedule IV — refills permitted in NYS"
+    ],
+    "pearls": [
+      "Federal Schedule IV and NYS Schedule IV",
+      "FDA required dose reduction recommendation for women in 2013 — women clear zolpidem 50% slower than men",
+      "Complex sleep behaviors (sleep-driving, sleep-eating, sleep-sex) are idiosyncratic and unpredictable — FDA added black box warning in 2019",
+      "Z-drugs (zolpidem, zaleplon, eszopiclone) were originally thought to have lower abuse potential than benzodiazepines — now known to have similar addiction risk"
+    ]
+  }
+]

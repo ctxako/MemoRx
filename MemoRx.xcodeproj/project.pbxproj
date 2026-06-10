@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C6054832FC8DDF00067E6AA /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 3C6054822FC8DDF00067E6AA /* Sentry */; };
+		3C9469902F7C3A6B005155F2 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3C94698F2F7C3A6B005155F2 /* Supabase */; };
+		3CD416ED2FC64CBF00873377 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 3CD416EC2FC64CBF00873377 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C3048602F7B52AD00C25CE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C30484A2F7B52AC00C25CE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C3048512F7B52AC00C25CE9;
+			remoteInfo = MemoRx;
+		};
+		3C30486A2F7B52AD00C25CE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C30484A2F7B52AC00C25CE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C3048512F7B52AC00C25CE9;
+			remoteInfo = MemoRx;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C3048522F7B52AC00C25CE9 /* MemoRx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoRx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C30485F2F7B52AD00C25CE9 /* MemoRxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoRxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3048692F7B52AD00C25CE9 /* MemoRxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoRxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA1BC002F900000005155F1 /* Supabase.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Supabase.xcconfig; sourceTree = "<group>"; };
+		3CD416EC2FC64CBF00873377 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3C946B742F7DACFF005155F2 /* Exceptions for "MemoRx" folder in "MemoRx" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3C3048512F7B52AC00C25CE9 /* MemoRx */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		3C3048542F7B52AC00C25CE9 /* MemoRx */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3C946B742F7DACFF005155F2 /* Exceptions for "MemoRx" folder in "MemoRx" target */,
+			);
+			path = MemoRx;
+			sourceTree = "<group>";
+		};
+		3C3048622F7B52AD00C25CE9 /* MemoRxTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MemoRxTests;
+			sourceTree = "<group>";
+		};
+		3C30486C2F7B52AD00C25CE9 /* MemoRxUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MemoRxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C30484F2F7B52AC00C25CE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C9469902F7C3A6B005155F2 /* Supabase in Frameworks */,
+				3C6054832FC8DDF00067E6AA /* Sentry in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C30485C2F7B52AD00C25CE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3048662F7B52AD00C25CE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C3048492F7B52AC00C25CE9 = {
+			isa = PBXGroup;
+			children = (
+				3CA1BC012F900000005155F1 /* Config */,
+				3C3048542F7B52AC00C25CE9 /* MemoRx */,
+				3C3048622F7B52AD00C25CE9 /* MemoRxTests */,
+				3C30486C2F7B52AD00C25CE9 /* MemoRxUITests */,
+				3C3048532F7B52AC00C25CE9 /* Products */,
+				3CD416EC2FC64CBF00873377 /* PrivacyInfo.xcprivacy */,
+			);
+			sourceTree = "<group>";
+		};
+		3C3048532F7B52AC00C25CE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C3048522F7B52AC00C25CE9 /* MemoRx.app */,
+				3C30485F2F7B52AD00C25CE9 /* MemoRxTests.xctest */,
+				3C3048692F7B52AD00C25CE9 /* MemoRxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CA1BC012F900000005155F1 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				3CA1BC002F900000005155F1 /* Supabase.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C3048512F7B52AC00C25CE9 /* MemoRx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C3048732F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRx" */;
+			buildPhases = (
+				3C30484E2F7B52AC00C25CE9 /* Sources */,
+				3C30484F2F7B52AC00C25CE9 /* Frameworks */,
+				3C3048502F7B52AC00C25CE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3C3048542F7B52AC00C25CE9 /* MemoRx */,
+			);
+			name = MemoRx;
+			packageProductDependencies = (
+				3C94698F2F7C3A6B005155F2 /* Supabase */,
+				3C6054822FC8DDF00067E6AA /* Sentry */,
+			);
+			productName = MemoRx;
+			productReference = 3C3048522F7B52AC00C25CE9 /* MemoRx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C30485E2F7B52AD00C25CE9 /* MemoRxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C3048762F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRxTests" */;
+			buildPhases = (
+				3C30485B2F7B52AD00C25CE9 /* Sources */,
+				3C30485C2F7B52AD00C25CE9 /* Frameworks */,
+				3C30485D2F7B52AD00C25CE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C3048612F7B52AD00C25CE9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3C3048622F7B52AD00C25CE9 /* MemoRxTests */,
+			);
+			name = MemoRxTests;
+			packageProductDependencies = (
+			);
+			productName = MemoRxTests;
+			productReference = 3C30485F2F7B52AD00C25CE9 /* MemoRxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3C3048682F7B52AD00C25CE9 /* MemoRxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C3048792F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRxUITests" */;
+			buildPhases = (
+				3C3048652F7B52AD00C25CE9 /* Sources */,
+				3C3048662F7B52AD00C25CE9 /* Frameworks */,
+				3C3048672F7B52AD00C25CE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C30486B2F7B52AD00C25CE9 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3C30486C2F7B52AD00C25CE9 /* MemoRxUITests */,
+			);
+			name = MemoRxUITests;
+			packageProductDependencies = (
+			);
+			productName = MemoRxUITests;
+			productReference = 3C3048692F7B52AD00C25CE9 /* MemoRxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C30484A2F7B52AC00C25CE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					3C3048512F7B52AC00C25CE9 = {
+						CreatedOnToolsVersion = 16.4;
+					};
+					3C30485E2F7B52AD00C25CE9 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 3C3048512F7B52AC00C25CE9;
+					};
+					3C3048682F7B52AD00C25CE9 = {
+						CreatedOnToolsVersion = 16.4;
+						TestTargetID = 3C3048512F7B52AC00C25CE9;
+					};
+				};
+			};
+			buildConfigurationList = 3C30484D2F7B52AC00C25CE9 /* Build configuration list for PBXProject "MemoRx" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C3048492F7B52AC00C25CE9;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3C94698A2F7C399F005155F2 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				3C6054812FC8DDF00067E6AA /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3C3048532F7B52AC00C25CE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C3048512F7B52AC00C25CE9 /* MemoRx */,
+				3C30485E2F7B52AD00C25CE9 /* MemoRxTests */,
+				3C3048682F7B52AD00C25CE9 /* MemoRxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C3048502F7B52AC00C25CE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD416ED2FC64CBF00873377 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C30485D2F7B52AD00C25CE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3048672F7B52AD00C25CE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C30484E2F7B52AC00C25CE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C30485B2F7B52AD00C25CE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3048652F7B52AD00C25CE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C3048612F7B52AD00C25CE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C3048512F7B52AC00C25CE9 /* MemoRx */;
+			targetProxy = 3C3048602F7B52AD00C25CE9 /* PBXContainerItemProxy */;
+		};
+		3C30486B2F7B52AD00C25CE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C3048512F7B52AC00C25CE9 /* MemoRx */;
+			targetProxy = 3C30486A2F7B52AD00C25CE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3C3048712F7B52AD00C25CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3C3048722F7B52AD00C25CE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C3048742F7B52AD00C25CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA1BC002F900000005155F1 /* Supabase.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MemoRx/MemoRx.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoRx/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MemoRx;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C3048752F7B52AD00C25CE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA1BC002F900000005155F1 /* Supabase.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MemoRx/MemoRx.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MemoRx/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MemoRx;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3C3048772F7B52AD00C25CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoRx.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoRx";
+			};
+			name = Debug;
+		};
+		3C3048782F7B52AD00C25CE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MemoRx.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MemoRx";
+			};
+			name = Release;
+		};
+		3C30487A2F7B52AD00C25CE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MemoRx;
+			};
+			name = Debug;
+		};
+		3C30487B2F7B52AD00C25CE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DYF4R2M73;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ctxa.MemoRxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MemoRx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C30484D2F7B52AC00C25CE9 /* Build configuration list for PBXProject "MemoRx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C3048712F7B52AD00C25CE9 /* Debug */,
+				3C3048722F7B52AD00C25CE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C3048732F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C3048742F7B52AD00C25CE9 /* Debug */,
+				3C3048752F7B52AD00C25CE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C3048762F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C3048772F7B52AD00C25CE9 /* Debug */,
+				3C3048782F7B52AD00C25CE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C3048792F7B52AD00C25CE9 /* Build configuration list for PBXNativeTarget "MemoRxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C30487A2F7B52AD00C25CE9 /* Debug */,
+				3C30487B2F7B52AD00C25CE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C6054812FC8DDF00067E6AA /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.15.0;
+			};
+			traits = (
+			);
+		};
+		3C94698A2F7C399F005155F2 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C6054822FC8DDF00067E6AA /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C6054812FC8DDF00067E6AA /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		3C94698F2F7C3A6B005155F2 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C94698A2F7C399F005155F2 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3C30484A2F7B52AC00C25CE9 /* Project object */;
+}

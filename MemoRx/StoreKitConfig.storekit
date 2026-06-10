@@ -1,0 +1,139 @@
+{
+  "appPolicies": {
+    "eula": "",
+    "policies": [
+      {
+        "locale": "en_US",
+        "policyText": "",
+        "policyURL": ""
+      }
+    ]
+  },
+  "identifier": "ADC09A44",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "99.99",
+      "familyShareable": false,
+      "internalID": "6764399999",
+      "localizations": [
+        {
+          "description": "Lifetime access to all MemoRx features. Pay once, never pay again.",
+          "displayName": "MemoRx Lifetime",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "ctxa.MemoRx.lifetime",
+      "referenceName": "MemoRx Lifetime",
+      "type": "NonConsumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "6761398713",
+    "_askToBuyEnabled": false,
+    "_billingGracePeriodEnabled": false,
+    "_billingIssuesEnabled": false,
+    "_developerTeamID": "8DYF4R2M73",
+    "_disableDialogs": false,
+    "_failTransactionsEnabled": false,
+    "_lastSynchronizedDate": 800909201.57189,
+    "_locale": "en_US",
+    "_renewalBillingIssuesEnabled": false,
+    "_storefront": "USA",
+    "_storeKitErrors": [],
+    "_timeRate": 0
+  },
+  "subscriptionGroups": [
+    {
+      "id": "22057846",
+      "localizations": [
+        {
+          "description": "",
+          "displayName": "MemoRx Premium",
+          "locale": "en_US"
+        }
+      ],
+      "name": "MemoRx Premium",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "49.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "6764398863",
+          "introductoryOffer": {
+            "billingPlanType": "BILLED_UPFRONT",
+            "internalID": "62688A36",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "introductoryOffers": [
+            {
+              "billingPlanType": "BILLED_UPFRONT",
+              "internalID": "62688A36",
+              "numberOfPeriods": 1,
+              "paymentMode": "free",
+              "subscriptionPeriod": "P1W"
+            }
+          ],
+          "localizations": [
+            {
+              "description": "A growing NAPLEX drug library updated regularly, adaptive daily quizzes that personalize to your weak spots, and weekly leaderboard challenges — new season every Monday.",
+              "displayName": "MemoRx Premium",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "ctxa.MemoRx.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "MemoRx Annual",
+          "subscriptionGroupID": "22057846",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "4.99",
+          "familyShareable": false,
+          "groupNumber": 2,
+          "internalID": "6764389599",
+          "introductoryOffer": {
+            "billingPlanType": "BILLED_UPFRONT",
+            "internalID": "5B25392B",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P1W"
+          },
+          "introductoryOffers": [
+            {
+              "billingPlanType": "BILLED_UPFRONT",
+              "internalID": "5B25392B",
+              "numberOfPeriods": 1,
+              "paymentMode": "free",
+              "subscriptionPeriod": "P1W"
+            }
+          ],
+          "localizations": [
+            {
+              "description": "A growing NAPLEX drug library updated regularly, adaptive daily quizzes that personalize to your weak spots, and weekly leaderboard challenges — new season every Monday.",
+              "displayName": "MemoRx Premium",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "ctxa.MemoRx.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "MemoRx Monthly",
+          "subscriptionGroupID": "22057846",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 5,
+    "minor": 0
+  }
+}

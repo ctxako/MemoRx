@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode user/local files
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad
+DerivedData/
+build/
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Secrets / local config
+.env
+.env.*
+*.xcconfig
+*.local
+*.secret
+Secrets.plist
+GoogleService-Info.plist
+
+# Supabase local junk
+supabase/.branches/
+supabase/.temp/
+supabase/.env
+supabase/.env.*

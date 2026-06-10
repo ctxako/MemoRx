@@ -1,0 +1,225 @@
+[
+  {
+    "sub_collection": "aceInhibitors",
+    "display_name": "ACE Inhibitors",
+    "suffixes": [
+      "-pril"
+    ],
+    "class_uses": [
+      "Hypertension",
+      "Heart failure",
+      "Diabetic nephropathy",
+      "Post-MI cardioprotection"
+    ],
+    "hallmark_side_effects": [
+      "Dry cough",
+      "Angioedema",
+      "Hyperkalemia",
+      "First-dose hypotension"
+    ],
+    "high_yield_pearls": [
+      "ACE inhibitors block conversion of Angiotensin I → Angiotensin II.",
+      "The dry cough is caused by accumulation of bradykinin — switch to ARB if intolerable.",
+      "Angioedema is rare but life-threatening — contraindicated in patients with prior angioedema.",
+      "First-line for hypertension in patients with diabetes or CKD.",
+      "Monitor potassium — can cause hyperkalemia, especially with K+-sparing diuretics.",
+      "Contraindicated in pregnancy (teratogenic — causes fetal renal damage)."
+    ],
+    "high_risk_meds": []
+  },
+  {
+    "sub_collection": "betaBlockers",
+    "display_name": "Beta-Blockers",
+    "suffixes": [
+      "-olol"
+    ],
+    "class_uses": [
+      "Hypertension",
+      "Angina",
+      "Heart failure",
+      "Arrhythmias",
+      "Anxiety (situational)",
+      "Post-MI"
+    ],
+    "hallmark_side_effects": [
+      "Bradycardia",
+      "Fatigue",
+      "Bronchospasm",
+      "Masked hypoglycemia",
+      "Cold extremities"
+    ],
+    "high_yield_pearls": [
+      "Beta-blockers block beta-adrenergic receptors, reducing heart rate and contractility.",
+      "Non-selective beta-blockers (propranolol) block both B1 (heart) and B2 (lungs) — avoid in asthma/COPD.",
+      "Cardioselective beta-blockers (metoprolol, atenolol) primarily target B1 — safer in pulmonary disease.",
+      "Can mask signs of hypoglycemia (tachycardia) — use with caution in diabetics on insulin.",
+      "Never abruptly discontinue — can trigger rebound hypertension or MI.",
+      "Carvedilol is a non-selective beta-blocker + alpha-1 blocker used in heart failure."
+    ],
+    "high_risk_meds": []
+  },
+  {
+    "sub_collection": "scheduleII",
+    "display_name": "Schedule II Controlled Substances",
+    "suffixes": [],
+    "class_uses": [
+      "Severe pain",
+      "ADHD",
+      "Narcolepsy"
+    ],
+    "hallmark_side_effects": [
+      "Respiratory depression",
+      "Constipation",
+      "Euphoria",
+      "Physical dependence",
+      "Tolerance"
+    ],
+    "high_yield_pearls": [
+      "Schedule II = high abuse potential with currently accepted medical use.",
+      "No refills allowed — requires a new written prescription each time.",
+      "Opioids (morphine, oxycodone, fentanyl) act on Mu receptors — primary risk is respiratory depression.",
+      "Stimulants (amphetamine, methylphenidate) used for ADHD — risk of cardiovascular effects and abuse.",
+      "Fentanyl is 100x more potent than morphine — high overdose risk.",
+      "Naloxone (Narcan) reverses opioid overdose — keep on hand for high-risk patients.",
+      "In New York State, anabolic steroids are classified as Schedule II (stricter than federal Schedule III)."
+    ],
+    "high_risk_meds": [
+      "Morphine",
+      "Oxycodone",
+      "Fentanyl",
+      "Hydromorphone",
+      "Amphetamine",
+      "Methylphenidate",
+      "Cocaine (topical only)"
+    ]
+  },
+  {
+    "sub_collection": "scheduleIII",
+    "display_name": "Schedule III Controlled Substances",
+    "suffixes": [],
+    "class_uses": [
+      "Moderate pain",
+      "Anabolic purposes (historic)",
+      "Hormone therapy"
+    ],
+    "hallmark_side_effects": [
+      "Dependence (lower risk than Schedule II)",
+      "Liver toxicity (anabolic steroids)",
+      "Hormonal disruption"
+    ],
+    "high_yield_pearls": [
+      "Schedule III = moderate to low physical dependence, high psychological dependence potential.",
+      "Up to 5 refills allowed within 6 months.",
+      "Acetaminophen/codeine combinations (e.g., Tylenol #3) are Schedule III federally.",
+      "Anabolic steroids are Schedule III federally — but Schedule II in New York State.",
+      "Buprenorphine (used in MAT for opioid use disorder) is Schedule III.",
+      "Ketamine is Schedule III — used for anesthesia and treatment-resistant depression."
+    ],
+    "high_risk_meds": [
+      "Acetaminophen/Codeine",
+      "Buprenorphine",
+      "Ketamine",
+      "Anabolic steroids (federal)"
+    ]
+  },
+  {
+    "sub_collection": "scheduleIV",
+    "display_name": "Schedule IV Controlled Substances",
+    "suffixes": [
+      "-pam",
+      "-lam",
+      "-zepam"
+    ],
+    "class_uses": [
+      "Anxiety",
+      "Insomnia",
+      "Seizures",
+      "Muscle relaxation",
+      "Procedural sedation"
+    ],
+    "hallmark_side_effects": [
+      "Sedation",
+      "Dependence",
+      "Respiratory depression (especially with opioids)",
+      "Anterograde amnesia",
+      "Falls in elderly"
+    ],
+    "high_yield_pearls": [
+      "Schedule IV = lower abuse potential than Schedule III; up to 5 refills in 6 months.",
+      "Benzodiazepines (-pam/-lam) enhance GABA-A receptor activity — CNS depression.",
+      "Avoid combining benzodiazepines with opioids — synergistic respiratory depression risk (Black Box Warning).",
+      "Benzodiazepines are high-risk in elderly patients (Beers Criteria) — increased fall and fracture risk.",
+      "Tramadol is Schedule IV — weak opioid agonist, also inhibits serotonin/NE reuptake.",
+      "Zolpidem (Ambien) is Schedule IV — non-benzo sleep aid, acts on GABA-A.",
+      "Never abruptly stop benzodiazepines — withdrawal can cause life-threatening seizures."
+    ],
+    "high_risk_meds": [
+      "Lorazepam",
+      "Diazepam",
+      "Alprazolam",
+      "Clonazepam",
+      "Tramadol",
+      "Zolpidem"
+    ]
+  },
+  {
+    "sub_collection": "scheduleV",
+    "display_name": "Schedule V Controlled Substances",
+    "suffixes": [],
+    "class_uses": [
+      "Mild pain",
+      "Cough suppression",
+      "Antidiarrheal",
+      "Partial seizures"
+    ],
+    "hallmark_side_effects": [
+      "Mild CNS depression",
+      "Low dependence risk",
+      "Constipation (codeine-containing)"
+    ],
+    "high_yield_pearls": [
+      "Schedule V = lowest abuse potential among controlled substances.",
+      "Some Schedule V products (e.g., cough syrups with <200mg codeine/100mL) may be sold OTC in some states.",
+      "Pregabalin (Lyrica) is Schedule V — used for neuropathic pain, fibromyalgia, and seizures.",
+      "Lacosamide is Schedule V — adjunct for partial-onset seizures.",
+      "Diphenoxylate/atropine (Lomotil) is Schedule V — antidiarrheal with opioid component.",
+      "Despite low scheduling, patients can still develop dependence — monitor accordingly."
+    ],
+    "high_risk_meds": [
+      "Pregabalin",
+      "Diphenoxylate/Atropine"
+    ]
+  },
+  {
+    "sub_collection": "ssris",
+    "display_name": "SSRIs",
+    "suffixes": [
+      "-oxetine",
+      "-pram"
+    ],
+    "class_uses": [
+      "Major depressive disorder",
+      "Generalized anxiety disorder",
+      "OCD",
+      "Panic disorder",
+      "PTSD"
+    ],
+    "hallmark_side_effects": [
+      "Sexual dysfunction",
+      "Insomnia or sedation",
+      "GI upset (nausea, diarrhea)",
+      "Weight gain",
+      "Serotonin syndrome (overdose/interaction)"
+    ],
+    "high_yield_pearls": [
+      "SSRIs block serotonin reuptake — mnemonic: 'Serotonin Stays Right In.'",
+      "First-line treatment for depression and anxiety disorders.",
+      "Takes 2–6 weeks for full therapeutic effect — counsel patients on delayed onset.",
+      "Serotonin syndrome risk when combined with MAOIs, tramadol, or triptans — potentially fatal.",
+      "Black box warning: increased suicidal ideation in patients under 25, especially early in treatment.",
+      "Fluoxetine has the longest half-life — least likely to cause discontinuation syndrome.",
+      "Paroxetine has the shortest half-life — highest risk of discontinuation syndrome."
+    ],
+    "high_risk_meds": []
+  }
+]

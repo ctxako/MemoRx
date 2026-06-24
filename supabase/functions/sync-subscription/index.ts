@@ -158,6 +158,12 @@ Deno.serve(async (req: Request) => {
       auth: { persistSession: false },
     })
 
+    // NOTE: do NOT touch is_lifetime here. is_lifetime is an admin/owner-granted
+    // comp (or a real lifetime purchase) and must survive cold launches where
+    // StoreKit reports no active entitlement (the normal state for a comped user
+    // who never purchased). This clear path only resets StoreKit-derived
+    // subscription_* fields. A genuine lifetime refund/revoke is handled via a
+    // signed REFUND/REVOKE transaction, not this client "clear" call.
     const { error: dbError } = await adminClient
       .from('users')
       .update({
@@ -166,7 +172,6 @@ Deno.serve(async (req: Request) => {
         subscription_expires_at: null,
         subscription_started_at: null,
         original_transaction_id: null,
-        is_lifetime: false,
       })
       .eq('id', user_id)
 
@@ -256,7 +261,10 @@ Deno.serve(async (req: Request) => {
     update.subscription_started_at = null
     update.original_transaction_id = null
     update.subscription_expires_at = null
-    update.is_lifetime = false
+    // Only a verified lifetime revocation should clear is_lifetime.
+    if (isLifetime) {
+      update.is_lifetime = false
+    }
   }
 
   // --- Write with service_role ---

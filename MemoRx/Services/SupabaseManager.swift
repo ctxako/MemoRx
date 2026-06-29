@@ -576,31 +576,11 @@ enum SupabaseManager {
 
         await ensureAnonymousSession()
 
-        let tableCandidates = ["drugs", "drug_library", "drugs_catalog"]
-        var lastError: Error?
-
-        for table in tableCandidates {
-            do {
-                let rows: [Drug] = try await client
-                    .from(table)
-                    .select()
-                    .execute()
-                    .value
-                if !rows.isEmpty {
-                    return rows
-                }
-            } catch {
-                #if DEBUG
-                print("[Supabase] fetch from \(table) failed: \(error)")
-                #endif
-                lastError = error
-            }
-        }
-
-        if let lastError {
-            throw lastError
-        }
-        return []
+        return try await client
+            .from("drugs")
+            .select()
+            .execute()
+            .value
     }
 
     static func fetchRemoteClassQuizGuides() async throws -> [ClassQuizGuide] {

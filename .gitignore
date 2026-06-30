@@ -26,3 +26,7 @@ supabase/.branches/
 supabase/.temp/
 supabase/.env
 supabase/.env.*
+
+# DB data snapshots — contain real user PII (names, App Store transaction IDs).
+# Keep local-only; never commit to git history.
+db-backups/

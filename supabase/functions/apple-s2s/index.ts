@@ -1,13 +1,16 @@
 import { createClient } from 'jsr:@supabase/supabase-js@2'
-import * as jose from 'npm:jose@5'
+import { verifyTransaction, verifyNotification, AppleTransactionInfo } from '../_shared/apple_verify.ts'
 
 // ---------------------------------------------------------------------------
 // Apple App Store Server-to-Server Notifications v2
 // ---------------------------------------------------------------------------
-
-// Apple Root CA - G3, DER-encoded, base64. Used to anchor trust for JWS certs.
-const APPLE_ROOT_CA_G3_SHA256 =
-  'b52cb02fd567e0359fe8fa4d4c41c737010f07274960f3f5ea2cd6b43ee2b312'
+// Both the outer signedPayload and the inner signedTransactionInfo are
+// cryptographically verified as Apple-signed (full x5c chain to Apple Root
+// CA - G3, leaf OID, bundleId, environment) via the shared verifier. See
+// _shared/apple_verify.ts. This endpoint is unauthenticated (Apple posts to
+// it), so JWS verification is the ONLY trust boundary — a forged payload must
+// never reach the DB write.
+// ---------------------------------------------------------------------------
 
 // Product-ID mapping: App Store Connect IDs -> DB IDs
 const PRODUCT_MAP: Record<string, string> = {
@@ -31,106 +34,6 @@ function json(body: unknown, status = 200): Response {
     status,
     headers: { 'Content-Type': 'application/json' },
   })
-}
-
-/** Hex-encode an ArrayBuffer */
-function hexEncode(buf: ArrayBuffer): string {
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('')
-}
-
-/** Convert a base64 string (standard, no PEM wrapping) to an X.509 PEM string */
-function base64ToPem(b64: string): string {
-  const lines: string[] = []
-  for (let i = 0; i < b64.length; i += 64) {
-    lines.push(b64.substring(i, i + 64))
-  }
-  return `-----BEGIN CERTIFICATE-----\n${lines.join('\n')}\n-----END CERTIFICATE-----`
-}
-
-/**
- * Verify that the certificate chain in x5c roots to Apple Root CA - G3.
- * x5c[0] = leaf, x5c[last] = root (or intermediate closest to root).
- * We SHA-256 hash each cert's DER and check if any matches the known root.
- * If Apple omits the root, we verify the last cert was signed by the root
- * by checking the issuer CN contains "Apple Root CA".
- */
-async function verifyAppleCertChain(x5c: string[]): Promise<boolean> {
-  if (!x5c || x5c.length === 0) return false
-
-  for (const certB64 of x5c) {
-    const der = Uint8Array.from(atob(certB64), c => c.charCodeAt(0))
-    const hash = await crypto.subtle.digest('SHA-256', der)
-    if (hexEncode(hash) === APPLE_ROOT_CA_G3_SHA256) {
-      return true // Chain contains the known Apple root
-    }
-  }
-
-  // Apple sometimes omits the root cert from x5c. Verify the last cert's
-  // issuer contains "Apple Root" as a heuristic. The JWS signature
-  // verification itself is still cryptographic proof the leaf is valid.
-  // In production this is acceptable because:
-  // 1. The JWS signature is verified against the leaf cert's public key.
-  // 2. Apple controls the x5c chain in its signed payloads.
-  // 3. We verify at least the OID/issuer hints.
-  const lastCert = x5c[x5c.length - 1]
-  const pem = base64ToPem(lastCert)
-  // Check issuer contains Apple identifiers
-  if (pem.length > 0) {
-    // The cert chain was provided by the JWS itself. Combined with
-    // successful signature verification, this is sufficient.
-    return true
-  }
-
-  return false
-}
-
-/**
- * Verify a JWS signed by Apple (signedPayload, signedTransactionInfo, etc.).
- * Returns the decoded payload object.
- */
-async function verifyAppleJWS<T = Record<string, unknown>>(jwsString: string): Promise<T> {
-  // Decode the protected header to get x5c
-  const header = jose.decodeProtectedHeader(jwsString)
-  const x5c = header.x5c
-  if (!x5c || x5c.length === 0) {
-    throw new Error('JWS missing x5c certificate chain')
-  }
-
-  // Verify the certificate chain anchors to Apple
-  const chainValid = await verifyAppleCertChain(x5c)
-  if (!chainValid) {
-    throw new Error('Certificate chain does not root to Apple Root CA - G3')
-  }
-
-  // Import the leaf certificate's public key
-  const leafPem = base64ToPem(x5c[0])
-  const publicKey = await jose.importX509(leafPem, header.alg as string)
-
-  // Verify the JWS signature
-  const { payload } = await jose.jwtVerify(jwsString, publicKey, {
-    // Apple's JWS tokens have their own expiry semantics, skip standard
-    // JWT exp/nbf checks since these are notification payloads, not auth tokens
-    clockTolerance: 365 * 24 * 60 * 60, // generous tolerance for notifications
-  })
-
-  return payload as T
-}
-
-// ---------------------------------------------------------------------------
-// Types for Apple notification payloads
-// ---------------------------------------------------------------------------
-
-interface AppleTransactionInfo {
-  originalTransactionId: string
-  transactionId: string
-  productId: string
-  type: string // 'Auto-Renewable Subscription' | 'Non-Consumable' | ...
-  expiresDate?: number // ms since epoch
-  purchaseDate: number
-  appAccountToken?: string // UUID = Supabase user ID
-  offerType?: number // 1=intro, 2=promo, 3=offer code
-  revocationDate?: number
-  environment: string
 }
 
 interface AppleNotificationPayload {
@@ -227,7 +130,7 @@ Deno.serve(async (req: Request) => {
   // --- Verify & decode the outer signed notification ---
   let notification: AppleNotificationPayload
   try {
-    notification = await verifyAppleJWS<AppleNotificationPayload>(signedPayload)
+    notification = await verifyNotification(signedPayload) as AppleNotificationPayload
   } catch (err) {
     console.error('[apple-s2s] JWS verification failed:', err)
     return json({ error: 'Invalid signedPayload: JWS verification failed' }, 403)
@@ -245,7 +148,7 @@ Deno.serve(async (req: Request) => {
 
   let txn: AppleTransactionInfo
   try {
-    txn = await verifyAppleJWS<AppleTransactionInfo>(data.signedTransactionInfo)
+    txn = await verifyTransaction(data.signedTransactionInfo)
   } catch (err) {
     console.error('[apple-s2s] signedTransactionInfo verification failed:', err)
     return json({ error: 'Invalid signedTransactionInfo' }, 403)

@@ -1,17 +1,15 @@
 import { createClient } from 'jsr:@supabase/supabase-js@2'
-import * as jose from 'npm:jose@5'
+import { verifyTransaction, AppleTransactionInfo } from '../_shared/apple_verify.ts'
 
 // ---------------------------------------------------------------------------
 // sync-subscription — Hardened with Apple JWS verification
 // ---------------------------------------------------------------------------
-// The client must now provide a signedTransactionInfo JWS from StoreKit 2
-// instead of self-reporting subscription status. The server verifies the JWS
-// was signed by Apple before trusting any subscription data.
+// The client provides a signedTransactionInfo JWS from StoreKit 2 instead of
+// self-reporting subscription status. The server cryptographically verifies
+// the JWS was signed by Apple — full x5c chain to Apple Root CA - G3, leaf
+// OID, bundleId, environment — via the shared verifier before trusting any
+// subscription data. See _shared/apple_verify.ts.
 // ---------------------------------------------------------------------------
-
-// Apple Root CA - G3 SHA-256 fingerprint (DER hash)
-const APPLE_ROOT_CA_G3_SHA256 =
-  'b52cb02fd567e0359fe8fa4d4c41c737010f07274960f3f5ea2cd6b43ee2b312'
 
 // Product-ID mapping: App Store Connect IDs -> DB IDs
 const PRODUCT_MAP: Record<string, string> = {
@@ -35,77 +33,6 @@ function json(body: unknown, status = 200): Response {
     status,
     headers: { 'Content-Type': 'application/json' },
   })
-}
-
-function hexEncode(buf: ArrayBuffer): string {
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('')
-}
-
-function base64ToPem(b64: string): string {
-  const lines: string[] = []
-  for (let i = 0; i < b64.length; i += 64) {
-    lines.push(b64.substring(i, i + 64))
-  }
-  return `-----BEGIN CERTIFICATE-----\n${lines.join('\n')}\n-----END CERTIFICATE-----`
-}
-
-async function verifyAppleCertChain(x5c: string[]): Promise<boolean> {
-  if (!x5c || x5c.length === 0) return false
-
-  for (const certB64 of x5c) {
-    const der = Uint8Array.from(atob(certB64), c => c.charCodeAt(0))
-    const hash = await crypto.subtle.digest('SHA-256', der)
-    if (hexEncode(hash) === APPLE_ROOT_CA_G3_SHA256) {
-      return true
-    }
-  }
-
-  // Apple may omit the root cert. The JWS signature verification against the
-  // leaf cert's public key is the primary trust anchor; the chain check is
-  // defense-in-depth. Accept if the chain was provided and sig verifies.
-  return true
-}
-
-/**
- * Verify a JWS signed by Apple. Returns the decoded payload.
- */
-async function verifyAppleJWS<T = Record<string, unknown>>(jwsString: string): Promise<T> {
-  const header = jose.decodeProtectedHeader(jwsString)
-  const x5c = header.x5c
-  if (!x5c || x5c.length === 0) {
-    throw new Error('JWS missing x5c certificate chain')
-  }
-
-  const chainValid = await verifyAppleCertChain(x5c)
-  if (!chainValid) {
-    throw new Error('Certificate chain does not root to Apple Root CA - G3')
-  }
-
-  const leafPem = base64ToPem(x5c[0])
-  const publicKey = await jose.importX509(leafPem, header.alg as string)
-
-  const { payload } = await jose.jwtVerify(jwsString, publicKey, {
-    clockTolerance: 365 * 24 * 60 * 60,
-  })
-
-  return payload as T
-}
-
-// ---------------------------------------------------------------------------
-// Apple transaction info type
-// ---------------------------------------------------------------------------
-
-interface AppleTransactionInfo {
-  originalTransactionId: string
-  transactionId: string
-  productId: string
-  type: string
-  expiresDate?: number
-  purchaseDate: number
-  appAccountToken?: string
-  offerType?: number
-  revocationDate?: number
-  environment: string
 }
 
 // ---------------------------------------------------------------------------
@@ -192,10 +119,10 @@ Deno.serve(async (req: Request) => {
     )
   }
 
-  // --- Verify the JWS ---
+  // --- Verify the JWS against Apple's certificate chain ---
   let txn: AppleTransactionInfo
   try {
-    txn = await verifyAppleJWS<AppleTransactionInfo>(signedTransactionInfo)
+    txn = await verifyTransaction(signedTransactionInfo)
   } catch (err) {
     console.error('sync-subscription JWS verification failed:', err)
     return json({ error: 'JWS verification failed. Provide a valid Apple-signed transaction.' }, 403)

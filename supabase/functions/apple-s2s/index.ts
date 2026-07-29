@@ -186,19 +186,25 @@ Deno.serve(async (req: Request) => {
   if (isLifetime) {
     update.is_lifetime = true
     update.subscription_expires_at = null
+    update.trial_started_at = null
+  } else if (status === 'trial') {
+    update.trial_started_at = new Date(txn.purchaseDate).toISOString()
+    update.subscription_expires_at = txn.expiresDate
+      ? new Date(txn.expiresDate).toISOString()
+      : null
   } else if (txn.expiresDate) {
     update.subscription_expires_at = new Date(txn.expiresDate).toISOString()
   } else {
     update.subscription_expires_at = null
   }
 
-  // For revoke/refund, clear subscription fields
   if (status === 'none' || status === 'expired') {
     if (status === 'none') {
       update.subscription_product_id = null
       update.subscription_started_at = null
       update.original_transaction_id = null
       update.is_lifetime = false
+      update.trial_started_at = null
     }
     update.subscription_expires_at = null
   }

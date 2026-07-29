@@ -192,7 +192,13 @@ final class SubscriptionManager: ObservableObject {
     @discardableResult
     func purchase(_ product: Product) async throws -> PurchaseOutcome {
         do {
-            let result = try await product.purchase()
+            let userId = await SupabaseManager.currentUserId()
+            let result: Product.PurchaseResult
+            if let userId {
+                result = try await product.purchase(options: [.appAccountToken(userId)])
+            } else {
+                result = try await product.purchase()
+            }
 
             switch result {
             case .success(let verification):

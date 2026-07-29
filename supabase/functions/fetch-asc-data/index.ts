@@ -11,8 +11,22 @@ const KEY_ID = env("ASC_KEY_ID")
 const ISSUER_ID = env("ASC_ISSUER_ID")
 const VENDOR = env("ASC_VENDOR")
 const PRIVATE_KEY_B64 = env("ASC_PRIVATE_KEY_B64")
+const ASC_CRON_SECRET = (Deno.env.get("ASC_CRON_SECRET") ?? "").trim()
 
-const APP_ORDER = ["MemoRx", "Urge Surfing", "Clockd", "Wage Tracker"]
+// Apple Identifier → app_name. Add IDs here as they're discovered from diagnostic logs.
+const APP_ID_MAP: Record<string, string> = {
+  "6761398713": "MemoRx",
+}
+
+const APP_NAMES = ["MemoRx", "Urge Surfing", "Clockd", "Wage Tracker"]
+const APP_TITLE_SET = new Set(APP_NAMES)
+
+const cors = {
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "content-type, x-asc-key",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+}
 
 async function generateJWT(): Promise<string> {
   const keyBytes = Uint8Array.from(atob(PRIVATE_KEY_B64), (c) => c.charCodeAt(0))
@@ -68,23 +82,49 @@ async function fetchForDate(token: string, dateStr: string): Promise<string | nu
   return new TextDecoder().decode(buf)
 }
 
-function parseInstalls(tsv: string): Record<string, number> {
-  const installs: Record<string, number> = Object.fromEntries(APP_ORDER.map(a => [a, 0]))
+function parseInstalls(tsv: string): { installs: Record<string, number>; diagnostic: string[] } {
+  const installs: Record<string, number> = Object.fromEntries(APP_NAMES.map(a => [a, 0]))
   const lines = tsv.trim().split("\n")
   const headers = lines[0].split("\t")
+
+  const appleIdIdx = headers.indexOf("Apple Identifier")
+  const skuIdx = headers.indexOf("SKU")
   const titleIdx = headers.indexOf("Title")
   const unitsIdx = headers.indexOf("Units")
   const typeIdx = headers.indexOf("Product Type Identifier")
+
+  const idCol = appleIdIdx >= 0 ? appleIdIdx : skuIdx
+  const diagnostic: string[] = []
+
   for (let i = 1; i < lines.length; i++) {
     const cols = lines[i].split("\t")
     if (!cols[typeIdx]?.startsWith("1")) continue
-    const title = cols[titleIdx]
-    if (title in installs) installs[title] += parseInt(cols[unitsIdx] || "0", 10)
+
+    const appleId = cols[idCol]?.trim() ?? ""
+    const title = cols[titleIdx]?.trim() ?? ""
+    const units = parseInt(cols[unitsIdx] || "0", 10)
+
+    // Prefer Apple Identifier match, fall back to exact Title match
+    const appName = APP_ID_MAP[appleId] ?? (APP_TITLE_SET.has(title) ? title : undefined)
+    if (appName) {
+      installs[appName] += units
+    }
+    // Log every row's Apple ID + Title so we can wire up the ID map
+    if (!(appleId in APP_ID_MAP)) {
+      diagnostic.push(`Apple Identifier=${appleId} Title="${title}" Units=${units}`)
+    }
   }
-  return installs
+
+  return { installs, diagnostic }
 }
 
 Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") return new Response(null, { headers: cors })
+
+  if (!ASC_CRON_SECRET || req.headers.get("x-asc-key") !== ASC_CRON_SECRET) {
+    return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401, headers: cors })
+  }
+
   try {
     const token = await generateJWT()
     const supabase = createClient(
@@ -92,14 +132,15 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     )
 
-    // Get list of dates already in DB (last 30 days)
     const { data: existing } = await supabase
       .from("asc_daily_stats")
       .select("report_date")
       .gte("report_date", (() => { const d = new Date(); d.setDate(d.getDate() - 30); return d.toISOString().split("T")[0] })())
     const existingDates = new Set((existing ?? []).map((r: { report_date: string }) => r.report_date))
 
-    // Walk back up to 20 days, stop at first missing date that has ASC data
+    const filled: Array<{ date: string; installs: Record<string, number> }> = []
+    const allDiagnostic: string[] = []
+
     for (let daysBack = 1; daysBack <= 20; daysBack++) {
       const d = new Date()
       d.setDate(d.getDate() - daysBack)
@@ -108,11 +149,13 @@ Deno.serve(async (req) => {
       if (existingDates.has(dateStr)) continue
 
       const tsv = await fetchForDate(token, dateStr)
-      if (tsv === null) continue  // no sales that day, keep walking back
+      if (tsv === null) continue
 
-      const installs = parseInstalls(tsv)
+      const { installs, diagnostic } = parseInstalls(tsv)
+      allDiagnostic.push(...diagnostic)
+
       const { error } = await supabase.from("asc_daily_stats").upsert(
-        APP_ORDER.map(app => ({
+        APP_NAMES.map(app => ({
           report_date: dateStr,
           app_name: app,
           installs: installs[app],
@@ -122,18 +165,23 @@ Deno.serve(async (req) => {
       )
       if (error) throw error
 
-      return new Response(JSON.stringify({ success: true, date: dateStr, installs }), {
-        headers: { "Content-Type": "application/json" }
-      })
+      filled.push({ date: dateStr, installs })
     }
 
-    return new Response(JSON.stringify({ success: true, message: "No new ASC data found in last 20 days" }), {
-      headers: { "Content-Type": "application/json" }
-    })
+    const result: Record<string, unknown> = {
+      success: true,
+      filled_count: filled.length,
+      filled,
+    }
+    if (allDiagnostic.length > 0) {
+      result.diagnostic = allDiagnostic
+    }
+
+    return new Response(JSON.stringify(result), { headers: cors })
   } catch (e) {
     return new Response(JSON.stringify({ error: String(e) }), {
       status: 500,
-      headers: { "Content-Type": "application/json" }
+      headers: cors
     })
   }
 })

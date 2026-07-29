@@ -148,21 +148,20 @@ Deno.serve(async (req: Request) => {
   const isLifetime = LIFETIME_PRODUCTS.has(dbProductId)
 
   // --- Derive subscription_status from verified transaction ---
+  // Order: lifetime → revocation → expired → trial → active
   let subscriptionStatus: string
 
   if (isLifetime) {
     subscriptionStatus = 'lifetime'
-  } else if (txn.offerType === 1) {
-    // offerType 1 = introductory offer / free trial
-    subscriptionStatus = 'trial'
   } else if (txn.revocationDate) {
     subscriptionStatus = 'none'
-  } else if (txn.expiresDate && txn.expiresDate > Date.now()) {
-    subscriptionStatus = 'active'
   } else if (txn.expiresDate && txn.expiresDate <= Date.now()) {
     subscriptionStatus = 'expired'
+  } else if (txn.offerType === 1) {
+    subscriptionStatus = 'trial'
+  } else if (txn.expiresDate && txn.expiresDate > Date.now()) {
+    subscriptionStatus = 'active'
   } else {
-    // Non-consumable / no expiry: treat as active
     subscriptionStatus = 'active'
   }
 
@@ -177,6 +176,12 @@ Deno.serve(async (req: Request) => {
   if (isLifetime) {
     update.is_lifetime = true
     update.subscription_expires_at = null
+    update.trial_started_at = null
+  } else if (subscriptionStatus === 'trial') {
+    update.trial_started_at = new Date(txn.purchaseDate).toISOString()
+    update.subscription_expires_at = txn.expiresDate
+      ? new Date(txn.expiresDate).toISOString()
+      : null
   } else if (txn.expiresDate) {
     update.subscription_expires_at = new Date(txn.expiresDate).toISOString()
   } else {
@@ -188,7 +193,7 @@ Deno.serve(async (req: Request) => {
     update.subscription_started_at = null
     update.original_transaction_id = null
     update.subscription_expires_at = null
-    // Only a verified lifetime revocation should clear is_lifetime.
+    update.trial_started_at = null
     if (isLifetime) {
       update.is_lifetime = false
     }

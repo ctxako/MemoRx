@@ -204,7 +204,7 @@ struct QuizCuratorView: View {
     }
 
     private func displayName(for subCollection: SubCollection) -> String {
-        guideBySubCollection[subCollection]?.displayName ?? subCollection.displayName
+        guideBySubCollection[subCollection]?.displayName ?? subCollectionDisplayName(subCollection)
     }
 
     private func toggleSelection(for subCollection: SubCollection) {

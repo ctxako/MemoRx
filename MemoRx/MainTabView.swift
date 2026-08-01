@@ -68,6 +68,18 @@ struct MainTabView: View {
                     .frame(maxWidth: .infinity)
                     // Opaque strip so scrolling lists don’t read through the glass highlight behind the tab icons.
                     .background(Color.appBackground)
+                    .overlay(alignment: .top) {
+                        // Gradient that bleeds upward so list content fades into the tab bar
+                        // rather than hard-cutting at the safe-area edge.
+                        LinearGradient(
+                            colors: [.clear, Color.appBackground],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .frame(height: 52)
+                        .offset(y: -52)
+                        .allowsHitTesting(false)
+                    }
                 }
             }
         }

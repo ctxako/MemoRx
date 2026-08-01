@@ -151,12 +151,7 @@ final class DrugService: ObservableObject {
 
     private static func buildOrderedDrugs() -> [Drug] {
         let grouped = Dictionary(grouping: DrugService.shared.drugs, by: { $0.subCollection })
-        let collectionOrder: [SubCollection] = [
-            .aceInhibitors, .arbs, .betaBlockers, .calciumChannelBlockers,
-            .statins, .diuretics, .ssris, .snris, .tcAs,
-            .penicillins, .cephalosporins, .macrolides,
-            .scheduleII, .scheduleIII, .scheduleIV, .scheduleV
-        ]
+        let collectionOrder = KnownSubCollection.preferredOrder
         var result: [Drug] = []
         for sub in collectionOrder {
             if let drugs = grouped[sub] {
@@ -168,7 +163,7 @@ final class DrugService: ObservableObject {
         let handled = Set(collectionOrder)
         let remainingSubs = grouped.keys
             .filter { !handled.contains($0) }
-            .sorted { $0.displayName.localizedCaseInsensitiveCompare($1.displayName) == .orderedAscending }
+            .sorted { subCollectionDisplayName($0).localizedCaseInsensitiveCompare(subCollectionDisplayName($1)) == .orderedAscending }
         for sub in remainingSubs {
             guard let drugs = grouped[sub] else { continue }
             result += drugs.sorted {

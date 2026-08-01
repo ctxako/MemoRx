@@ -13,6 +13,12 @@ struct LastDrugQuizSessionSummary: Codable, Equatable, Sendable {
     }
 }
 
+struct DrugSRSState: Codable {
+    var repetitionNumber: Int
+    var easeFactor: Double
+    var intervalDays: Int
+}
+
 struct QuizSessionFinalizeResult: Sendable {
     var userVisibleError: String?
     /// Server-side daily XP just granted (0 when not a server-daily quiz or already completed).
@@ -46,6 +52,9 @@ final class UserProgressService: ObservableObject {
         static let lastDailyQuizSession = "lastDailyQuizSessionV1"
         /// Persists first-seen `created_at` for stable `public.users` upserts (`SupabaseManager.UserRow`).
         static let profileCreatedAtForSupabase = "supabaseProfileCreatedAt"
+        static let drugSRSStates = "drugSRSStatesV1"
+        /// Set when `setOnboardingCompleted` couldn't reach the server; retried on next launch.
+        static let onboardingCompletedNeedsSync = "onboardingCompletedNeedsSyncV1"
     }
 
     enum QuizSource: String {
@@ -73,6 +82,7 @@ final class UserProgressService: ObservableObject {
     /// User-selected study flags, independent of score/mastery/difficulty.
     @Published var flaggedDrugIds: Set<String>
     @Published var drugNextReview: [String: Date]
+    @Published var drugSRSStates: [String: DrugSRSState]
     @Published var classQuizHistory: [ClassQuizHistoryEntry]
     @Published var lastDrugQuizSession: LastDrugQuizSessionSummary?
     @Published var lastDailyQuizSession: LastDrugQuizSessionSummary?
@@ -101,6 +111,12 @@ final class UserProgressService: ObservableObject {
 
         if let raw = defaults.dictionary(forKey: Keys.drugNextReview) as? [String: Double] {
             self.drugNextReview = raw.mapValues { Date(timeIntervalSince1970: $0) }
+        }
+        if let data = defaults.data(forKey: Keys.drugSRSStates),
+           let decoded = try? JSONDecoder().decode([String: DrugSRSState].self, from: data) {
+            self.drugSRSStates = decoded
+        } else {
+            self.drugSRSStates = [:]
         }
         if let data = defaults.data(forKey: Keys.classQuizHistory),
            let decoded = try? JSONDecoder().decode([ClassQuizHistoryEntry].self, from: data) {
@@ -137,6 +153,15 @@ final class UserProgressService: ObservableObject {
                 await flushPendingSyncQueue(userId: uid, maxDrugs: 10)
             }
         }
+
+        // Retry a completion-flag write that failed on a previous launch (offline finish, etc.)
+        // so the server's `has_completed_onboarding` eventually matches the local flag.
+        if defaults.bool(forKey: Keys.onboardingCompletedNeedsSync) {
+            Task {
+                try? await Task.sleep(nanoseconds: 2_000_000_000)
+                await pushOnboardingCompletedWithRetry()
+            }
+        }
     }
 
     func save() {
@@ -150,6 +175,9 @@ final class UserProgressService: ObservableObject {
         defaults.set(Array(flaggedDrugIds), forKey: Keys.flaggedDrugIds)
         let rawDates = drugNextReview.mapValues { $0.timeIntervalSince1970 }
         defaults.set(rawDates, forKey: Keys.drugNextReview)
+        if let srsData = try? JSONEncoder().encode(drugSRSStates) {
+            defaults.set(srsData, forKey: Keys.drugSRSStates)
+        }
         if let historyData = try? JSONEncoder().encode(classQuizHistory) {
             defaults.set(historyData, forKey: Keys.classQuizHistory)
         }
@@ -309,10 +337,10 @@ final class UserProgressService: ObservableObject {
         sources.append(source.rawValue)
         drugScoreSources[drug.id] = sources
 
-        let intervals = [1, 3, 7, 14, 30]
-        let idx = min(pct / 25, intervals.count - 1)
-        let days = intervals[idx]
-        drugNextReview[drug.id] = Calendar.current.date(byAdding: .day, value: days, to: Date()) ?? Date()
+        var srsState = drugSRSStates[drug.id] ?? inferredInitialSRSState(for: drug.id)
+        Self.applySM2(to: &srsState, quizPercent: pct)
+        drugSRSStates[drug.id] = srsState
+        drugNextReview[drug.id] = Calendar.current.date(byAdding: .day, value: srsState.intervalDays, to: Date()) ?? Date()
 
         if todayQuiz {
             // Server is the authoritative streak source (via `submit_daily_completion` →
@@ -502,7 +530,7 @@ final class UserProgressService: ObservableObject {
         let entry = ClassQuizHistoryEntry(
             id: UUID(),
             timestamp: Date(),
-            selectedSubCollections: selectedSubCollections.map(\.rawValue),
+            selectedSubCollections: selectedSubCollections,
             selectedClassNames: selectedClassNames,
             questionCount: questionCount,
             correctCount: correctCount,
@@ -886,18 +914,36 @@ final class UserProgressService: ObservableObject {
         }
     }
 
+    /// Marks `has_completed_onboarding = true` on the server. Sets a local "needs sync"
+    /// flag first so that if the write fails (offline / no session / app killed mid-flight),
+    /// `init()` retries it on the next launch instead of leaving the server flag stale.
     func setOnboardingCompleted() {
-        Task {
-            await SupabaseManager.ensureAnonymousSession()
-            guard let uid = await SupabaseManager.currentUserId() else { return }
+        defaults.set(true, forKey: Keys.onboardingCompletedNeedsSync)
+        Task { await pushOnboardingCompletedWithRetry() }
+    }
+
+    /// Pushes the completion flag with bounded retry (1.5s, then 3s backoff). Clears the
+    /// local "needs sync" flag on success; leaves it set on failure so the launch-time
+    /// flush retries.
+    @discardableResult
+    private func pushOnboardingCompletedWithRetry() async -> Bool {
+        await SupabaseManager.ensureAnonymousSession()
+        guard let uid = await SupabaseManager.currentUserId() else { return false }
+        let backoffNanoseconds: [UInt64] = [1_500_000_000, 3_000_000_000]
+        for attemptIndex in 0..<3 {
             do {
                 try await SupabaseManager.upsertOnboardingCompleted(userId: uid)
+                defaults.set(false, forKey: Keys.onboardingCompletedNeedsSync)
+                return true
             } catch {
                 #if DEBUG
-                print("setOnboardingCompleted upsert: \(error)")
+                print("setOnboardingCompleted upsert attempt \(attemptIndex + 1)/3: \(error)")
                 #endif
+                guard attemptIndex + 1 < 3 else { break }
+                try? await Task.sleep(nanoseconds: backoffNanoseconds[attemptIndex])
             }
         }
+        return false
     }
 
     private func naplexDateFromDefaults() -> Date? {
@@ -917,7 +963,10 @@ final class UserProgressService: ObservableObject {
 
     /// Build the client-authoritative subset of the user profile. XP and is_lifetime are
     /// deliberately excluded — those columns are owned by `submit_daily_completion` and
-    /// `admin_adjust_user_xp` respectively. See `SupabaseManager.UserProfileSafeRow`.
+    /// `admin_adjust_user_xp` respectively. `has_completed_onboarding` is also left nil here
+    /// (and is therefore omitted from the PATCH body by the synthesized Encodable), so routine
+    /// profile syncs never clobber it — it is written only via `setOnboardingCompleted` →
+    /// `SupabaseManager.upsertOnboardingCompleted`. See `SupabaseManager.UserProfileSafeRow`.
     private func buildUserRow(id: UUID) -> SupabaseManager.UserProfileSafeRow {
         let appleRaw = defaults.string(forKey: "appleUserID")
         let _ = appleRaw.flatMap { $0.isEmpty ? nil : $0 }
@@ -992,12 +1041,16 @@ final class UserProgressService: ObservableObject {
         let profile = buildUserRow(id: userId)
         try await SupabaseManager.upsertUserProfile(profile)
 
+        let srs = drugSRSStates[drug.id]
         let progress = SupabaseManager.DrugProgressRow(
             user_id: userId,
             drug_id: drug.id,
             scores: drugScores[drug.id] ?? [],
             next_review: drugNextReview[drug.id],
-            updated_at: Date()
+            updated_at: Date(),
+            ease_factor: srs?.easeFactor,
+            repetition_number: srs?.repetitionNumber,
+            interval_days: srs?.intervalDays
         )
         try await SupabaseManager.upsertDrugProgress(progress)
     }
@@ -1067,6 +1120,47 @@ final class UserProgressService: ObservableObject {
                 break
             }
         }
+    }
+
+    // MARK: - SM-2 Spaced Repetition
+
+    private static func sm2Quality(from pct: Int) -> Int {
+        switch pct {
+        case 85...100: return 5
+        case 70..<85:  return 4
+        case 50..<70:  return 3
+        case 30..<50:  return 2
+        default:       return 0
+        }
+    }
+
+    static func applySM2(to state: inout DrugSRSState, quizPercent: Int) {
+        let q = sm2Quality(from: quizPercent)
+        let delta = 0.1 - Double(5 - q) * (0.08 + Double(5 - q) * 0.02)
+        state.easeFactor = max(1.3, state.easeFactor + delta)
+
+        if q < 3 {
+            state.repetitionNumber = 0
+            state.intervalDays = 1
+        } else {
+            switch state.repetitionNumber {
+            case 0:  state.intervalDays = 1
+            case 1:  state.intervalDays = 6
+            default: state.intervalDays = min(180, Int((Double(state.intervalDays) * state.easeFactor).rounded()))
+            }
+            state.repetitionNumber += 1
+        }
+    }
+
+    private func inferredInitialSRSState(for drugId: String) -> DrugSRSState {
+        let scores = drugScores[drugId] ?? []
+        guard !scores.isEmpty else {
+            return DrugSRSState(repetitionNumber: 0, easeFactor: 2.5, intervalDays: 1)
+        }
+        let avg = scores.reduce(0, +) / scores.count
+        let reps = min(scores.count, 4)
+        let ef = max(1.3, 1.3 + (Double(avg) / 100.0) * 1.5)
+        return DrugSRSState(repetitionNumber: reps, easeFactor: ef, intervalDays: 1)
     }
 }
 

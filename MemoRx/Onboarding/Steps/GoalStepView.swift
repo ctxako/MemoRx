@@ -15,7 +15,7 @@ struct GoalStepView: View {
             title: "NAPLEX Exam Date",
             customTitle: Text("NAPLEX ") + Text("Exam").italic().foregroundColor(warmGold) + Text(" Date"),
             bodyText: "Set a date and we'll show your countdown throughout the app.",
-            progress: (current: 1, total: 7),
+            progress: (current: 2, total: OnboardingViewModel.totalSteps),
             primaryTitle: "Continue",
             primaryAction: {
                 vm.commitNaplex()

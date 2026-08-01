@@ -16,6 +16,10 @@ struct PaywallView: View {
     @ObservedObject private var subscriptions = SubscriptionManager.shared
     @Environment(\.dismiss) private var dismiss
     var subscriptionLapsed: Bool = false
+    /// When false, the close (X) button is hidden — used by the mandatory root gate in
+    /// `ContentView`, where the view isn't presented modally and `dismiss()` is a no-op
+    /// (a visible-but-dead button). Sheet presentations keep the default `true`.
+    var isDismissable: Bool = true
     @State private var isPurchasing = false
     @State private var isRestoring = false
     @State private var hasTimedOutProductLoad = false
@@ -26,8 +30,9 @@ struct PaywallView: View {
     private let annualID = "ctxa.MemoRx.yearly"
     private let lifetimeID = "ctxa.MemoRx.lifetime"
 
-    init(subscriptionLapsed: Bool = false) {
+    init(subscriptionLapsed: Bool = false, isDismissable: Bool = true) {
         self.subscriptionLapsed = subscriptionLapsed
+        self.isDismissable = isDismissable
         self._showPlans = State(initialValue: true)
     }
 
@@ -143,22 +148,24 @@ struct PaywallView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundStyle(Color.appSecondaryText)
-                            .frame(width: 36, height: 36)
-                            .background(Color.appCardBackground)
-                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .strokeBorder(PaywallTheme.cardStroke, lineWidth: 1)
-                            }
+                if isDismissable {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(Color.appSecondaryText)
+                                .frame(width: 36, height: 36)
+                                .background(Color.appCardBackground)
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .strokeBorder(PaywallTheme.cardStroke, lineWidth: 1)
+                                }
+                        }
+                        .minimumHitTarget()
                     }
-                    .minimumHitTarget()
                 }
             }
         }

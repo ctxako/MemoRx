@@ -54,15 +54,7 @@ enum StudentLevel: String, CaseIterable {
 
 struct OnboardingView: View {
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
-    @StateObject private var vm: OnboardingViewModel
-    private let onTourFinish: (() -> Void)?
-    @State private var showPaywall = false
-    @ObservedObject private var subscriptions = SubscriptionManager.shared
-
-    init(mode: OnboardingMode = .onboarding, onTourFinish: (() -> Void)? = nil) {
-        _vm = StateObject(wrappedValue: OnboardingViewModel(mode: mode))
-        self.onTourFinish = onTourFinish
-    }
+    @StateObject private var vm = OnboardingViewModel()
 
     var body: some View {
         ZStack {
@@ -72,24 +64,24 @@ struct OnboardingView: View {
             Group {
                 switch vm.step {
                 case 1:
-                    IdentityStepView(vm: vm)
+                    WelcomeChallengeStepView(vm: vm)
                 case 2:
-                    GoalStepView(vm: vm)
+                    ResultGapStepView(vm: vm)
                 case 3:
-                    DailyStudyStepView(vm: vm)
-                case 4:
-                    LibraryStepView(vm: vm)
-                case 5:
-                    RequestStepView(vm: vm)
-                case 6:
-                    ReminderStepView(vm: vm)
+                    GoalStepView(vm: vm)
                 default:
-                    ReadyStepView(vm: vm) {
-                        if vm.mode == .onboarding && !subscriptions.hasActiveSubscription {
-                            showPaywall = true
-                        } else {
-                            hasCompletedOnboarding = true
-                        }
+                    // Step 4 — notifications is the final onboarding screen. It owns the
+                    // finish hook that ReadyStepView used to carry (ReadyStepView removed in Pass 1).
+                    ReminderStepView(vm: vm) {
+                        // Persist the name fallback, "member since" startDate, and profile
+                        // sync that the (removed) Identity screen used to write. Name/year
+                        // capture moves onto GoalStepView in Pass 2; commitIdentity() stays for that.
+                        vm.commitIdentity()
+                        // Finish unconditionally. Monetization is owned by ContentView's
+                        // paywall gate on the next render, so a non-subscriber who closes
+                        // the paywall can't get trapped re-running onboarding.
+                        vm.commitOnboardingFinished()
+                        hasCompletedOnboarding = true
                     }
                 }
             }
@@ -99,20 +91,6 @@ struct OnboardingView: View {
             ))
         }
         .environmentObject(vm)
-        .onChange(of: vm.step) { _, newStep in
-            if vm.mode == .tour && newStep >= 6 {
-                onTourFinish?()
-            }
-        }
-        .fullScreenCover(isPresented: $showPaywall) {
-            PaywallView()
-        }
-        .onChange(of: subscriptions.hasActiveSubscription) { _, isActive in
-            if isActive && showPaywall {
-                showPaywall = false
-                hasCompletedOnboarding = true
-            }
-        }
     }
 }
 

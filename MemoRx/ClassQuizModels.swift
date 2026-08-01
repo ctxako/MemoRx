@@ -9,7 +9,7 @@ struct ClassQuizGuide: Codable, Identifiable {
     let highYieldPearls: [String]
     let highRiskMeds: [String]
 
-    var id: String { subCollection.rawValue }
+    var id: String { subCollection }
 
     enum CodingKeys: String, CodingKey {
         case subCollection = "sub_collection"

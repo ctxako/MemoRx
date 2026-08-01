@@ -17,7 +17,7 @@ struct Drug: Codable, Identifiable {
     let id: String
     let genericName: String
     let brandNames: [String]
-    let collection: Collection
+    let collection: DrugCollection
     let subCollection: SubCollection
     let drugClass: String
     let mechanismOfAction: String
@@ -36,7 +36,7 @@ struct Drug: Codable, Identifiable {
         id: String,
         genericName: String,
         brandNames: [String],
-        collection: Collection,
+        collection: DrugCollection,
         subCollection: SubCollection,
         drugClass: String,
         mechanismOfAction: String,
@@ -71,7 +71,7 @@ struct Drug: Codable, Identifiable {
     }
 
     /// Stable grouping key for the global ordered library list (matches `DrugService` ordering).
-    var classId: String { subCollection.rawValue }
+    var classId: String { subCollection }
 
     /// Uppercased line for the front-of-card capsule.
     /// Uses specific pharmacologic class label (e.g. `ACE INHIBITOR`, `SSRI`).

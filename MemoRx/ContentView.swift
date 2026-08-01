@@ -214,7 +214,8 @@ struct ContentView: View {
         } else if !hasCompletedOnboarding {
             OnboardingView()
         } else if !subscriptions.hasActiveSubscription {
-            PaywallView(subscriptionLapsed: subscriptionLapsed)
+            // Mandatory gate: not presented modally, so hide the (dead) close button.
+            PaywallView(subscriptionLapsed: subscriptionLapsed, isDismissable: false)
         } else {
             MainTabView()
         }
@@ -466,7 +467,7 @@ struct SubCollectionDrugsView: View {
     var body: some View {
         content
             .background(SubCollectionNavigationBarChrome())
-            .navigationTitle(subCollection.displayName)
+            .navigationTitle(subCollectionDisplayName(subCollection))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.appBackground, for: .navigationBar)
             .toolbar(.hidden, for: .tabBar)
@@ -537,7 +538,7 @@ struct SubCollectionDrugsView: View {
 
 /// Matches bar fill to `appBackground` and removes the default bottom hairline so scrolling
 /// does not leave a contrasting “white line” under the sticky title.
-private struct SubCollectionNavigationBarChrome: UIViewControllerRepresentable {
+struct SubCollectionNavigationBarChrome: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> ChromeViewController {
         ChromeViewController()
     }

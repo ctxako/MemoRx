@@ -209,12 +209,12 @@ struct LibraryView: View {
     @ObservedObject private var subscriptions = SubscriptionManager.shared
     @State private var showPaywall = false
 
-    private var groupedDrugs: [SubCollection: [Drug]] {
-        Dictionary(grouping: drugs, by: \.subCollection)
+    private var groupedByCollection: [DrugCollection: [Drug]] {
+        Dictionary(grouping: drugs, by: \.collection)
     }
 
-    private var sortedSubCollections: [SubCollection] {
-        groupedDrugs.keys.sorted { $0.displayName < $1.displayName }
+    private var sortedCollections: [DrugCollection] {
+        groupedByCollection.keys.sorted { collectionDisplayName($0) < collectionDisplayName($1) }
     }
 
     var filteredDrugs: [Drug] {
@@ -272,8 +272,7 @@ struct LibraryView: View {
         .accessibilityLabel("Open quiz curator")
     }
 
-    func badgeTier(for subCollection: SubCollection, drugs: [Drug]) -> (label: String, color: Color)? {
-        let collectionDrugs = drugs.filter { $0.subCollection == subCollection }
+    func badgeTier(for collectionDrugs: [Drug]) -> (label: String, color: Color)? {
         guard !collectionDrugs.isEmpty else { return nil }
 
         let masteredCount = collectionDrugs.filter { drug in
@@ -381,13 +380,13 @@ struct LibraryView: View {
                         }
 
                         if searchText.isEmpty {
-                            subCollectionsSection
+                            collectionsSection
                         }
                     }
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, TabContentMetrics.firstCardTopInset)
-                .padding(.bottom, 12)
+                .padding(.bottom, 64)
             }
             .scrollDismissesKeyboard(.interactively)
             .drugListScrollEdgeFade()
@@ -430,13 +429,13 @@ struct LibraryView: View {
         }
     }
 
-    private var subCollectionsSection: some View {
-        ForEach(sortedSubCollections, id: \.self) { subCollection in
-            let items = groupedDrugs[subCollection] ?? []
+    private var collectionsSection: some View {
+        ForEach(sortedCollections, id: \.self) { collection in
+            let items = groupedByCollection[collection] ?? []
             NavigationLink {
-                SubCollectionDrugsView(subCollection: subCollection, drugs: items)
+                CollectionDrugsView(collection: collection, drugs: items)
             } label: {
-                subCollectionRow(subCollection: subCollection, items: items)
+                collectionRow(collection: collection, items: items)
             }
         }
     }
@@ -464,7 +463,7 @@ struct LibraryView: View {
 
             HStack(spacing: 0) {
                 RoundedRectangle(cornerRadius: 2, style: .continuous)
-                    .fill(collectionColor(drug.subCollection.displayName))
+                    .fill(collectionColor(subCollectionDisplayName(drug.subCollection)))
                     .frame(width: 4)
 
                 HStack {
@@ -545,18 +544,99 @@ struct LibraryView: View {
         }
     }
 
-    private func subCollectionRow(subCollection: SubCollection, items: [Drug]) -> some View {
+    private func collectionRow(collection: DrugCollection, items: [Drug]) -> some View {
         HStack(spacing: 0) {
             RoundedRectangle(cornerRadius: 2, style: .continuous)
-                .fill(collectionColor(subCollection.displayName))
+                .fill(collectionColor(collectionDisplayName(collection)))
                 .frame(width: 4)
 
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(subCollection.displayName)
+                    Text(collectionDisplayName(collection))
                         .font(theme.appFont(17, weight: .semibold))
                         .foregroundStyle(Color.appPrimaryText)
-                    Text("\(items.count) drugs")
+                    let subCount = Set(items.map(\.subCollection)).count
+                    Text("\(items.count) drugs · \(subCount) \(subCount == 1 ? "class" : "classes")")
+                        .font(theme.appFont(13))
+                        .foregroundStyle(Color.appSecondaryText)
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .font(theme.appFont(14))
+                    .foregroundStyle(Color.appTertiaryText)
+            }
+            .padding(16)
+        }
+        .background(Color.appCardBackground)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
+    }
+}
+
+struct CollectionDrugsView: View {
+    @Environment(\.appTheme) private var theme
+    let collection: DrugCollection
+    let drugs: [Drug]
+    @ObservedObject private var progress = UserProgressService.shared
+
+    private var groupedBySubCollection: [SubCollection: [Drug]] {
+        Dictionary(grouping: drugs, by: \.subCollection)
+    }
+
+    private var sortedSubCollections: [SubCollection] {
+        let order = KnownSubCollection.preferredOrder
+        return groupedBySubCollection.keys.sorted { a, b in
+            let ia = order.firstIndex(of: a) ?? Int.max
+            let ib = order.firstIndex(of: b) ?? Int.max
+            if ia != ib { return ia < ib }
+            return subCollectionDisplayName(a) < subCollectionDisplayName(b)
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            Color.appBackground.ignoresSafeArea()
+
+            ScrollView {
+                LazyVStack(spacing: 12) {
+                    ForEach(sortedSubCollections, id: \.self) { sub in
+                        let items = groupedBySubCollection[sub] ?? []
+                        NavigationLink {
+                            SubCollectionDrugsView(subCollection: sub, drugs: items)
+                        } label: {
+                            subCollectionRow(subCollection: sub, items: items)
+                        }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+            }
+            .drugListScrollEdgeFade()
+        }
+        .background(SubCollectionNavigationBarChrome())
+        .navigationTitle(collectionDisplayName(collection))
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.appBackground, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
+        .onAppear { LiquidTabBarSuppression.shared.libraryStackDidPush() }
+        .onDisappear { LiquidTabBarSuppression.shared.libraryStackDidPop() }
+    }
+
+    private func subCollectionRow(subCollection: SubCollection, items: [Drug]) -> some View {
+        HStack(spacing: 0) {
+            RoundedRectangle(cornerRadius: 2, style: .continuous)
+                .fill(collectionColor(subCollectionDisplayName(subCollection)))
+                .frame(width: 4)
+
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(subCollectionDisplayName(subCollection))
+                        .font(theme.appFont(17, weight: .semibold))
+                        .foregroundStyle(Color.appPrimaryText)
+                    Text("\(items.count) \(items.count == 1 ? "drug" : "drugs")")
                         .font(theme.appFont(13))
                         .foregroundStyle(Color.appSecondaryText)
                 }
@@ -576,14 +656,8 @@ struct LibraryView: View {
 }
 
 func collectionColor(_ name: String) -> Color {
-    switch name {
-    case "ACE Inhibitors":  return Color(hex: "3DBFBF")
-    case "Beta Blockers":   return Color(hex: "5B8FF9")
-    case "SSRIs":           return Color(hex: "8B72BE")
-    case "Schedule II":     return Color(hex: "2C2C2C")
-    case "Schedule III":    return Color(hex: "444444")
-    case "Schedule IV":     return Color(hex: "5E5E5E")
-    case "Schedule V":      return Color(hex: "787878")
-    default:                return Color(hex: "888888")
+    if let hex = KnownSubCollection.colors[name] {
+        return Color(hex: hex)
     }
+    return Color(hex: "888888")
 }

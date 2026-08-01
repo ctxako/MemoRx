@@ -5,7 +5,7 @@ import StoreKit
 struct SettingsView: View {
     @Environment(\.appTheme) private var theme
     @AppStorage("userName") private var userName = ""
-    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = true
+    @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
     @AppStorage("dailyReminderEnabled") private var dailyReminderEnabled = true
     @AppStorage("highContrastEnabled") private var highContrastEnabled = false
     @AppStorage("selectedTheme") private var selectedThemeRaw = AppTheme.standard.rawValue

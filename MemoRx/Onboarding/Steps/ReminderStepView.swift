@@ -19,6 +19,9 @@ private let timeSlots: [TimeSlot] = [
 
 struct ReminderStepView: View {
     @ObservedObject var vm: OnboardingViewModel
+    /// Final onboarding step: invoked instead of `vm.advance()` to finish onboarding.
+    /// Set by the router in `OnboardingView`; replaces the old `ReadyStepView` finish hook.
+    let onFinish: () -> Void
     @State private var selectedHour: Int = 9
     @State private var showCustomPicker = false
     @State private var permissionRequested = false
@@ -29,7 +32,7 @@ struct ReminderStepView: View {
             title: "Daily Reminder",
             customTitle: Text("Daily ") + Text("Reminder").italic().foregroundColor(warmGold),
             bodyText: "We\u{2019}ll nudge you once a day. You can change this anytime in Settings.",
-            progress: (current: 5, total: 7),
+            progress: (current: 3, total: OnboardingViewModel.totalSteps),
             primaryTitle: "Continue",
             primaryAction: {
                 applySelectedTime()
@@ -38,7 +41,7 @@ struct ReminderStepView: View {
                     vm.showPermissionDeniedToast()
                 }
                 vm.commitReminder()
-                vm.advance()
+                onFinish()
             },
             backAction: vm.goBack
         ) {

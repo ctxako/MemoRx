@@ -446,6 +446,9 @@ enum SupabaseManager {
         var scores: [Int]
         var next_review: Date?
         var updated_at: Date
+        var ease_factor: Double?
+        var repetition_number: Int?
+        var interval_days: Int?
     }
 
     struct DrugSubmissionRow: Encodable {

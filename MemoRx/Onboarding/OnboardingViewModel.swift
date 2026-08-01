@@ -2,16 +2,21 @@ import SwiftUI
 import UIKit
 import UserNotifications
 
-enum OnboardingMode {
-    case onboarding
-    case tour
-}
-
 @MainActor
 final class OnboardingViewModel: ObservableObject {
-    let mode: OnboardingMode
+    /// Total onboarding steps, used as the progress-bar denominator across the step views.
+    /// Pass 1 placeholder: the bar may be re-segmented in Pass 2 (the challenge becomes
+    /// 3 real questions), so the denominator lives in one place to keep that change cheap.
+    static let totalSteps = 4
+
     @Published var step: Int
     @Published var isGoingBack: Bool = false
+
+    // Onboarding challenge (Pass 2) — score handed from the challenge screen
+    // (WelcomeChallengeStepView) to the result/gap screen (ResultGapStepView).
+    // Written once when the user finishes Q3; read by the result screen.
+    @Published var challengeCorrect: Int = 0
+    @Published var challengeMisses: [OnboardingMiss] = []
 
     // Step 1 — Identity
     @Published var name: String
@@ -31,9 +36,8 @@ final class OnboardingViewModel: ObservableObject {
 
     private let defaults = UserDefaults.standard
 
-    init(mode: OnboardingMode = .onboarding) {
-        self.mode = mode
-        self.step = (mode == .tour) ? 3 : 1
+    init() {
+        self.step = 1
         let defaults = UserDefaults.standard
 
         let savedName = defaults.string(forKey: "userName") ?? ""
@@ -107,7 +111,7 @@ final class OnboardingViewModel: ObservableObject {
         SentryReporting.breadcrumb(
             category: "onboarding",
             message: "step.advance",
-            data: ["from": previousStep, "to": step, "mode": String(describing: mode)]
+            data: ["from": previousStep, "to": step]
         )
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
     }
@@ -122,7 +126,7 @@ final class OnboardingViewModel: ObservableObject {
         SentryReporting.breadcrumb(
             category: "onboarding",
             message: "step.back",
-            data: ["from": previousStep, "to": step, "mode": String(describing: mode)]
+            data: ["from": previousStep, "to": step]
         )
         UIImpactFeedbackGenerator(style: .light).impactOccurred()
     }
@@ -131,7 +135,11 @@ final class OnboardingViewModel: ObservableObject {
         defaults.set(nameTrimmed, forKey: "userName")
         defaults.set(selectedLevel?.rawValue ?? "", forKey: "studentLevel")
         defaults.set(selectedLevel?.title ?? "", forKey: "studentLevelTitle")
-        defaults.set(Date().timeIntervalSince1970, forKey: "startDate")
+        // Write-once: don't reset "member since" when the user navigates back to step 1
+        // and forward again.
+        if defaults.object(forKey: "startDate") == nil {
+            defaults.set(Date().timeIntervalSince1970, forKey: "startDate")
+        }
         UserProgressService.shared.syncProfileOnly()
         // Do NOT mark the server-side `has_completed_onboarding` here — `setOnboardingCompleted`
         // moved to `ReadyStepView` finish (audit P1 #6). Marking it after step 1 meant a user

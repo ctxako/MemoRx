@@ -187,7 +187,7 @@ enum ClassQuizEngine {
 
         return QuizQuestion(
             id: UUID(),
-            drugId: "class-\(guide.subCollection.rawValue)",
+            drugId: "class-\(guide.subCollection)",
             question: "Which suffix is most associated with \(guide.displayName)?",
             options: options,
             correctAnswers: [correct],
@@ -208,7 +208,7 @@ enum ClassQuizEngine {
 
         return QuizQuestion(
             id: UUID(),
-            drugId: "class-\(guide.subCollection.rawValue)",
+            drugId: "class-\(guide.subCollection)",
             question: "Which condition is a common use for \(guide.displayName)?",
             options: options,
             correctAnswers: [correct],
@@ -229,7 +229,7 @@ enum ClassQuizEngine {
 
         return QuizQuestion(
             id: UUID(),
-            drugId: "class-\(guide.subCollection.rawValue)",
+            drugId: "class-\(guide.subCollection)",
             question: "Which adverse effect is high-yield for \(guide.displayName)?",
             options: options,
             correctAnswers: [correct],
@@ -250,7 +250,7 @@ enum ClassQuizEngine {
 
         return QuizQuestion(
             id: UUID(),
-            drugId: "class-\(guide.subCollection.rawValue)",
+            drugId: "class-\(guide.subCollection)",
             question: "Which medication is listed as high-risk in \(guide.displayName)?",
             options: options,
             correctAnswers: [correct],
@@ -271,7 +271,7 @@ enum ClassQuizEngine {
 
         return QuizQuestion(
             id: UUID(),
-            drugId: "class-\(guide.subCollection.rawValue)",
+            drugId: "class-\(guide.subCollection)",
             question: "Which statement is true about \(guide.displayName)?",
             options: options,
             correctAnswers: [correct],

@@ -100,6 +100,20 @@ struct OnboardingShell<Content: View>: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 24)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                // Bottom-only fade so scrolling content (e.g. the result/gap cards) melts
+                // out above the nav chips instead of hard-cutting. Top stays crisp under
+                // the header; harmless on short screens where the fade zone is empty.
+                .mask(
+                    LinearGradient(
+                        stops: [
+                            .init(color: .black, location: 0),
+                            .init(color: .black, location: 0.9),
+                            .init(color: .clear, location: 1.0)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
 
             navButtons
         }
@@ -117,11 +131,11 @@ struct OnboardingShell<Content: View>: View {
                 navChip(systemImage: "arrow.right", action: primaryAction, isEnabled: primaryEnabled)
                     .accessibilityLabel(primaryTitle)
             }
-            .padding(.bottom, 32)
+            .padding(.bottom, 14)
         } else {
             navChip(systemImage: "arrow.right", action: primaryAction, isEnabled: primaryEnabled)
                 .accessibilityLabel(primaryTitle)
-                .padding(.bottom, 32)
+                .padding(.bottom, 14)
         }
     }
 

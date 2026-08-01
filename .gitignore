@@ -16,6 +16,7 @@ build/
 .env
 .env.*
 *.xcconfig
+!*.example.xcconfig
 *.local
 *.secret
 Secrets.plist
@@ -30,3 +31,17 @@ supabase/.env.*
 # DB data snapshots — contain real user PII (names, App Store transaction IDs).
 # Keep local-only; never commit to git history.
 db-backups/
+
+# AI tooling
+.claude/
+CLAUDE.md
+.agents/
+.codex/
+AGENTS.md
+skills-lock.json
+
+# App Store screenshot generator (Next.js project, not part of the app)
+app-store-screenshots/
+
+# Local screenshot exports
+finals1/

@@ -1,0 +1,36 @@
+// =============================================================================
+// MemoRx Supabase — canonical template & documentation
+// =============================================================================
+//
+// Committed `Supabase.xcconfig` contains the real anon key and Sentry DSN —
+// both are public by design (the anon key ships in the binary).
+// Override via `Supabase.local.xcconfig` (gitignored) or inject in CI if needed.
+//
+// Quick start (local)
+// -------------------
+// Create `Config/Supabase.local.xcconfig` with lines like:
+//
+//   SUPABASE_HOST = abcdxyz.supabase.co
+//   SUPABASE_ANON_KEY = eyJhbGciOiJI...your_anon_key
+//
+// You do not need to repeat SUPABASE_URL there; it is derived after the include
+// in `Supabase.xcconfig` from `SUPABASE_HOST`.
+//
+// CI / Xcode Cloud
+// ----------------
+// Generate `Supabase.local.xcconfig` from environment variables in a Run Script,
+// or inject equivalent build settings via `xcodebuild` / Xcode Cloud custom vars.
+//
+// NOTE: xcconfig treats `//` as comment; URL is composed without typing `//`.
+
+SUPABASE_SCHEME = https:
+SUPABASE_SLASH = /
+SUPABASE_HOST = YOUR_PROJECT_REF.supabase.co
+SUPABASE_ANON_KEY = YOUR_SUPABASE_ANON_KEY
+
+#include? "Supabase.local.xcconfig"
+
+// Sentry DSN (used by SentryConfig.swift). Leave blank to disable Sentry.
+SENTRY_DSN = YOUR_SENTRY_DSN
+
+SUPABASE_URL = $(SUPABASE_SCHEME)$(SUPABASE_SLASH)$(SUPABASE_SLASH)$(SUPABASE_HOST)

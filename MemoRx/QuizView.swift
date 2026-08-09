@@ -17,6 +17,12 @@ struct QuizView: View {
     @Environment(\.appTheme) private var theme
     let drug: Drug
     var source: UserProgressService.QuizSource = .library
+    /// Marketing capture only: when set, the quiz self-drives from this script's
+    /// immutable questions/selections/timings, skips `finalizeQuizSession`, and
+    /// hides mutation-capable actions.
+    var captureScript: MarketingCaptureScript? = nil
+    /// Marketing capture only: fired once the results reveal has held for `resultsHold`.
+    var onCaptureCompleted: (() -> Void)? = nil
     @ObservedObject private var progress = UserProgressService.shared
     @ObservedObject private var dailyChallenge = DailyChallengeService.shared
 
@@ -38,7 +44,12 @@ struct QuizView: View {
     @State private var resultsXPBadgeScale: CGFloat = 0.6
     @State private var resultsCardVisible = false
     @State private var resultsButtonsVisible = false
+    @State private var captureDriveStarted = false
     @Environment(\.dismiss) private var dismiss
+
+    private var isCaptureDriven: Bool {
+        captureScript != nil
+    }
 
     private var currentQuestion: QuizQuestion {
         questions[currentIndex]
@@ -179,17 +190,7 @@ struct QuizView: View {
             if hasSubmitted {
                 Button(isLastQuestion ? "See Results" : "Next Question →") {
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    if isLastQuestion {
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                            showResults = true
-                        }
-                    } else {
-                        withAnimation(.spring(response: 0.62, dampingFraction: 0.72)) {
-                            currentIndex += 1
-                            selectedAnswers.removeAll()
-                            hasSubmitted = false
-                        }
-                    }
+                    advanceAfterReveal()
                 }
                 .font(.system(size: 18, weight: .semibold))
                 .frame(maxWidth: .infinity)
@@ -201,15 +202,7 @@ struct QuizView: View {
                 .padding(.bottom, 24)
             } else {
                 Button("Submit Answer") {
-                    guard canSubmitCurrentQuestion else { return }
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        hasSubmitted = true
-                        if selectedIsCorrect {
-                            correctCount += 1
-                        }
-                    }
-                    let style: UIImpactFeedbackGenerator.FeedbackStyle = selectedIsCorrect ? .heavy : .rigid
-                    UIImpactFeedbackGenerator(style: style).impactOccurred()
+                    submitCurrentAnswer()
                 }
                 .font(.system(size: 18, weight: .semibold))
                 .frame(maxWidth: .infinity)
@@ -408,6 +401,35 @@ struct QuizView: View {
         currentIndex == questions.count - 1
     }
 
+    // Shared by the Submit/Next buttons and the capture timer — identical
+    // behavior either way, so capture exercises the real transitions.
+
+    private func submitCurrentAnswer() {
+        guard canSubmitCurrentQuestion else { return }
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+            hasSubmitted = true
+            if selectedIsCorrect {
+                correctCount += 1
+            }
+        }
+        let style: UIImpactFeedbackGenerator.FeedbackStyle = selectedIsCorrect ? .heavy : .rigid
+        UIImpactFeedbackGenerator(style: style).impactOccurred()
+    }
+
+    private func advanceAfterReveal() {
+        if isLastQuestion {
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                showResults = true
+            }
+        } else {
+            withAnimation(.spring(response: 0.62, dampingFraction: 0.72)) {
+                currentIndex += 1
+                selectedAnswers.removeAll()
+                hasSubmitted = false
+            }
+        }
+    }
+
     private var resultsView: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -423,32 +445,42 @@ struct QuizView: View {
         }
         .scrollIndicators(.hidden)
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            resultsActionButtons
-                .padding(.horizontal, 24)
-                .padding(.top, 8)
-                .padding(.bottom, 28)
+            // Capture: Done (finalize), Play Again, and Review Card are
+            // mutation-capable or navigational — hidden for the recording.
+            if !isCaptureDriven {
+                resultsActionButtons
+                    .padding(.horizontal, 24)
+                    .padding(.top, 8)
+                    .padding(.bottom, 28)
+            }
         }
         .overlay(alignment: .topTrailing) {
-            Button {
-                progress.toggleDrugFlag(drug.id)
-                UIImpactFeedbackGenerator(style: .light).impactOccurred()
-            } label: {
-                Image(systemName: progress.isDrugFlagged(drug.id) ? "flag.fill" : "flag")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(progress.isDrugFlagged(drug.id) ? QuizCompleteTheme.warmGold : Color.appSecondaryText)
-                    .frame(width: 40, height: 40)
-                    .background(Color.appCardBackground)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle()
-                            .strokeBorder(QuizCompleteTheme.cardStroke, lineWidth: 1)
-                    }
+            if !isCaptureDriven {
+                flagToggleButton
             }
-            .minimumHitTarget()
-            .accessibilityLabel(progress.isDrugFlagged(drug.id) ? "Unflag drug" : "Flag drug")
-            .padding(.trailing, 24)
-            .padding(.top, 12)
         }
+    }
+
+    private var flagToggleButton: some View {
+        Button {
+            progress.toggleDrugFlag(drug.id)
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        } label: {
+            Image(systemName: progress.isDrugFlagged(drug.id) ? "flag.fill" : "flag")
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(progress.isDrugFlagged(drug.id) ? QuizCompleteTheme.warmGold : Color.appSecondaryText)
+                .frame(width: 40, height: 40)
+                .background(Color.appCardBackground)
+                .clipShape(Circle())
+                .overlay {
+                    Circle()
+                        .strokeBorder(QuizCompleteTheme.cardStroke, lineWidth: 1)
+                }
+        }
+        .minimumHitTarget()
+        .accessibilityLabel(progress.isDrugFlagged(drug.id) ? "Unflag drug" : "Flag drug")
+        .padding(.trailing, 24)
+        .padding(.top, 12)
     }
 
     private var resultsHeroHeader: some View {
@@ -782,8 +814,39 @@ struct QuizView: View {
         await loadQuestions()
     }
 
+    /// Capture only: walks every question through the same select → submit →
+    /// reveal → advance path the buttons use, then holds the results screen and
+    /// signals completion. Never touches `finalizeQuizSession`.
+    private func startCaptureDrive(_ script: MarketingCaptureScript) {
+        guard !captureDriveStarted else { return }
+        captureDriveStarted = true
+        Task { @MainActor in
+            let timing = script.timing
+            for index in questions.indices {
+                try? await Task.sleep(nanoseconds: UInt64(timing.answerSelectDelay * 1_000_000_000))
+                guard currentIndex == index, !showResults, !hasSubmitted else { return }
+                withAnimation(.spring(response: 0.25, dampingFraction: 0.85)) {
+                    selectedAnswers = Set(index < script.selections.count ? script.selections[index] : [])
+                }
+                try? await Task.sleep(nanoseconds: UInt64(timing.submitDelay * 1_000_000_000))
+                submitCurrentAnswer()
+                try? await Task.sleep(nanoseconds: UInt64(timing.revealHold * 1_000_000_000))
+                advanceAfterReveal()
+            }
+            guard showResults else { return }
+            try? await Task.sleep(nanoseconds: UInt64(timing.resultsHold * 1_000_000_000))
+            onCaptureCompleted?()
+        }
+    }
+
     @MainActor
     private func loadQuestions() async {
+        if let captureScript {
+            questions = captureScript.questions
+            startCaptureDrive(captureScript)
+            return
+        }
+
         var generated = QuizEngine.generateQuestions(for: drug, allDrugs: orderedDrugs)
         let targetDailyCount = generated.count + 1
 

@@ -24,7 +24,10 @@ final class DrugService: ObservableObject {
         defer { isLoading = false }
 
         do {
-            let remote = try await SupabaseManager.fetchRemoteDrugs()
+            // Capture runtime reads sessionless (anon role, no anonymous sign-in).
+            let remote = MarketingCaptureRuntime.isActive
+                ? try await SupabaseManager.fetchRemoteDrugsSessionless()
+                : try await SupabaseManager.fetchRemoteDrugs()
             if !remote.isEmpty {
                 drugs = remote
                 loadErrorMessage = nil

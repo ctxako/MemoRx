@@ -62,11 +62,17 @@ final class DailyChallengeService: ObservableObject {
             return
         }
 
-        await SupabaseManager.ensureAnonymousSession()
+        // Capture runtime must not establish an anonymous session — it calls the
+        // anon-executable RPC sessionless instead.
+        if !MarketingCaptureRuntime.isActive {
+            await SupabaseManager.ensureAnonymousSession()
+        }
 
         let payload: ServerDailyAssignment?
         do {
-            payload = try await SupabaseManager.fetchCurrentChallengeAssignment()
+            payload = MarketingCaptureRuntime.isActive
+                ? try await SupabaseManager.fetchCurrentChallengeAssignmentSessionless()
+                : try await SupabaseManager.fetchCurrentChallengeAssignment()
             lastRefreshFailed = false
             lastRefreshErrorMessage = nil
         } catch {

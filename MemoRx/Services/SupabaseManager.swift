@@ -616,6 +616,78 @@ enum SupabaseManager {
         return []
     }
 
+    // MARK: - Marketing capture (sessionless reads)
+    //
+    // Capture runtime must never call `ensureAnonymousSession()` /
+    // `signInAnonymously()` — anonymous sign-in auto-creates a `public.users`
+    // row via the `handle_new_auth_user` trigger. These paths hit PostgREST
+    // directly with the anon key as bearer, so they always execute as the
+    // `anon` role even if a previous normal run left a session on disk.
+
+    private static func sessionlessRequest(
+        path: String,
+        query: [URLQueryItem] = [],
+        method: String,
+        body: Data? = nil
+    ) -> URLRequest {
+        var url = validatedSupabaseHTTPURL()
+        url.append(path: path)
+        if !query.isEmpty {
+            url.append(queryItems: query)
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.setValue(supabaseAnonKey, forHTTPHeaderField: "apikey")
+        request.setValue("Bearer \(supabaseAnonKey)", forHTTPHeaderField: "Authorization")
+        if let body {
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = body
+        }
+        return request
+    }
+
+    private static func performSessionless(_ request: URLRequest) async throws -> Data {
+        let (data, response) = try await URLSession.shared.data(for: request)
+        if let http = response as? HTTPURLResponse, !(200...299).contains(http.statusCode) {
+            let detail = String(data: data, encoding: .utf8) ?? ""
+            throw NSError(
+                domain: "MemoRxSupabase",
+                code: http.statusCode,
+                userInfo: [NSLocalizedDescriptionKey: "Sessionless read failed (\(http.statusCode)): \(detail)"]
+            )
+        }
+        return data
+    }
+
+    static func fetchRemoteDrugsSessionless() async throws -> [Drug] {
+        guard isConfiguredForRemote else { return [] }
+        let data = try await performSessionless(
+            sessionlessRequest(path: "/rest/v1/drugs", query: [URLQueryItem(name: "select", value: "*")], method: "GET")
+        )
+        return try JSONDecoder().decode([Drug].self, from: data)
+    }
+
+    /// Reads the `class_quizzes` base table (anon SELECT grant + `class_quizzes_read_anon`
+    /// policy) — the `class_quiz_guides`/`class_quiz_content` views used by the normal
+    /// path are granted to `authenticated` only.
+    static func fetchRemoteClassQuizGuidesSessionless() async throws -> [ClassQuizGuide] {
+        guard isConfiguredForRemote else { return [] }
+        let data = try await performSessionless(
+            sessionlessRequest(path: "/rest/v1/class_quizzes", query: [URLQueryItem(name: "select", value: "*")], method: "GET")
+        )
+        return try JSONDecoder().decode([ClassQuizGuide].self, from: data)
+    }
+
+    /// Anon-executable RPC; its internal `fill_challenge_buffer(7)` is a global
+    /// scheduling side effect, not a user-scoped write.
+    static func fetchCurrentChallengeAssignmentSessionless() async throws -> ServerDailyAssignment? {
+        guard isConfiguredForRemote else { return nil }
+        let data = try await performSessionless(
+            sessionlessRequest(path: "/rest/v1/rpc/get_current_challenge", method: "POST", body: Data("{}".utf8))
+        )
+        return Self.parseChallengeAssignmentData(data)
+    }
+
     static func fetchLeaderboard(limit: Int = 20) async throws -> [LeaderboardUserRow] {
         guard isConfiguredForRemote else { return [] }
 

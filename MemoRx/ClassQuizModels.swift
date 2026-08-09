@@ -45,7 +45,11 @@ final class ClassQuizGuideService {
 
     func loadFromSupabaseOnLaunch() async {
         do {
-            let remote = try await SupabaseManager.fetchRemoteClassQuizGuides()
+            // Capture runtime reads the anon-readable `class_quizzes` base table
+            // sessionless — the guide views require an authenticated session.
+            let remote = MarketingCaptureRuntime.isActive
+                ? try await SupabaseManager.fetchRemoteClassQuizGuidesSessionless()
+                : try await SupabaseManager.fetchRemoteClassQuizGuides()
             if !remote.isEmpty {
                 guides = remote
                 loadErrorMessage = nil

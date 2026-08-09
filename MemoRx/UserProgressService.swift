@@ -145,6 +145,12 @@ final class UserProgressService: ObservableObject {
         // via `refreshAuthoritativeProgressFromServer()`. The previous init-time fetch was
         // redundant and racy with that path.
         migrateLegacyPendingSyncIfNeeded()
+
+        // Capture runtime: no background remote work — this init runs on any
+        // first touch of the singleton, so the suppression must live here, not
+        // in callers. Queued events stay on disk for the next normal launch.
+        guard !MarketingCaptureRuntime.isActive else { return }
+
         if !loadPendingSyncEvents().isEmpty {
             Task {
                 try? await Task.sleep(nanoseconds: 2_000_000_000)
@@ -388,6 +394,7 @@ final class UserProgressService: ObservableObject {
     /// correct (possibly zero) XP rather than holding stale local cache.
     @discardableResult
     func hydrateFromServerIfNeeded() async -> Bool {
+        guard !MarketingCaptureRuntime.isActive else { return false }
         guard SupabaseManager.isConfiguredForRemote else { return false }
         guard let uid = await SupabaseManager.currentUserId() else { return false }
         let row: SupabaseManager.UserRow?
@@ -463,6 +470,7 @@ final class UserProgressService: ObservableObject {
     /// (Growth Dashboard on appear, foregrounding, etc.). Cheap — single users-row read.
     /// Silent on failure: keeps existing local state rather than zeroing it.
     func refreshAuthoritativeProgressFromServer() async {
+        guard !MarketingCaptureRuntime.isActive else { return }
         guard SupabaseManager.isConfiguredForRemote else { return }
         guard let uid = await SupabaseManager.currentUserId() else { return }
         do {
@@ -799,6 +807,7 @@ final class UserProgressService: ObservableObject {
     }()
 
     private func logQuizAttempt(drug: Drug, correctCount: Int, totalCount: Int, xpAwarded: Int) {
+        guard !MarketingCaptureRuntime.isActive else { return }
         Task {
             await SupabaseManager.ensureAnonymousSession()
             guard let uid = await SupabaseManager.currentUserId() else { return }
@@ -918,6 +927,7 @@ final class UserProgressService: ObservableObject {
     }
 
     func syncProfileOnly() {
+        guard !MarketingCaptureRuntime.isActive else { return }
         Task {
             await SupabaseManager.ensureAnonymousSession()
             guard let uid = await SupabaseManager.currentUserId() else { return }
@@ -951,6 +961,7 @@ final class UserProgressService: ObservableObject {
     /// flush retries.
     @discardableResult
     private func pushOnboardingCompletedWithRetry() async -> Bool {
+        guard !MarketingCaptureRuntime.isActive else { return false }
         await SupabaseManager.ensureAnonymousSession()
         guard let uid = await SupabaseManager.currentUserId() else { return false }
         let backoffNanoseconds: [UInt64] = [1_500_000_000, 3_000_000_000]
@@ -1023,6 +1034,7 @@ final class UserProgressService: ObservableObject {
     }
 
     private func syncToSupabase(drug: Drug, correctCount: Int, totalCount: Int, quizPercent: Int) {
+        guard !MarketingCaptureRuntime.isActive else { return }
         Task {
             await SupabaseManager.ensureAnonymousSession()
             guard let uid = await SupabaseManager.currentUserId() else { return }
@@ -1127,6 +1139,7 @@ final class UserProgressService: ObservableObject {
 
     /// Drains queued drugs sequentially (each with full retry/backoff), bounded to avoid long blocking.
     private func flushPendingSyncQueue(userId: UUID, maxDrugs: Int) async {
+        guard !MarketingCaptureRuntime.isActive else { return }
         var processed = 0
         while processed < maxDrugs {
             let events = loadPendingSyncEvents()

@@ -1,0 +1,5 @@
+// Copy this file to `LiquidGlass.local.xcconfig` (gitignored; see `Config/Supabase.xcconfig`).
+// Enables compile-time `MEMORX_LIQUID_GLASS` so `glassEffect(_:in:)` is used on iOS 26+.
+// Use only with an Xcode / Swift SDK that defines `View.glassEffect` (iOS 26 SwiftUI); otherwise the build will fail.
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = MEMORX_LIQUID_GLASS $(inherited)

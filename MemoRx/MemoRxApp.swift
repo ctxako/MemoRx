@@ -16,6 +16,11 @@ struct MemoRxApp: App {
         // notification-permission failures, and StoreKit configuration are all captured.
         SentryReporting.start()
 
+        // Capture runtime (-marketingCapture, DEBUG only) keeps Sentry but makes
+        // no user-scoped Supabase writes: no notification refresh, no
+        // subscription sync (see MarketingCaptureRuntime).
+        guard !MarketingCaptureRuntime.isActive else { return }
+
         NotificationManager.shared.refreshDailyReminderIfAuthorized()
         Task {
             await SubscriptionManager.shared.configureOnLaunch()
@@ -28,9 +33,15 @@ struct MemoRxApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.appTheme, theme)
-                .preferredColorScheme(.dark)
+            Group {
+                if MarketingCaptureRuntime.isActive {
+                    MarketingCaptureRootView()
+                } else {
+                    ContentView()
+                }
+            }
+            .environment(\.appTheme, theme)
+            .preferredColorScheme(.dark)
         }
     }
 }

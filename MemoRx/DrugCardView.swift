@@ -47,6 +47,9 @@ struct DrugCardView: View {
     /// Library detail header includes a "house" pop-to-root button by default. Growth → Archives
     /// pushes a single drug onto Growth's stack, so back and home are the same — hide home there.
     var showsLibraryHomeButton: Bool = true
+    /// Marketing capture only: fires the existing internal flip transition after
+    /// this front-hold. Nil (always, outside capture) means tap-driven as normal.
+    var captureAutoFlipDelay: TimeInterval? = nil
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
@@ -230,6 +233,12 @@ struct DrugCardView: View {
             }
             if isToday {
                 LiquidTabBarSuppression.shared.setTodayDrugDetailPresented(isFlipped)
+            }
+            if let delay = captureAutoFlipDelay, !isFlipped {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                    guard !isFlipped else { return }
+                    toggleCardFace()
+                }
             }
         }
         .onDisappear {

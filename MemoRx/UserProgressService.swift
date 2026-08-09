@@ -414,6 +414,9 @@ final class UserProgressService: ObservableObject {
 
         if hasName {
             defaults.set(trimmedName, forKey: "userName")
+        } else if let localName = defaults.string(forKey: "userName"),
+                  !localName.isEmpty, nameHasValidFormat(localName) {
+            backfillDisplayName(localName)
         }
         if !row.legacy_user_id.isEmpty {
             defaults.set(row.legacy_user_id, forKey: "userID")
@@ -883,6 +886,27 @@ final class UserProgressService: ObservableObject {
         } catch {
             defaults.set(previousName, forKey: "userName")
             throw error
+        }
+    }
+
+    private func backfillDisplayName(_ name: String) {
+        Task {
+            var currentName = name
+            for attempt in 0..<3 {
+                do {
+                    try await SupabaseManager.changeDisplayName(currentName)
+                    return
+                } catch SupabaseManager.ChangeDisplayNameError.taken {
+                    let fresh = Int.random(in: 1...9999)
+                    currentName = "PharmStudent\(String(format: "%04d", fresh))"
+                    defaults.set(currentName, forKey: "userName")
+                } catch {
+                    #if DEBUG
+                    print("backfillDisplayName attempt \(attempt + 1)/3: \(error)")
+                    #endif
+                    return
+                }
+            }
         }
     }
 

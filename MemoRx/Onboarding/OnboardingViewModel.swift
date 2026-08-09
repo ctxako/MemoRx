@@ -46,8 +46,8 @@ final class OnboardingViewModel: ObservableObject {
             if !appleName.isEmpty {
                 name = appleName
             } else {
-                let randomNum = Int.random(in: 1...999)
-                name = "PharmStudent\(randomNum)"
+                let randomNum = Int.random(in: 1...9999)
+                name = "PharmStudent\(String(format: "%04d", randomNum))"
             }
         } else {
             name = savedName
@@ -135,16 +135,33 @@ final class OnboardingViewModel: ObservableObject {
         defaults.set(nameTrimmed, forKey: "userName")
         defaults.set(selectedLevel?.rawValue ?? "", forKey: "studentLevel")
         defaults.set(selectedLevel?.title ?? "", forKey: "studentLevelTitle")
-        // Write-once: don't reset "member since" when the user navigates back to step 1
-        // and forward again.
         if defaults.object(forKey: "startDate") == nil {
             defaults.set(Date().timeIntervalSince1970, forKey: "startDate")
         }
         UserProgressService.shared.syncProfileOnly()
-        // Do NOT mark the server-side `has_completed_onboarding` here — `setOnboardingCompleted`
-        // moved to `ReadyStepView` finish (audit P1 #6). Marking it after step 1 meant a user
-        // who bailed mid-flow would skip the rest of onboarding on next launch via
-        // `hydrateFromServerIfNeeded`.
+        syncDisplayNameToSupabase(nameTrimmed)
+    }
+
+    private func syncDisplayNameToSupabase(_ name: String) {
+        Task {
+            var currentName = name
+            for attempt in 0..<3 {
+                do {
+                    try await SupabaseManager.changeDisplayName(currentName)
+                    return
+                } catch SupabaseManager.ChangeDisplayNameError.taken {
+                    let fresh = Int.random(in: 1...9999)
+                    currentName = "PharmStudent\(String(format: "%04d", fresh))"
+                    self.name = currentName
+                    defaults.set(currentName, forKey: "userName")
+                } catch {
+                    #if DEBUG
+                    print("syncDisplayNameToSupabase attempt \(attempt + 1)/3: \(error)")
+                    #endif
+                    return
+                }
+            }
+        }
     }
 
     /// Marks `has_completed_onboarding = true` on the server. Called from `ReadyStepView`'s
